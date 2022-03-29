@@ -1,0 +1,180 @@
+;!FILE intro_screen.asm
+XL2
+H 9 areas 82 global symbols
+M intro_screen
+O -mz80
+S _rand Ref0000
+S _engine_font_manager_text Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _engine_timer_manager_load Ref0000
+S _engine_text_manager_border Ref0000
+S _engine_text_manager_clear Ref0000
+S .__.ABS. Def0000
+S _intro_texts Ref0000
+S _engine_input_manager_hold Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _engine_content_manager_load_title Ref0000
+S _engine_game_manager_flash_on Ref0000
+S _engine_timer_manager_update Ref0000
+S _engine_text_manager_title Ref0000
+S _engine_text_manager_fire Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 7F flags 0 addr 0
+S A$intro_screen$93 Def0017
+S A$intro_screen$75 Def0005
+S A$intro_screen$94 Def0018
+S A$intro_screen$76 Def0006
+S A$intro_screen$95 Def0019
+S A$intro_screen$86 Def000E
+S A$intro_screen$77 Def0007
+S A$intro_screen$96 Def001C
+S A$intro_screen$87 Def0011
+S A$intro_screen$78 Def000A
+S A$intro_screen$88 Def0012
+S _screen_intro_screen_load Def0000
+S XG$screen_intro_screen_load$0$0 Def002E
+S Fintro_screen$print_intro$0$0 Def0056
+S C$intro_screen.c$51$1$100 Def0040
+S C$intro_screen.c$51$2$101 Def004B
+S C$intro_screen.c$52$2$101 Def004D
+S C$intro_screen.c$55$1$100 Def004E
+S C$intro_screen.c$46$1$100 Def0031
+S C$intro_screen.c$56$1$100 Def0053
+S C$intro_screen.c$47$1$100 Def003A
+S C$intro_screen.c$57$1$100 Def0055
+S C$intro_screen.c$72$2$103 Def007E
+S C$intro_screen.c$65$1$102 Def0056
+S C$intro_screen.c$49$1$100 Def0044
+S C$intro_screen.c$59$1$100 Def0056
+S G$screen_intro_screen_update$0$0 Def0031
+S C$intro_screen.c$66$2$103 Def0078
+S C$intro_screen.c$66$3$104 Def005E
+S A$intro_screen$100 Def001D
+S C$intro_screen.c$68$3$104 Def0061
+S C$intro_screen.c$69$3$104 Def0077
+S A$intro_screen$201 Def0056
+S A$intro_screen$220 Def006A
+S A$intro_screen$202 Def0058
+S A$intro_screen$112 Def0026
+S A$intro_screen$221 Def006B
+S A$intro_screen$203 Def0059
+S A$intro_screen$140 Def0038
+S A$intro_screen$113 Def0029
+S A$intro_screen$104 Def0020
+S A$intro_screen$240 Def007C
+S A$intro_screen$222 Def006C
+S A$intro_screen$204 Def005A
+S A$intro_screen$141 Def0039
+S A$intro_screen$123 Def002E
+S A$intro_screen$114 Def002A
+S A$intro_screen$223 Def006D
+S A$intro_screen$214 Def0061
+S A$intro_screen$205 Def005D
+S A$intro_screen$160 Def0045
+S A$intro_screen$115 Def002D
+S _screen_intro_screen_update Def0031
+S A$intro_screen$233 Def0077
+S A$intro_screen$224 Def006F
+S A$intro_screen$215 Def0062
+S A$intro_screen$161 Def0046
+S A$intro_screen$152 Def0040
+S A$intro_screen$225 Def0070
+S A$intro_screen$216 Def0064
+S A$intro_screen$162 Def0048
+S A$intro_screen$153 Def0041
+S A$intro_screen$108 Def0023
+S XFintro_screen$print_intro$0$0 Def007E
+S A$intro_screen$226 Def0071
+S A$intro_screen$217 Def0065
+S A$intro_screen$172 Def004D
+S A$intro_screen$163 Def0049
+S A$intro_screen$154 Def0042
+S A$intro_screen$145 Def003A
+S A$intro_screen$136 Def0031
+S A$intro_screen$245 Def007E
+S A$intro_screen$227 Def0074
+S A$intro_screen$218 Def0068
+S A$intro_screen$209 Def005E
+S A$intro_screen$155 Def0043
+S A$intro_screen$146 Def003B
+S A$intro_screen$137 Def0033
+S A$intro_screen$237 Def0078
+S A$intro_screen$228 Def0075
+S A$intro_screen$219 Def0069
+S A$intro_screen$183 Def0053
+S A$intro_screen$147 Def003E
+S A$intro_screen$138 Def0034
+S A$intro_screen$238 Def0079
+S A$intro_screen$229 Def0076
+S A$intro_screen$148 Def003F
+S A$intro_screen$139 Def0035
+S A$intro_screen$239 Def007A
+S A$intro_screen$177 Def004E
+S A$intro_screen$168 Def004B
+S A$intro_screen$159 Def0044
+S A$intro_screen$178 Def004F
+S A$intro_screen$188 Def0055
+S A$intro_screen$179 Def0052
+S C$intro_screen.c$41$1$98 Def0031
+S C$intro_screen.c$32$1$98 Def001D
+S C$intro_screen.c$23$1$98 Def0000
+S XG$screen_intro_screen_update$0$0 Def0055
+S C$intro_screen.c$24$1$98 Def0003
+S C$intro_screen.c$34$1$98 Def0020
+S C$intro_screen.c$25$1$98 Def000B
+S C$intro_screen.c$18$0$0 Def0000
+S C$intro_screen.c$35$1$98 Def0023
+S C$intro_screen.c$26$1$98 Def000E
+S A$intro_screen$70 Def0000
+S C$intro_screen.c$37$1$98 Def0026
+S C$intro_screen.c$38$1$98 Def002E
+S C$intro_screen.c$29$1$98 Def0015
+S G$screen_intro_screen_load$0$0 Def0000
+S C$intro_screen.c$39$1$98 Def002E
+S A$intro_screen$82 Def000B
+S A$intro_screen$92 Def0015
+S A$intro_screen$74 Def0003
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 03 09 00 02 0A 0A 00 02 0E 04 00
+T 0E 00 21 01 0A E5 CD 00 00 26 03 E3 33 CD 00 00
+R 00 00 00 00 02 07 05 00 02 0E 0D 00
+T 1C 00 33 CD 56 00 CD 00 00 CD 00 00 21 84 03 E5
+R 00 00 00 00 00 04 00 00 02 07 0E 00 02 0A 02 00
+T 2A 00 CD 00 00 F1 C3 00 00
+R 00 00 00 00 02 03 03 00 02 07 0B 00
+T 31 00
+R 00 00 00 00
+T 31 00 3E 10 F5 33 CD 00 00 33 4D C5 CD 00 00 C1
+R 00 00 00 00 02 07 08 00 02 0D 0C 00
+T 3F 00 45 D1 E1 E5 D5 79 B7 20 03 B0 28 03
+R 00 00 00 00
+T 4B 00
+R 00 00 00 00
+T 4B 00 36 05 C9
+R 00 00 00 00
+T 4E 00
+R 00 00 00 00
+T 4E 00 E5 CD 00 00 E1 36 04 C9
+R 00 00 00 00 02 04 00 00
+T 56 00
+R 00 00 00 00
+T 56 00 3E 0F F5 33 CD 00 00 33 11 00 0A
+R 00 00 00 00 02 07 0F 00
+T 61 00
+R 00 00 00 00
+T 61 00 6B 26 00 29 01 00 00 09 4E 23 46 D5 1E 02
+R 00 00 00 00 02 07 07 00
+T 6F 00 D5 C5 CD 00 00 F1 F1 D1 14 1C 7B D6 0A 38
+R 00 00 00 00 02 05 01 00
+T 7D 00 E3 C9
+R 00 00 00 00

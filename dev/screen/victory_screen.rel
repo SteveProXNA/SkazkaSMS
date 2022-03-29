@@ -1,0 +1,205 @@
+;!FILE victory_screen.asm
+XL2
+H 9 areas 97 global symbols
+M victory_screen
+O -mz80
+S _devkit_PSGSFXGetStatus Ref0000
+S _engine_font_manager_text Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _engine_text_manager_border Ref0000
+S _global_player_object Ref0000
+S _engine_text_manager_clear Ref0000
+S _gold_texts Ref0000
+S _engine_font_manager_data Ref0000
+S .__.ABS. Def0000
+S _engine_input_manager_hold Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _engine_content_manager_load_title Ref0000
+S _engine_sound_manager_play Ref0000
+S _engine_player_manager_calc Ref0000
+S _engine_text_manager_fire Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 99 flags 0 addr 0
+S C$victory_screen.c$45$2$110 Def005A
+S C$victory_screen.c$31$1$107 Def0029
+S C$victory_screen.c$22$1$107 Def0000
+S C$victory_screen.c$62$2$113 Def0092
+S C$victory_screen.c$33$1$107 Def002C
+S C$victory_screen.c$24$1$107 Def0003
+S C$victory_screen.c$41$1$109 Def003B
+S G$screen_victory_screen_update$0$0 Def003B
+S C$victory_screen.c$34$1$107 Def002F
+S C$victory_screen.c$25$1$107 Def0006
+S C$victory_screen.c$62$3$114 Def0071
+S C$victory_screen.c$47$3$111 Def0063
+S C$victory_screen.c$42$1$109 Def0044
+S C$victory_screen.c$26$1$107 Def000E
+S C$victory_screen.c$52$1$109 Def0066
+S C$victory_screen.c$48$3$111 Def0065
+S C$victory_screen.c$43$1$109 Def0053
+S C$victory_screen.c$36$1$107 Def0032
+S C$victory_screen.c$27$1$107 Def0011
+S C$victory_screen.c$18$1$107 Def0000
+S C$victory_screen.c$66$2$113 Def0098
+S C$victory_screen.c$64$3$114 Def0074
+S C$victory_screen.c$53$1$109 Def0068
+S C$victory_screen.c$37$1$107 Def003A
+S C$victory_screen.c$55$1$109 Def0069
+S C$victory_screen.c$39$1$107 Def003B
+S A$victory_screen$100 Def001C
+S C$victory_screen.c$47$1$109 Def004F
+S A$victory_screen$101 Def001D
+S A$victory_screen$111 Def0029
+S A$victory_screen$102 Def001F
+S A$victory_screen$220 Def006D
+S A$victory_screen$103 Def0022
+S A$victory_screen$230 Def0074
+S A$victory_screen$221 Def0070
+S A$victory_screen$104 Def0023
+S A$victory_screen$240 Def0081
+S A$victory_screen$231 Def0075
+S A$victory_screen$204 Def0068
+S A$victory_screen$150 Def0043
+S A$victory_screen$132 Def003A
+S A$victory_screen$123 Def0032
+S A$victory_screen$105 Def0024
+S A$victory_screen$250 Def008C
+S A$victory_screen$241 Def0082
+S A$victory_screen$232 Def0076
+S A$victory_screen$160 Def004D
+S A$victory_screen$124 Def0034
+S A$victory_screen$115 Def002C
+S A$victory_screen$106 Def0027
+S _screen_victory_screen_update Def003B
+S A$victory_screen$260 Def0096
+S A$victory_screen$251 Def008F
+S A$victory_screen$242 Def0083
+S A$victory_screen$233 Def0077
+S A$victory_screen$161 Def004E
+S A$victory_screen$125 Def0035
+S A$victory_screen$107 Def0028
+S A$victory_screen$252 Def0090
+S A$victory_screen$243 Def0084
+S A$victory_screen$234 Def0079
+S A$victory_screen$225 Def0071
+S A$victory_screen$126 Def0036
+S Fvictory_screen$victory$0$0 Def0069
+S A$victory_screen$253 Def0091
+S A$victory_screen$244 Def0085
+S A$victory_screen$235 Def007A
+S A$victory_screen$217 Def0069
+S A$victory_screen$190 Def0063
+S A$victory_screen$181 Def005A
+S A$victory_screen$172 Def0053
+S A$victory_screen$154 Def0044
+S A$victory_screen$145 Def003B
+S A$victory_screen$127 Def0039
+S A$victory_screen$245 Def0086
+S A$victory_screen$236 Def007C
+S A$victory_screen$218 Def006B
+S A$victory_screen$182 Def005B
+S A$victory_screen$173 Def0054
+S A$victory_screen$155 Def0045
+S A$victory_screen$146 Def003D
+S A$victory_screen$119 Def002F
+S A$victory_screen$246 Def0087
+S A$victory_screen$237 Def007D
+S A$victory_screen$219 Def006C
+S A$victory_screen$183 Def005E
+S A$victory_screen$174 Def0055
+S A$victory_screen$165 Def004F
+S A$victory_screen$156 Def0047
+S A$victory_screen$147 Def003E
+S A$victory_screen$265 Def0098
+S A$victory_screen$247 Def0088
+S A$victory_screen$238 Def007E
+S A$victory_screen$184 Def005F
+S A$victory_screen$175 Def0057
+S A$victory_screen$166 Def0050
+S A$victory_screen$157 Def0048
+S A$victory_screen$148 Def003F
+S A$victory_screen$257 Def0092
+S A$victory_screen$248 Def008A
+S A$victory_screen$239 Def0080
+S A$victory_screen$194 Def0065
+S A$victory_screen$185 Def0060
+S A$victory_screen$176 Def0058
+S A$victory_screen$167 Def0051
+S A$victory_screen$158 Def0049
+S A$victory_screen$149 Def0042
+S A$victory_screen$258 Def0093
+S A$victory_screen$249 Def008B
+S A$victory_screen$186 Def0061
+S A$victory_screen$168 Def0052
+S A$victory_screen$159 Def004C
+S A$victory_screen$259 Def0094
+S C$victory_screen.c$16$0$0 Def0000
+S A$victory_screen$199 Def0066
+S XG$screen_victory_screen_update$0$0 Def0068
+S A$victory_screen$80 Def0006
+S G$screen_victory_screen_load$0$0 Def0000
+S A$victory_screen$81 Def0008
+S A$victory_screen$72 Def0000
+S A$victory_screen$82 Def0009
+S A$victory_screen$92 Def0011
+S A$victory_screen$83 Def000A
+S A$victory_screen$93 Def0014
+S A$victory_screen$84 Def000D
+S A$victory_screen$94 Def0015
+S A$victory_screen$76 Def0003
+S A$victory_screen$95 Def0018
+S A$victory_screen$88 Def000E
+S XFvictory_screen$victory$0$0 Def0098
+S A$victory_screen$99 Def0019
+S _screen_victory_screen_load Def0000
+S XG$screen_victory_screen_load$0$0 Def003A
+S C$victory_screen.c$61$1$112 Def0069
+S C$victory_screen.c$30$1$107 Def0019
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33
+R 00 00 00 00 02 03 0D 00 02 06 0A 00 02 0D 0B 00
+T 0E 00 CD 00 00 21 03 0A E5 CD 00 00 F1 21 0A 00
+R 00 00 00 00 02 03 03 00 02 0A 05 00 02 0E 04 00
+T 1C 00 4E 06 00 21 18 0C E5 C5 CD 00 00 F1 F1 CD
+R 00 00 00 00 02 0B 07 00
+T 2A 00 69 00 CD 00 00 CD 00 00 3E 07 F5 33 CD
+R 00 00 00 00 00 02 00 00 02 05 0E 00 02 08 02 00
+T 37 00 00 00 33 C9
+R 00 00 00 00 02 02 0C 00
+T 3B 00
+R 00 00 00 00
+T 3B 00 3E 10 F5 33 CD 00 00 33 4D C5 3E 20 F5 33
+R 00 00 00 00 02 07 09 00
+T 49 00 CD 00 00 33 C1 45 D1 E1 E5 D5 79 B7 20 03
+R 00 00 00 00 02 03 09 00
+T 57 00 B0 28 0C
+R 00 00 00 00
+T 5A 00
+R 00 00 00 00
+T 5A 00 E5 CD 00 00 7D E1 B7 20 03 36 07 C9
+R 00 00 00 00 02 04 00 00
+T 66 00
+R 00 00 00 00
+T 66 00 36 09 C9
+R 00 00 00 00
+T 69 00
+R 00 00 00 00
+T 69 00 3E 0F F5 33 CD 00 00 33 01 09 00
+R 00 00 00 00 02 07 0F 00
+T 74 00
+R 00 00 00 00
+T 74 00 59 0C 68 26 00 29 3E 00 00 85 6F 3E 00 00
+R 00 00 00 00 0B 09 06 00 8B 0E 06 00
+T 80 00 8C 67 7E 23 66 6F C5 53 1E 08 D5 E5 CD
+R 00 00 00 00
+T 8D 00 00 00 F1 F1 C1 04 78 D6 04 38 DC C9
+R 00 00 00 00 02 02 01 00

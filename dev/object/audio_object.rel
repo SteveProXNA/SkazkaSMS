@@ -1,0 +1,82 @@
+XL2
+H 9 areas 21 global symbols
+M audio_object
+O -mz80
+S _Intro01_wav_pcmenc Ref0000
+S _Intro02_wav_pcmenc Ref0000
+S _Intro03_wav_pcmenc Ref0000
+S _Intro04_wav_pcmenc Ref0000
+S _sound10_psg Ref0000
+S _Intro05_wav_pcmenc Ref0000
+S _sound11_psg Ref0000
+S _Boss01_wav_pcmenc Ref0000
+S _Boss02_wav_pcmenc Ref0000
+S _Boss03_wav_pcmenc Ref0000
+S _Over01_wav_pcmenc Ref0000
+S .__.ABS. Def0000
+S _Over02_wav_pcmenc Ref0000
+S _sound0_psg Ref0000
+S _sound1_psg Ref0000
+S _sound2_psg Ref0000
+S _sound3_psg Ref0000
+S _sound4_psg Ref0000
+S _sound5_psg Ref0000
+S _sound6_psg Ref0000
+S _sound7_psg Ref0000
+S _sound8_psg Ref0000
+S _sound9_psg Ref0000
+A _CODE size 16 flags 0 addr 0
+S G$music_sample_bank$0$0 Def0000
+S G$sound_sample_bank$0$0 Def000A
+S _music_sample_bank Def0000
+S _sound_sample_bank Def000A
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 2C flags 0 addr 0
+S G$music_sample_data$0$0 Def0000
+S G$sound_sample_data$0$0 Def0014
+S _music_sample_data Def0000
+S _sound_sample_data Def0014
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 2C flags 0 addr 0
+S Faudio_object$__xinit_sound_sample_data$0$0 Def0014
+S Faudio_object$__xinit_music_sample_data$0$0 Def0000
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 02 00
+T 00 00
+R 00 00 02 00
+T 14 00
+R 00 00 02 00
+T 14 00
+R 00 00 02 00
+T 00 00
+R 00 00 00 00
+T 00 00 04 05 06 07 08 09 0A 0B 0C 0D
+R 00 00 00 00
+T 0A 00
+R 00 00 00 00
+T 0A 00 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E
+R 00 00 00 00
+T 00 00
+R 00 00 07 00
+T 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 00 00 02 04 01 00 02 06 02 00
+T 06 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 03 00 02 04 05 00 02 06 07 00
+T 0C 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 08 00 02 04 09 00 02 06 0A 00
+T 12 00 00 00
+R 00 00 07 00 02 02 0C 00
+T 14 00
+R 00 00 07 00
+T 14 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 0D 00 02 04 0E 00 02 06 0F 00
+T 1A 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 10 00 02 04 11 00 02 06 12 00
+T 20 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 13 00 02 04 14 00 02 06 15 00
+T 26 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 16 00 02 04 04 00 02 06 06 00
