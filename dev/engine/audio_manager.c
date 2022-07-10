@@ -5,6 +5,7 @@
 #include "../object/audio_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
+#include "../content/psg.h"
 #include <stdlib.h>
 
 const unsigned char psgInit[] =
@@ -46,6 +47,17 @@ void engine_sound_manager_fight()
 	}
 
 	engine_sound_manager_play( index );
+}
+
+void engine_sound_manager_kill()
+{
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_sounds )
+	{
+		return;
+	}
+
+	devkit_PSGSFXPlay( ( void * ) sfx_death_psg, devkit_SFX_CHANNEL2() );
 }
 
 void engine_music_manager_play( unsigned char index )

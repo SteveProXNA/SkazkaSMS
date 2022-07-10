@@ -1,0 +1,1088 @@
+;!FILE graphics_manager.asm
+XL3
+H 9 areas 302 global symbols
+M graphics_manager
+O -mz80
+S _logo_big__tilemap__bin Ref000000
+S _battle_enemies_leshy__tilemap__bin Ref000000
+S _splash__tilemap__bin Ref000000
+S _devkit_SMS_setNextTileatXY Ref000000
+S _logo_new__tilemap__bin Ref000000
+S .__.ABS. Def000000
+S _devkit_TILE_USE_SPRITE_PALETTE Ref000000
+S _logo_small__tilemap__bin Ref000000
+S _devkit_SMS_setTile Ref000000
+S _stats_village__tilemap__bin Ref000000
+S _koschey__tilemap__bin Ref000000
+S _border__tilemap__bin Ref000000
+A _CODE size 42E flags 0 addr 0
+S A$graphics_manager$84 Def000014
+S A$graphics_manager$75 Def00000A
+S A$graphics_manager$85 Def000015
+S A$graphics_manager$76 Def00000D
+S A$graphics_manager$67 Def000000
+S _engine_graphics_manager_draw_borderX Def00001F
+S A$graphics_manager$86 Def000016
+S A$graphics_manager$77 Def00000E
+S A$graphics_manager$68 Def000003
+S XG$engine_graphics_manager_draw_splash$0$0 Def0001C4
+S C$graphics_manager.c$31$2_0$95 Def00012D
+S C$graphics_manager.c$16$2_0$92 Def000029
+S A$graphics_manager$87 Def000017
+S A$graphics_manager$69 Def000004
+S G$engine_graphics_manager_draw_village$0$0 Def0002DB
+S C$graphics_manager.c$25$2_0$93 Def0000DC
+S A$graphics_manager$88 Def000018
+S G$engine_graphics_manager_draw_leshy$0$0 Def0003B6
+S C$graphics_manager.c$36$2_0$92 Def000134
+S C$graphics_manager.c$19$1_0$92 Def000029
+S A$graphics_manager$89 Def000019
+S C$graphics_manager.c$40$2_0$98 Def00013D
+S A$graphics_manager$99 Def00001E
+S C$graphics_manager.c$33$3_0$96 Def0000FB
+S C$graphics_manager.c$51$2_0$98 Def00018F
+S C$graphics_manager.c$43$1_0$98 Def00013D
+S C$graphics_manager.c$34$3_0$96 Def000114
+S C$graphics_manager.c$27$3_0$94 Def0000AE
+S G$engine_graphics_manager_draw_logo_small$0$0 Def00028C
+S C$graphics_manager.c$44$1_0$98 Def000154
+S C$graphics_manager.c$28$3_0$94 Def0000C5
+S C$graphics_manager.c$47$2_0$98 Def000169
+S C$graphics_manager.c$38$2_0$98 Def000135
+S C$graphics_manager.c$47$2_0$99 Def000187
+S XG$engine_graphics_manager_draw_borderX$0$0 Def000134
+S C$graphics_manager.c$8$0_0$90 Def000000
+S _engine_graphics_manager_draw_village Def0002DB
+S _engine_graphics_manager_draw_leshy Def0003B6
+S _engine_graphics_manager_draw_logo_small Def00028C
+S G$engine_graphics_manager_draw_koschey$0$0 Def000353
+S A$graphics_manager$1001 Def0003A9
+S A$graphics_manager$1110 Def000415
+S A$graphics_manager$1002 Def0003AC
+S C$graphics_manager.c$130$2_0$120 Def0002D4
+S A$graphics_manager$1111 Def000416
+S A$graphics_manager$1102 Def000406
+S A$graphics_manager$1030 Def0003B8
+S C$graphics_manager.c$122$2_0$120 Def00028C
+S C$graphics_manager.c$110$2_0$114 Def000246
+S A$graphics_manager$1130 Def000426
+S A$graphics_manager$1112 Def000417
+S A$graphics_manager$1103 Def000409
+S A$graphics_manager$1040 Def0003C0
+S A$graphics_manager$1031 Def0003BC
+S A$graphics_manager$1013 Def0003B1
+S C$graphics_manager.c$120$2_0$114 Def00028B
+S C$graphics_manager.c$111$2_0$114 Def000285
+S A$graphics_manager$1131 Def000427
+S A$graphics_manager$1113 Def00041A
+S A$graphics_manager$1104 Def00040B
+S A$graphics_manager$1032 Def0003BE
+S A$graphics_manager$1014 Def0003B3
+S C$graphics_manager.c$124$2_0$120 Def000295
+S C$graphics_manager.c$103$2_0$114 Def00023D
+S C$graphics_manager.c$101$2_0$107 Def00023C
+S A$graphics_manager$1123 Def000420
+S A$graphics_manager$1114 Def00041B
+S A$graphics_manager$1105 Def00040E
+S A$graphics_manager$1060 Def0003D2
+S A$graphics_manager$1051 Def0003C8
+S A$graphics_manager$1033 Def0003BF
+S C$graphics_manager.c$200$5_0$141 Def000406
+S XG$engine_graphics_manager_draw_village$0$0 Def000352
+S A$graphics_manager$1142 Def00042D
+S A$graphics_manager$1124 Def000421
+S A$graphics_manager$1115 Def00041C
+S A$graphics_manager$1106 Def00040F
+S A$graphics_manager$1061 Def0003D3
+S A$graphics_manager$1007 Def0003AE
+S XG$engine_graphics_manager_draw_leshy$0$0 Def00042D
+S C$graphics_manager.c$201$5_0$141 Def00041D
+S C$graphics_manager.c$105$2_0$114 Def000246
+S G$engine_graphics_manager_draw_splash2$0$0 Def0001C5
+S A$graphics_manager$1107 Def000410
+S A$graphics_manager$1080 Def0003EC
+S A$graphics_manager$1071 Def0003E0
+S A$graphics_manager$1062 Def0003D6
+S A$graphics_manager$1053 Def0003CA
+S A$graphics_manager$1044 Def0003C2
+S A$graphics_manager$1008 Def0003AF
+S C$graphics_manager.c$132$4_0$122 Def0002D1
+S G$engine_graphics_manager_draw_border$0$0 Def000000
+S A$graphics_manager$1126 Def000423
+S A$graphics_manager$1108 Def000413
+S A$graphics_manager$1090 Def0003F9
+S A$graphics_manager$1081 Def0003ED
+S A$graphics_manager$1072 Def0003E3
+S A$graphics_manager$1063 Def0003D9
+S A$graphics_manager$1054 Def0003CB
+S A$graphics_manager$1045 Def0003C3
+S A$graphics_manager$1136 Def000429
+S A$graphics_manager$1109 Def000414
+S A$graphics_manager$1091 Def0003FC
+S A$graphics_manager$1082 Def0003F0
+S A$graphics_manager$1073 Def0003E5
+S A$graphics_manager$1055 Def0003CD
+S A$graphics_manager$1046 Def0003C6
+S A$graphics_manager$1019 Def0003B5
+S C$graphics_manager.c$141$2_0$126 Def0002DB
+S C$graphics_manager.c$132$5_0$123 Def00029F
+S C$graphics_manager.c$129$2_0$120 Def000295
+S C$graphics_manager.c$113$4_0$116 Def000282
+S A$graphics_manager$1137 Def00042B
+S A$graphics_manager$1119 Def00041D
+S A$graphics_manager$1092 Def0003FD
+S A$graphics_manager$1074 Def0003E6
+S A$graphics_manager$1065 Def0003DB
+S A$graphics_manager$1047 Def0003C7
+S A$graphics_manager$1029 Def0003B6
+S C$graphics_manager.c$172$2_0$132 Def0003AE
+S C$graphics_manager.c$163$2_0$132 Def000353
+S C$graphics_manager.c$151$2_0$126 Def00034B
+S XG$engine_graphics_manager_draw_logo_small$0$0 Def0002DA
+S C$graphics_manager.c$139$2_0$120 Def0002DA
+S A$graphics_manager$1093 Def0003FE
+S A$graphics_manager$1075 Def0003E7
+S A$graphics_manager$1066 Def0003DC
+S C$graphics_manager.c$182$2_0$132 Def0003B5
+S C$graphics_manager.c$161$2_0$126 Def000352
+S C$graphics_manager.c$143$2_0$126 Def0002E5
+S C$graphics_manager.c$134$5_0$123 Def0002AD
+S C$graphics_manager.c$113$5_0$117 Def000250
+S G$engine_graphics_manager_draw_logo_big$0$0 Def00023D
+S _engine_graphics_manager_draw_koschey Def000353
+S A$graphics_manager$1094 Def0003FF
+S A$graphics_manager$1076 Def0003E8
+S A$graphics_manager$1067 Def0003DE
+S C$graphics_manager.c$204$2_0$138 Def00042D
+S C$graphics_manager.c$165$2_0$132 Def00035C
+S C$graphics_manager.c$135$5_0$123 Def0002C0
+S A$graphics_manager$1095 Def000400
+S A$graphics_manager$1086 Def0003F3
+S A$graphics_manager$1077 Def0003E9
+S A$graphics_manager$1059 Def0003CF
+S C$graphics_manager.c$136$5_0$123 Def0002D0
+S C$graphics_manager.c$115$5_0$117 Def00025E
+S A$graphics_manager$1096 Def000403
+S A$graphics_manager$1087 Def0003F6
+S A$graphics_manager$1078 Def0003EA
+S C$graphics_manager.c$116$5_0$117 Def000271
+S A$graphics_manager$1097 Def000404
+S A$graphics_manager$1088 Def0003F7
+S A$graphics_manager$1079 Def0003EB
+S C$graphics_manager.c$149$1_0$125 Def0002E7
+S C$graphics_manager.c$147$2_0$126 Def0002E5
+S C$graphics_manager.c$117$5_0$117 Def000281
+S G$engine_graphics_manager_draw_underline$0$0 Def000135
+S A$graphics_manager$1098 Def000405
+S A$graphics_manager$1089 Def0003F8
+S A$graphics_manager$110 Def000021
+S C$graphics_manager.c$190$2_0$138 Def0003C0
+S C$graphics_manager.c$174$4_0$134 Def0003A9
+S C$graphics_manager.c$169$2_0$132 Def00035C
+S C$graphics_manager.c$153$4_0$128 Def000345
+S A$graphics_manager$210 Def0000BE
+S A$graphics_manager$120 Def000029
+S A$graphics_manager$111 Def000025
+S C$graphics_manager.c$196$4_0$140 Def000420
+S C$graphics_manager.c$193$1_0$137 Def0003C2
+S A$graphics_manager$220 Def0000CB
+S A$graphics_manager$211 Def0000BF
+S A$graphics_manager$130 Def00003E
+S A$graphics_manager$121 Def00002C
+S A$graphics_manager$112 Def000027
+S C$graphics_manager.c$174$5_0$135 Def000364
+S C$graphics_manager.c$153$5_0$129 Def0002F4
+S _engine_graphics_manager_draw_splash2 Def0001C5
+S A$graphics_manager$320 Def000137
+S A$graphics_manager$221 Def0000CC
+S A$graphics_manager$212 Def0000C0
+S A$graphics_manager$203 Def0000AE
+S A$graphics_manager$140 Def00004E
+S A$graphics_manager$122 Def00002F
+S A$graphics_manager$113 Def000028
+S C$graphics_manager.c$196$5_0$141 Def0003CF
+S C$graphics_manager.c$184$2_0$138 Def0003B6
+S _engine_graphics_manager_draw_border Def000000
+S A$graphics_manager$510 Def0001D7
+S A$graphics_manager$411 Def000190
+S A$graphics_manager$330 Def000141
+S A$graphics_manager$321 Def00013B
+S A$graphics_manager$303 Def000130
+S A$graphics_manager$240 Def0000E4
+S A$graphics_manager$222 Def0000CF
+S A$graphics_manager$213 Def0000C1
+S A$graphics_manager$204 Def0000B1
+S A$graphics_manager$141 Def000051
+S A$graphics_manager$123 Def000030
+S C$graphics_manager.c$194$2_0$138 Def000426
+S C$graphics_manager.c$176$5_0$135 Def000376
+S C$graphics_manager.c$155$5_0$129 Def000305
+S C$graphics_manager.c$53$2_0$101 Def000190
+S G$engine_graphics_manager_draw_splash$0$0 Def000190
+S A$graphics_manager$601 Def00023C
+S A$graphics_manager$520 Def0001E2
+S A$graphics_manager$430 Def00019F
+S A$graphics_manager$421 Def000194
+S A$graphics_manager$340 Def000150
+S A$graphics_manager$331 Def000142
+S A$graphics_manager$304 Def000132
+S A$graphics_manager$250 Def0000F1
+S A$graphics_manager$223 Def0000D0
+S A$graphics_manager$214 Def0000C4
+S A$graphics_manager$205 Def0000B4
+S A$graphics_manager$160 Def000071
+S A$graphics_manager$151 Def00005D
+S A$graphics_manager$142 Def000052
+S A$graphics_manager$124 Def000033
+S C$graphics_manager.c$198$5_0$141 Def0003E0
+S C$graphics_manager.c$186$2_0$138 Def0003C0
+S C$graphics_manager.c$177$5_0$135 Def000385
+S C$graphics_manager.c$156$5_0$129 Def000318
+S A$graphics_manager$611 Def00023D
+S A$graphics_manager$530 Def0001EF
+S A$graphics_manager$521 Def0001E5
+S A$graphics_manager$512 Def0001D9
+S A$graphics_manager$503 Def0001D1
+S A$graphics_manager$440 Def0001A5
+S A$graphics_manager$422 Def000196
+S A$graphics_manager$350 Def00015E
+S A$graphics_manager$341 Def000153
+S A$graphics_manager$332 Def000143
+S A$graphics_manager$260 Def0000FC
+S A$graphics_manager$251 Def0000F2
+S A$graphics_manager$242 Def0000E5
+S A$graphics_manager$233 Def0000DC
+S A$graphics_manager$224 Def0000D3
+S A$graphics_manager$206 Def0000B5
+S A$graphics_manager$170 Def00007F
+S A$graphics_manager$161 Def000072
+S A$graphics_manager$152 Def000060
+S A$graphics_manager$143 Def000055
+S A$graphics_manager$134 Def00003F
+S A$graphics_manager$125 Def000034
+S C$graphics_manager.c$199$5_0$141 Def0003F3
+S C$graphics_manager.c$178$5_0$135 Def00039A
+S C$graphics_manager.c$157$5_0$129 Def00032B
+S C$graphics_manager.c$63$2_0$102 Def0001BE
+S A$graphics_manager$801 Def0002DB
+S A$graphics_manager$720 Def000298
+S A$graphics_manager$621 Def000246
+S A$graphics_manager$612 Def00023F
+S A$graphics_manager$540 Def0001FC
+S A$graphics_manager$531 Def0001F2
+S A$graphics_manager$522 Def0001E8
+S A$graphics_manager$513 Def0001DA
+S A$graphics_manager$504 Def0001D2
+S A$graphics_manager$450 Def0001AD
+S A$graphics_manager$441 Def0001A6
+S A$graphics_manager$423 Def000197
+S A$graphics_manager$351 Def000161
+S A$graphics_manager$333 Def000144
+S A$graphics_manager$270 Def00010D
+S A$graphics_manager$261 Def0000FF
+S A$graphics_manager$252 Def0000F3
+S A$graphics_manager$243 Def0000E8
+S A$graphics_manager$234 Def0000DF
+S A$graphics_manager$225 Def0000D5
+S A$graphics_manager$207 Def0000B8
+S A$graphics_manager$171 Def000080
+S A$graphics_manager$162 Def000074
+S A$graphics_manager$153 Def000062
+S A$graphics_manager$144 Def000056
+S A$graphics_manager$135 Def000042
+S A$graphics_manager$126 Def000037
+S XG$engine_graphics_manager_draw_koschey$0$0 Def0003B5
+S C$graphics_manager.c$179$5_0$135 Def0003A8
+S C$graphics_manager.c$158$5_0$129 Def000342
+S C$graphics_manager.c$74$2_0$101 Def0001C4
+S C$graphics_manager.c$65$2_0$101 Def000192
+S _engine_graphics_manager_draw_logo_big Def00023D
+S A$graphics_manager$802 Def0002DD
+S A$graphics_manager$730 Def0002A3
+S A$graphics_manager$640 Def00025C
+S A$graphics_manager$613 Def000243
+S A$graphics_manager$550 Def00020B
+S A$graphics_manager$541 Def0001FF
+S A$graphics_manager$532 Def0001F4
+S A$graphics_manager$514 Def0001DC
+S A$graphics_manager$505 Def0001D5
+S A$graphics_manager$460 Def0001B8
+S A$graphics_manager$451 Def0001AE
+S A$graphics_manager$424 Def000198
+S A$graphics_manager$370 Def000173
+S A$graphics_manager$352 Def000162
+S A$graphics_manager$334 Def000145
+S A$graphics_manager$280 Def000118
+S A$graphics_manager$271 Def00010E
+S A$graphics_manager$262 Def000100
+S A$graphics_manager$253 Def0000F6
+S A$graphics_manager$244 Def0000EA
+S A$graphics_manager$226 Def0000D6
+S A$graphics_manager$208 Def0000B9
+S A$graphics_manager$190 Def00009D
+S A$graphics_manager$172 Def000083
+S A$graphics_manager$163 Def000075
+S A$graphics_manager$154 Def000065
+S A$graphics_manager$145 Def000058
+S A$graphics_manager$136 Def000044
+S A$graphics_manager$127 Def000038
+S A$graphics_manager$109 Def00001F
+S A$graphics_manager$902 Def00034B
+S A$graphics_manager$812 Def0002E5
+S A$graphics_manager$803 Def0002E1
+S A$graphics_manager$740 Def0002B0
+S A$graphics_manager$731 Def0002A6
+S A$graphics_manager$722 Def00029A
+S A$graphics_manager$650 Def000268
+S A$graphics_manager$614 Def000245
+S A$graphics_manager$551 Def00020C
+S A$graphics_manager$533 Def0001F5
+S A$graphics_manager$524 Def0001EA
+S A$graphics_manager$506 Def0001D6
+S A$graphics_manager$470 Def0001C2
+S A$graphics_manager$461 Def0001B9
+S A$graphics_manager$452 Def0001AF
+S A$graphics_manager$434 Def0001A0
+S A$graphics_manager$425 Def000199
+S A$graphics_manager$416 Def000192
+S A$graphics_manager$380 Def000182
+S A$graphics_manager$371 Def000176
+S A$graphics_manager$353 Def000164
+S A$graphics_manager$335 Def000148
+S A$graphics_manager$290 Def000127
+S A$graphics_manager$281 Def000119
+S A$graphics_manager$272 Def00010F
+S A$graphics_manager$263 Def000103
+S A$graphics_manager$245 Def0000EB
+S A$graphics_manager$227 Def0000D7
+S A$graphics_manager$218 Def0000C5
+S A$graphics_manager$209 Def0000BC
+S A$graphics_manager$191 Def0000A0
+S A$graphics_manager$182 Def00008F
+S A$graphics_manager$173 Def000084
+S A$graphics_manager$164 Def000078
+S A$graphics_manager$155 Def000066
+S A$graphics_manager$146 Def000059
+S A$graphics_manager$137 Def000047
+S A$graphics_manager$128 Def00003A
+S C$graphics_manager.c$49$3_0$100 Def00016B
+S A$graphics_manager$903 Def00034C
+S A$graphics_manager$831 Def0002F4
+S A$graphics_manager$804 Def0002E3
+S A$graphics_manager$750 Def0002BE
+S A$graphics_manager$741 Def0002B1
+S A$graphics_manager$723 Def00029B
+S A$graphics_manager$660 Def000271
+S A$graphics_manager$651 Def000269
+S A$graphics_manager$633 Def000250
+S A$graphics_manager$570 Def000225
+S A$graphics_manager$561 Def000215
+S A$graphics_manager$552 Def00020D
+S A$graphics_manager$534 Def0001F6
+S A$graphics_manager$525 Def0001EB
+S A$graphics_manager$462 Def0001BA
+S A$graphics_manager$453 Def0001B2
+S A$graphics_manager$426 Def00019A
+S A$graphics_manager$381 Def000185
+S A$graphics_manager$372 Def000177
+S A$graphics_manager$354 Def000165
+S A$graphics_manager$345 Def000154
+S A$graphics_manager$336 Def000149
+S A$graphics_manager$309 Def000134
+S A$graphics_manager$291 Def000128
+S A$graphics_manager$282 Def00011C
+S A$graphics_manager$273 Def000112
+S A$graphics_manager$264 Def000104
+S A$graphics_manager$255 Def0000F8
+S A$graphics_manager$246 Def0000EC
+S A$graphics_manager$228 Def0000D8
+S A$graphics_manager$219 Def0000C8
+S A$graphics_manager$192 Def0000A2
+S A$graphics_manager$183 Def000092
+S A$graphics_manager$174 Def000087
+S A$graphics_manager$156 Def000069
+S A$graphics_manager$147 Def00005C
+S A$graphics_manager$138 Def00004A
+S A$graphics_manager$129 Def00003B
+S C$graphics_manager.c$93$4_0$110 Def00022F
+S C$graphics_manager.c$70$5_0$105 Def0001A8
+S A$graphics_manager$940 Def000360
+S A$graphics_manager$850 Def00030F
+S A$graphics_manager$832 Def0002F7
+S A$graphics_manager$823 Def0002ED
+S A$graphics_manager$805 Def0002E4
+S A$graphics_manager$760 Def0002C8
+S A$graphics_manager$751 Def0002BF
+S A$graphics_manager$742 Def0002B2
+S A$graphics_manager$733 Def0002A8
+S A$graphics_manager$724 Def00029D
+S A$graphics_manager$706 Def00028C
+S A$graphics_manager$670 Def000280
+S A$graphics_manager$661 Def000274
+S A$graphics_manager$652 Def00026A
+S A$graphics_manager$634 Def000253
+S A$graphics_manager$625 Def000249
+S A$graphics_manager$571 Def000226
+S A$graphics_manager$562 Def000218
+S A$graphics_manager$553 Def00020E
+S A$graphics_manager$535 Def0001F7
+S A$graphics_manager$526 Def0001ED
+S A$graphics_manager$490 Def0001CB
+S A$graphics_manager$463 Def0001BC
+S A$graphics_manager$454 Def0001B3
+S A$graphics_manager$445 Def0001A8
+S A$graphics_manager$427 Def00019B
+S A$graphics_manager$382 Def000186
+S A$graphics_manager$373 Def000178
+S A$graphics_manager$364 Def00016B
+S A$graphics_manager$355 Def000168
+S A$graphics_manager$346 Def000157
+S A$graphics_manager$337 Def00014C
+S A$graphics_manager$328 Def00013D
+S A$graphics_manager$319 Def000135
+S A$graphics_manager$292 Def00012B
+S A$graphics_manager$283 Def00011D
+S A$graphics_manager$274 Def000113
+S A$graphics_manager$265 Def000105
+S A$graphics_manager$247 Def0000ED
+S A$graphics_manager$229 Def0000DB
+S A$graphics_manager$193 Def0000A3
+S A$graphics_manager$184 Def000093
+S A$graphics_manager$175 Def000088
+S A$graphics_manager$157 Def00006A
+S A$graphics_manager$139 Def00004D
+S _engine_graphics_manager_draw_underline Def000135
+S A$graphics_manager$950 Def00036F
+S A$graphics_manager$941 Def000362
+S A$graphics_manager$914 Def000352
+S A$graphics_manager$860 Def00031C
+S A$graphics_manager$851 Def000310
+S A$graphics_manager$833 Def0002F8
+S A$graphics_manager$761 Def0002C9
+S A$graphics_manager$743 Def0002B3
+S A$graphics_manager$734 Def0002A9
+S A$graphics_manager$716 Def000295
+S A$graphics_manager$707 Def00028E
+S A$graphics_manager$662 Def000276
+S A$graphics_manager$653 Def00026B
+S A$graphics_manager$644 Def00025E
+S A$graphics_manager$635 Def000254
+S A$graphics_manager$590 Def000236
+S A$graphics_manager$572 Def000229
+S A$graphics_manager$563 Def00021A
+S A$graphics_manager$554 Def00020F
+S A$graphics_manager$545 Def000202
+S A$graphics_manager$536 Def0001F8
+S A$graphics_manager$518 Def0001DE
+S A$graphics_manager$491 Def0001CD
+S A$graphics_manager$455 Def0001B6
+S A$graphics_manager$446 Def0001A9
+S A$graphics_manager$428 Def00019C
+S A$graphics_manager$374 Def00017B
+S A$graphics_manager$365 Def00016C
+S A$graphics_manager$347 Def000159
+S A$graphics_manager$338 Def00014D
+S A$graphics_manager$329 Def000140
+S A$graphics_manager$293 Def00012C
+S A$graphics_manager$284 Def00011E
+S A$graphics_manager$266 Def000108
+S A$graphics_manager$248 Def0000EF
+S A$graphics_manager$239 Def0000E1
+S A$graphics_manager$194 Def0000A4
+S A$graphics_manager$176 Def00008A
+S A$graphics_manager$158 Def00006D
+S C$graphics_manager.c$93$5_0$111 Def0001DE
+S C$graphics_manager.c$91$2_0$107 Def0001D7
+S C$graphics_manager.c$82$2_0$107 Def0001CF
+S C$graphics_manager.c$65$4_0$104 Def0001B8
+S C$graphics_manager.c$63$5_0$105 Def000190
+S A$graphics_manager$960 Def00037B
+S A$graphics_manager$951 Def000372
+S A$graphics_manager$924 Def000353
+S A$graphics_manager$870 Def00032A
+S A$graphics_manager$861 Def00031D
+S A$graphics_manager$852 Def000311
+S A$graphics_manager$843 Def000305
+S A$graphics_manager$834 Def0002FB
+S A$graphics_manager$825 Def0002EF
+S A$graphics_manager$816 Def0002E7
+S A$graphics_manager$780 Def0002D5
+S A$graphics_manager$762 Def0002CA
+S A$graphics_manager$744 Def0002B6
+S A$graphics_manager$735 Def0002AB
+S A$graphics_manager$708 Def000292
+S A$graphics_manager$690 Def000288
+S A$graphics_manager$663 Def000277
+S A$graphics_manager$654 Def00026E
+S A$graphics_manager$645 Def000261
+S A$graphics_manager$636 Def000257
+S A$graphics_manager$627 Def00024B
+S A$graphics_manager$582 Def00022F
+S A$graphics_manager$573 Def00022A
+S A$graphics_manager$564 Def00021D
+S A$graphics_manager$555 Def000212
+S A$graphics_manager$546 Def000205
+S A$graphics_manager$537 Def0001F9
+S A$graphics_manager$519 Def0001E1
+S A$graphics_manager$492 Def0001CE
+S A$graphics_manager$456 Def0001B7
+S A$graphics_manager$447 Def0001AA
+S A$graphics_manager$438 Def0001A1
+S A$graphics_manager$429 Def00019E
+S A$graphics_manager$393 Def00018D
+S A$graphics_manager$375 Def00017C
+S A$graphics_manager$366 Def00016F
+S A$graphics_manager$348 Def00015A
+S A$graphics_manager$339 Def00014F
+S A$graphics_manager$285 Def000121
+S A$graphics_manager$267 Def000109
+S A$graphics_manager$249 Def0000F0
+S A$graphics_manager$195 Def0000A5
+S A$graphics_manager$186 Def000096
+S A$graphics_manager$177 Def00008B
+S A$graphics_manager$168 Def000079
+S A$graphics_manager$159 Def00006E
+S C$graphics_manager.c$91$2_0$108 Def000235
+S A$graphics_manager$970 Def000388
+S A$graphics_manager$961 Def00037C
+S A$graphics_manager$952 Def000374
+S A$graphics_manager$925 Def000355
+S A$graphics_manager$880 Def000338
+S A$graphics_manager$862 Def00031E
+S A$graphics_manager$853 Def000312
+S A$graphics_manager$844 Def000308
+S A$graphics_manager$835 Def0002FE
+S A$graphics_manager$826 Def0002F0
+S A$graphics_manager$817 Def0002E8
+S A$graphics_manager$763 Def0002CD
+S A$graphics_manager$745 Def0002B7
+S A$graphics_manager$709 Def000294
+S A$graphics_manager$691 Def000289
+S A$graphics_manager$664 Def000278
+S A$graphics_manager$655 Def00026F
+S A$graphics_manager$646 Def000262
+S A$graphics_manager$628 Def00024C
+S A$graphics_manager$583 Def000230
+S A$graphics_manager$574 Def00022B
+S A$graphics_manager$565 Def00021E
+S A$graphics_manager$556 Def000213
+S A$graphics_manager$547 Def000206
+S A$graphics_manager$538 Def0001FA
+S A$graphics_manager$448 Def0001AB
+S A$graphics_manager$439 Def0001A4
+S A$graphics_manager$376 Def00017E
+S A$graphics_manager$367 Def000170
+S A$graphics_manager$349 Def00015D
+S A$graphics_manager$286 Def000122
+S A$graphics_manager$268 Def00010B
+S A$graphics_manager$259 Def0000FB
+S A$graphics_manager$196 Def0000A6
+S A$graphics_manager$187 Def000099
+S A$graphics_manager$178 Def00008E
+S A$graphics_manager$169 Def00007C
+S XG$engine_graphics_manager_draw_splash2$0$0 Def00023C
+S C$graphics_manager.c$95$5_0$111 Def0001EF
+S A$graphics_manager$980 Def000398
+S A$graphics_manager$971 Def00038B
+S A$graphics_manager$962 Def00037F
+S A$graphics_manager$926 Def000359
+S A$graphics_manager$908 Def00034E
+S A$graphics_manager$881 Def000339
+S A$graphics_manager$863 Def000321
+S A$graphics_manager$854 Def000315
+S A$graphics_manager$845 Def00030A
+S A$graphics_manager$827 Def0002F2
+S A$graphics_manager$818 Def0002EB
+S A$graphics_manager$791 Def0002DA
+S A$graphics_manager$773 Def0002D1
+S A$graphics_manager$764 Def0002CE
+S A$graphics_manager$755 Def0002C0
+S A$graphics_manager$746 Def0002B8
+S A$graphics_manager$728 Def00029F
+S A$graphics_manager$674 Def000281
+S A$graphics_manager$665 Def000279
+S A$graphics_manager$656 Def000270
+S A$graphics_manager$647 Def000263
+S A$graphics_manager$638 Def000259
+S A$graphics_manager$629 Def00024E
+S A$graphics_manager$566 Def00021F
+S A$graphics_manager$557 Def000214
+S A$graphics_manager$548 Def000207
+S A$graphics_manager$539 Def0001FB
+S A$graphics_manager$467 Def0001BE
+S A$graphics_manager$449 Def0001AC
+S A$graphics_manager$386 Def000187
+S A$graphics_manager$377 Def00017F
+S A$graphics_manager$368 Def000171
+S A$graphics_manager$359 Def000169
+S A$graphics_manager$287 Def000124
+S A$graphics_manager$278 Def000114
+S A$graphics_manager$269 Def00010C
+S A$graphics_manager$197 Def0000A9
+S A$graphics_manager$188 Def00009B
+S C$graphics_manager.c$96$5_0$111 Def000202
+S C$graphics_manager.c$86$1_0$107 Def0001D1
+S C$graphics_manager.c$76$2_0$107 Def0001C5
+S G$engine_graphics_manager_draw_borderX$0$0 Def00001F
+S XG$engine_graphics_manager_draw_border$0$0 Def00001E
+S A$graphics_manager$990 Def0003A2
+S A$graphics_manager$981 Def000399
+S A$graphics_manager$972 Def00038C
+S A$graphics_manager$963 Def000380
+S A$graphics_manager$945 Def000364
+S A$graphics_manager$927 Def00035B
+S A$graphics_manager$909 Def000350
+S A$graphics_manager$891 Def000342
+S A$graphics_manager$882 Def00033A
+S A$graphics_manager$864 Def000322
+S A$graphics_manager$846 Def00030B
+S A$graphics_manager$837 Def000300
+S A$graphics_manager$819 Def0002EC
+S A$graphics_manager$774 Def0002D2
+S A$graphics_manager$765 Def0002CF
+S A$graphics_manager$756 Def0002C3
+S A$graphics_manager$747 Def0002B9
+S A$graphics_manager$729 Def0002A2
+S A$graphics_manager$684 Def000285
+S A$graphics_manager$666 Def00027A
+S A$graphics_manager$648 Def000264
+S A$graphics_manager$639 Def00025A
+S A$graphics_manager$585 Def000232
+S A$graphics_manager$567 Def000222
+S A$graphics_manager$549 Def000208
+S A$graphics_manager$468 Def0001BF
+S A$graphics_manager$387 Def000188
+S A$graphics_manager$378 Def000180
+S A$graphics_manager$369 Def000172
+S A$graphics_manager$297 Def00012D
+S A$graphics_manager$288 Def000125
+S A$graphics_manager$279 Def000115
+S A$graphics_manager$189 Def00009C
+S C$graphics_manager.c$97$5_0$111 Def000215
+S C$graphics_manager.c$67$5_0$105 Def000194
+S _engine_graphics_manager_draw_splash Def000190
+S A$graphics_manager$991 Def0003A3
+S A$graphics_manager$973 Def00038D
+S A$graphics_manager$964 Def000381
+S A$graphics_manager$946 Def000367
+S A$graphics_manager$937 Def00035C
+S A$graphics_manager$883 Def00033B
+S A$graphics_manager$874 Def00032B
+S A$graphics_manager$865 Def000323
+S A$graphics_manager$847 Def00030C
+S A$graphics_manager$838 Def000301
+S A$graphics_manager$757 Def0002C5
+S A$graphics_manager$748 Def0002BA
+S A$graphics_manager$739 Def0002AD
+S A$graphics_manager$685 Def000286
+S A$graphics_manager$667 Def00027B
+S A$graphics_manager$649 Def000267
+S A$graphics_manager$595 Def000238
+S A$graphics_manager$568 Def000223
+S A$graphics_manager$478 Def0001C4
+S A$graphics_manager$469 Def0001C0
+S A$graphics_manager$388 Def00018A
+S A$graphics_manager$379 Def000181
+S A$graphics_manager$298 Def00012E
+S A$graphics_manager$289 Def000126
+S A$graphics_manager$199 Def0000AB
+S C$graphics_manager.c$98$5_0$111 Def00022C
+S C$graphics_manager.c$78$2_0$107 Def0001CF
+S C$graphics_manager.c$68$5_0$105 Def0001A0
+S A$graphics_manager$992 Def0003A6
+S A$graphics_manager$974 Def000390
+S A$graphics_manager$965 Def000384
+S A$graphics_manager$956 Def000376
+S A$graphics_manager$947 Def000368
+S A$graphics_manager$884 Def00033C
+S A$graphics_manager$875 Def00032E
+S A$graphics_manager$866 Def000324
+S A$graphics_manager$848 Def00030D
+S A$graphics_manager$839 Def000303
+S A$graphics_manager$785 Def0002D7
+S A$graphics_manager$758 Def0002C6
+S A$graphics_manager$749 Def0002BD
+S A$graphics_manager$668 Def00027E
+S A$graphics_manager$596 Def00023A
+S A$graphics_manager$578 Def00022C
+S A$graphics_manager$569 Def000224
+S A$graphics_manager$488 Def0001C5
+S A$graphics_manager$398 Def00018F
+S A$graphics_manager$389 Def00018B
+S C$graphics_manager.c$69$5_0$105 Def0001A1
+S A$graphics_manager$993 Def0003A7
+S A$graphics_manager$975 Def000391
+S A$graphics_manager$957 Def000377
+S A$graphics_manager$948 Def00036B
+S A$graphics_manager$939 Def00035F
+S A$graphics_manager$885 Def00033F
+S A$graphics_manager$876 Def000330
+S A$graphics_manager$867 Def000325
+S A$graphics_manager$858 Def000318
+S A$graphics_manager$849 Def00030E
+S A$graphics_manager$786 Def0002D8
+S A$graphics_manager$759 Def0002C7
+S A$graphics_manager$696 Def00028B
+S A$graphics_manager$678 Def000282
+S A$graphics_manager$669 Def00027F
+S A$graphics_manager$489 Def0001C7
+S XG$engine_graphics_manager_draw_logo_big$0$0 Def00028B
+S C$graphics_manager.c$10$1_0$90 Def000000
+S A$graphics_manager$985 Def00039A
+S A$graphics_manager$976 Def000392
+S A$graphics_manager$958 Def000379
+S A$graphics_manager$895 Def000345
+S A$graphics_manager$886 Def000340
+S A$graphics_manager$877 Def000333
+S A$graphics_manager$868 Def000328
+S A$graphics_manager$859 Def00031B
+S A$graphics_manager$769 Def0002D0
+S A$graphics_manager$679 Def000283
+S A$graphics_manager$589 Def000235
+S A$graphics_manager$499 Def0001CF
+S C$graphics_manager.c$11$1_0$90 Def00000F
+S A$graphics_manager$986 Def00039D
+S A$graphics_manager$977 Def000393
+S A$graphics_manager$959 Def00037A
+S A$graphics_manager$896 Def000346
+S A$graphics_manager$887 Def000341
+S A$graphics_manager$878 Def000334
+S A$graphics_manager$869 Def000329
+S A$graphics_manager$779 Def0002D4
+S A$graphics_manager$70 Def000005
+S C$graphics_manager.c$12$1_0$90 Def00001E
+S A$graphics_manager$987 Def00039F
+S A$graphics_manager$978 Def000394
+S A$graphics_manager$969 Def000385
+S A$graphics_manager$879 Def000335
+S A$graphics_manager$71 Def000006
+S C$graphics_manager.c$20$1_0$92 Def00003F
+S A$graphics_manager$997 Def0003A8
+S A$graphics_manager$988 Def0003A0
+S A$graphics_manager$979 Def000397
+S A$graphics_manager$898 Def000348
+S A$graphics_manager$90 Def00001C
+S A$graphics_manager$81 Def00000F
+S A$graphics_manager$72 Def000007
+S XG$engine_graphics_manager_draw_underline$0$0 Def00018F
+S C$graphics_manager.c$21$1_0$92 Def00005D
+S A$graphics_manager$989 Def0003A1
+S A$graphics_manager$91 Def00001D
+S A$graphics_manager$82 Def000012
+S A$graphics_manager$73 Def000008
+S C$graphics_manager.c$22$1_0$92 Def000079
+S A$graphics_manager$83 Def000013
+S A$graphics_manager$74 Def000009
+S C$graphics_manager.c$14$1_0$92 Def00001F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 11 20 18 D5 AF F5 33 AF F5 33 CD 1F 00
+R 00 00 00 00 00 0E 00 00
+T 0D 00 00 F1 F1 11 20 18 D5 AF F5 33 AF F5 33 CD
+R 00 00 00 00
+T 1A 00 00 1F 00 F1 F1 C9
+R 00 00 00 00 00 03 00 00
+T 1F 00 00
+R 00 00 00 00
+T 1F 00 00 DD E5 DD 21 00 00 DD 39 F5 3B DD 66 04
+R 00 00 00 00
+T 2C 00 00 DD 6E 05 E5 CD 00 00 F1 3A 00 00 4F 06
+R 00 00 00 00 02 08 03 00 02 0C 0B 00
+T 39 00 00 00 C5 CD 00 00 F1 DD 7E 06 C6 FF DD 77
+R 00 00 00 00 02 06 08 00
+T 46 00 00 FD DD 66 04 DD 6E FD E5 CD 00 00 F1 3A
+R 00 00 00 00 02 0C 03 00
+T 53 00 00 00 00 4F 06 00 C5 CD 00 00 F1 DD 7E 07
+R 00 00 00 00 02 03 0B 00 02 0A 08 00
+T 60 00 00 C6 FF DD 77 FE 67 DD 6E 05 E5 CD 00 00
+R 00 00 00 00 02 0E 03 00
+T 6D 00 00 F1 3A 00 00 4F 06 00 C5 CD 00 00 F1 DD
+R 00 00 00 00 02 05 0B 00 02 0C 08 00
+T 7A 00 00 66 FE DD 6E FD E5 CD 00 00 F1 3A 00 00
+R 00 00 00 00 02 0A 03 00 02 0E 0B 00
+T 87 00 00 4F 06 00 C5 CD 00 00 F1 DD 7E 04 3C DD
+R 00 00 00 00 02 08 08 00
+T 94 00 00 77 FF
+R 00 00 00 00
+T 96 00 00
+R 00 00 00 00
+T 96 00 00 DD 4E 07 06 00 0B 0B DD 5E FF 16 00 79
+R 00 00 00 00
+T A3 00 00 93 78 9A E2 AB 00 EE 80
+R 00 00 00 00 00 07 00 00
+T AB 00 00
+R 00 00 00 00
+T AB 00 00 FA E1 00 DD 66 FF DD 6E 05 E5 CD 00 00
+R 00 00 00 00 00 04 00 00 02 0E 03 00
+T B8 00 00 F1 3A 00 00 06 00 4F 03 C5 CD 00 00 F1
+R 00 00 00 00 02 05 0B 00 02 0D 08 00
+T C5 00 00 DD 66 FF DD 6E FD E5 CD 00 00 F1 3A
+R 00 00 00 00 02 0B 03 00
+T D1 00 00 00 00 06 00 4F 03 C5 CD 00 00 F1 DD 34
+R 00 00 00 00 02 03 0B 00 02 0B 08 00
+T DE 00 00 FF 18 B5
+R 00 00 00 00
+T E1 00 00
+R 00 00 00 00
+T E1 00 00 DD 4E 05 0C
+R 00 00 00 00
+T E5 00 00
+R 00 00 00 00
+T E5 00 00 DD 5E 06 16 00 1B 1B 69 26 00 7B 95 7A
+R 00 00 00 00
+T F2 00 00 9C E2 F8 00 EE 80
+R 00 00 00 00 00 05 00 00
+T F8 00 00
+R 00 00 00 00
+T F8 00 00 FA 30 01 C5 DD 46 04 C5 CD 00 00 F1 C1
+R 00 00 00 00 00 04 00 00 02 0C 03 00
+T 05 01 00 3A 00 00 5F 16 00 13 13 C5 D5 CD 00 00
+R 00 00 00 00 02 04 0B 00 02 0E 08 00
+T 12 01 00 F1 C1 C5 DD 46 FE C5 CD 00 00 F1 C1 3A
+R 00 00 00 00 02 0B 03 00
+T 1F 01 00 00 00 5F 16 00 13 13 C5 D5 CD 00 00 F1
+R 00 00 00 00 02 03 0B 00 02 0D 08 00
+T 2C 01 00 C1 0C 18 B5
+R 00 00 00 00
+T 30 01 00
+R 00 00 00 00
+T 30 01 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 35 01 00
+R 00 00 00 00
+T 35 01 00 DD E5 DD 21 00 00 DD 39 DD 7E 04 F5 33
+R 00 00 00 00
+T 42 01 00 AF F5 33 CD 00 00 F1 3A 00 00 4F 06 00
+R 00 00 00 00 02 07 03 00 02 0B 0B 00
+T 4F 01 00 C5 CD 00 00 F1 DD 56 04 1E 1F D5 CD
+R 00 00 00 00 02 05 08 00
+T 5B 01 00 00 00 F1 3A 00 00 4F 06 00 C5 CD 00 00
+R 00 00 00 00 02 03 03 00 02 07 0B 00 02 0E 08 00
+T 68 01 00 F1 06 01
+R 00 00 00 00
+T 6B 01 00
+R 00 00 00 00
+T 6B 01 00 C5 DD 7E 04 F5 33 C5 33 CD 00 00 F1 C1
+R 00 00 00 00 02 0C 03 00
+T 78 01 00 3A 00 00 5F 16 00 13 13 C5 D5 CD 00 00
+R 00 00 00 00 02 04 0B 00 02 0E 08 00
+T 85 01 00 F1 C1 04 3E 1E 90 30 DE DD E1 C9
+R 00 00 00 00
+T 90 01 00
+R 00 00 00 00
+T 90 01 00 0E 00
+R 00 00 00 00
+T 92 01 00
+R 00 00 00 00
+T 92 01 00 06 00
+R 00 00 00 00
+T 94 01 00
+R 00 00 00 00
+T 94 01 00 26 00 69 29 29 29 29 29 16 00 58 19 29
+R 00 00 00 00
+T A1 01 00 11 00 00 19 5E 16 00 C5 D5 79 F5 33 C5
+R 00 00 00 00 02 04 02 00
+T AE 01 00 33 CD 00 00 F1 CD 00 00 F1 C1 04 78 D6
+R 00 00 00 00 02 05 03 00 02 09 08 00
+T BB 01 00 20 38 D6 0C 79 D6 16 38 CE C9
+R 00 00 00 00
+T C5 01 00
+R 00 00 00 00
+T C5 01 00 DD E5 DD 21 00 00 DD 39 F5 F5 06 00 C5
+R 00 00 00 00
+T D2 01 00 CD 00 00 EB C1 0E 00
+R 00 00 00 00 02 04 06 00
+T D9 01 00
+R 00 00 00 00
+T D9 01 00 79 D6 05 30 5A DD 7E 05 81 DD 77 FC DD
+R 00 00 00 00
+T E6 01 00 70 FF 06 00
+R 00 00 00 00
+T EA 01 00
+R 00 00 00 00
+T EA 01 00 78 D6 1C 30 43 DD 6E FF 3E 00 3C F5 7D
+R 00 00 00 00
+T F7 01 00 B3 6F F1 B2 67 DD 75 FD DD 74 FE DD 7E
+R 00 00 00 00
+T 04 02 00 04 80 C5 D5 DD 66 FC E5 33 F5 33 CD
+R 00 00 00 00
+T 10 02 00 00 00 F1 D1 C1 3A 00 00 26 00 DD 86 FD
+R 00 00 00 00 02 03 03 00 02 09 04 00
+T 1D 02 00 6F 7C DD 8E FE 67 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 08 00
+T 2A 02 00 D1 C1 DD 34 FF 04 18 B8
+R 00 00 00 00
+T 32 02 00
+R 00 00 00 00
+T 32 02 00 DD 46 FF 0C 18 A1
+R 00 00 00 00
+T 38 02 00
+R 00 00 00 00
+T 38 02 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 3D 02 00
+R 00 00 00 00
+T 3D 02 00 DD E5 DD 21 00 00 DD 39 3B 01 00 00 1E
+R 00 00 00 00
+T 4A 02 00 00
+R 00 00 00 00
+T 4B 02 00
+R 00 00 00 00
+T 4B 02 00 7B D6 05 30 38 DD 7E 05 83 DD 77 FF 16
+R 00 00 00 00
+T 58 02 00 00
+R 00 00 00 00
+T 59 02 00
+R 00 00 00 00
+T 59 02 00 7A D6 1C 30 27 DD 7E 04 82 C5 D5 DD 66
+R 00 00 00 00
+T 66 02 00 FF E5 33 F5 33 CD 00 00 F1 D1 C1 3A
+R 00 00 00 00 02 09 03 00
+T 72 02 00 00 00 26 00 6F 09 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 00 00 02 0D 08 00
+T 7F 02 00 D1 C1 03 14 18 D4
+R 00 00 00 00
+T 85 02 00
+R 00 00 00 00
+T 85 02 00 1C 18 C3
+R 00 00 00 00
+T 88 02 00
+R 00 00 00 00
+T 88 02 00 33 DD E1 C9
+R 00 00 00 00
+T 8C 02 00
+R 00 00 00 00
+T 8C 02 00 DD E5 DD 21 00 00 DD 39 3B 01 00 00 1E
+R 00 00 00 00
+T 99 02 00 00
+R 00 00 00 00
+T 9A 02 00
+R 00 00 00 00
+T 9A 02 00 7B D6 03 30 38 DD 7E 05 83 DD 77 FF 16
+R 00 00 00 00
+T A7 02 00 00
+R 00 00 00 00
+T A8 02 00
+R 00 00 00 00
+T A8 02 00 7A D6 1E 30 27 DD 7E 04 82 C5 D5 DD 66
+R 00 00 00 00
+T B5 02 00 FF E5 33 F5 33 CD 00 00 F1 D1 C1 3A
+R 00 00 00 00 02 09 03 00
+T C1 02 00 00 00 26 00 6F 09 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 07 00 02 0D 08 00
+T CE 02 00 D1 C1 03 14 18 D4
+R 00 00 00 00
+T D4 02 00
+R 00 00 00 00
+T D4 02 00 1C 18 C3
+R 00 00 00 00
+T D7 02 00
+R 00 00 00 00
+T D7 02 00 33 DD E1 C9
+R 00 00 00 00
+T DB 02 00
+R 00 00 00 00
+T DB 02 00 DD E5 DD 21 00 00 DD 39 F5 F5 06 00 C5
+R 00 00 00 00
+T E8 02 00 CD 00 00 EB C1 0E 00
+R 00 00 00 00 02 04 06 00
+T EF 02 00
+R 00 00 00 00
+T EF 02 00 79 D6 07 30 5A DD 7E 05 81 DD 77 FC DD
+R 00 00 00 00
+T FC 02 00 70 FF 06 00
+R 00 00 00 00
+T 00 03 00
+R 00 00 00 00
+T 00 03 00 78 D6 12 30 43 DD 6E FF 3E 00 3C F5 7D
+R 00 00 00 00
+T 0D 03 00 B3 6F F1 B2 67 DD 75 FD DD 74 FE DD 7E
+R 00 00 00 00
+T 1A 03 00 04 80 C5 D5 DD 66 FC E5 33 F5 33 CD
+R 00 00 00 00
+T 26 03 00 00 00 F1 D1 C1 3A 00 00 26 00 DD 86 FD
+R 00 00 00 00 02 03 03 00 02 09 09 00
+T 33 03 00 6F 7C DD 8E FE 67 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 08 00
+T 40 03 00 D1 C1 DD 34 FF 04 18 B8
+R 00 00 00 00
+T 48 03 00
+R 00 00 00 00
+T 48 03 00 DD 46 FF 0C 18 A1
+R 00 00 00 00
+T 4E 03 00
+R 00 00 00 00
+T 4E 03 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 53 03 00
+R 00 00 00 00
+T 53 03 00 DD E5 DD 21 00 00 DD 39 F5 01 00 00
+R 00 00 00 00
+T 5F 03 00
+R 00 00 00 00
+T 5F 03 00 78 D6 0F 30 4D DD 7E 05 80 DD 77 FE DD
+R 00 00 00 00
+T 6C 03 00 36 FF 00
+R 00 00 00 00
+T 6F 03 00
+R 00 00 00 00
+T 6F 03 00 DD 7E FF D6 0C 30 38 51 3E 00 3C F5 7A
+R 00 00 00 00
+T 7C 03 00 DD B6 06 5F F1 DD B6 07 57 DD 7E 04 DD
+R 00 00 00 00
+T 89 03 00 86 FF C5 D5 DD 66 FE E5 33 F5 33 CD
+R 00 00 00 00
+T 95 03 00 00 00 F1 D1 C1 3A 00 00 26 00 6F 19 C5
+R 00 00 00 00 02 03 03 00 02 09 0A 00
+T A2 03 00 E5 CD 00 00 F1 C1 0C DD 34 FF 18 C1
+R 00 00 00 00 02 05 08 00
+T AE 03 00
+R 00 00 00 00
+T AE 03 00 04 18 AE
+R 00 00 00 00
+T B1 03 00
+R 00 00 00 00
+T B1 03 00 DD F9 DD E1 C9
+R 00 00 00 00
+T B6 03 00
+R 00 00 00 00
+T B6 03 00 DD E5 DD 21 00 00 DD 39 F5 F5 06 00 C5
+R 00 00 00 00
+T C3 03 00 CD 00 00 EB C1 0E 00
+R 00 00 00 00 02 04 06 00
+T CA 03 00
+R 00 00 00 00
+T CA 03 00 79 D6 04 30 5A DD 7E 05 81 DD 77 FC DD
+R 00 00 00 00
+T D7 03 00 70 FF 06 00
+R 00 00 00 00
+T DB 03 00
+R 00 00 00 00
+T DB 03 00 78 D6 03 30 43 DD 6E FF 3E 00 3C F5 7D
+R 00 00 00 00
+T E8 03 00 B3 6F F1 B2 67 DD 75 FD DD 74 FE DD 7E
+R 00 00 00 00
+T F5 03 00 04 80 C5 D5 DD 66 FC E5 33 F5 33 CD
+R 00 00 00 00
+T 01 04 00 00 00 F1 D1 C1 3A 00 00 26 00 DD 86 FD
+R 00 00 00 00 02 03 03 00 02 09 01 00
+T 0E 04 00 6F 7C DD 8E FE 67 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 08 00
+T 1B 04 00 D1 C1 DD 34 FF 04 18 B8
+R 00 00 00 00
+T 23 04 00
+R 00 00 00 00
+T 23 04 00 DD 46 FF 0C 18 A1
+R 00 00 00 00
+T 29 04 00
+R 00 00 00 00
+T 29 04 00 DD F9 DD E1 C9
+R 00 00 00 00

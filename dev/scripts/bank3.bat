@@ -4,7 +4,10 @@ cd ..
 cd banks
 cd bank3
 
-bmp2tile.exe raw/splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin" -fullpalette -exit
+:: Tiles
+bmp2tile.exe raw/font_overs.png -savetiles "font_overs (tiles).psgcompr" -noremovedupes           -planar -tileoffset   0  -savetilemap "font_overs (tilemap).bin" -savepalette "font_overs (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/splash.png     -savetiles "splash (tiles).psgcompr"       -removedupes -nomirror -planar -tileoffset   0  -savetilemap "splash (tilemap).bin"   -savepalette "splash (palette).bin"       -fullpalette -exit
+bmp2tile.exe raw/logo_new.png   -savetiles "logo_new (tiles).psgcompr"   -noremovedupes           -planar -tileoffset 272  -savetilemap "logo_new (tilemap).bin" -savepalette "logo_new (palette).bin"     -fullpalette -exit
 
 cd ..
 folder2c bank3 bank3 3

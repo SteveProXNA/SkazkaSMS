@@ -8,6 +8,5 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char random );
 
 void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold );
-void engine_boss_manager_draw( unsigned char x, unsigned char y );
 
 #endif//_FIGHT_MANAGER_H_

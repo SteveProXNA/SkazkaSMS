@@ -1,610 +1,70 @@
 ;!FILE text_manager.asm
-XL2
-H 9 areas 259 global symbols
+XL3
+H 9 areas 3D global symbols
 M text_manager
 O -mz80
-S _engine_font_manager_text Ref0000
-S _diff_texts Ref0000
-S .__.ABS. Def0000
-S _global_game_object Ref0000
-S _engine_font_manager_char Ref0000
-S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 367 flags 0 addr 0
-S XG$engine_text_manager_title$0$0 Def02CC
-S XG$engine_text_manager_fire$0$0 Def02DA
-S G$engine_text_manager_border$0$0 Def003E
-S XG$engine_text_manager_args$0$0 Def0366
-S G$engine_text_manager_clear$0$0 Def0000
-S _engine_text_manager_border Def003E
-S _engine_text_manager_clear Def0000
-S A$text_manager$300 Def010C
-S A$text_manager$210 Def00A6
-S A$text_manager$400 Def019C
-S A$text_manager$310 Def011D
-S A$text_manager$301 Def010D
-S A$text_manager$220 Def00B1
-S A$text_manager$202 Def009A
-S A$text_manager$121 Def0049
-S A$text_manager$112 Def003E
-S XG$engine_text_manager_border$0$0 Def00BA
-S A$text_manager$500 Def022E
-S A$text_manager$410 Def01AB
-S A$text_manager$401 Def019E
-S A$text_manager$320 Def0128
-S A$text_manager$302 Def010E
-S A$text_manager$221 Def00B2
-S A$text_manager$203 Def009B
-S A$text_manager$131 Def0055
-S A$text_manager$122 Def004A
-S A$text_manager$113 Def0041
-S A$text_manager$600 Def02BE
-S A$text_manager$510 Def023D
-S A$text_manager$501 Def022F
-S A$text_manager$420 Def01BA
-S A$text_manager$411 Def01AD
-S A$text_manager$402 Def019F
-S A$text_manager$330 Def0137
-S A$text_manager$321 Def012A
-S A$text_manager$303 Def0111
-S A$text_manager$222 Def00B3
-S A$text_manager$204 Def009C
-S A$text_manager$141 Def0061
-S A$text_manager$132 Def0056
-S A$text_manager$123 Def004D
-S A$text_manager$114 Def0042
-S A$text_manager$601 Def02BF
-S A$text_manager$520 Def024C
-S A$text_manager$511 Def023E
-S A$text_manager$502 Def0231
-S A$text_manager$430 Def01C9
-S A$text_manager$421 Def01BC
-S A$text_manager$412 Def01AE
-S A$text_manager$403 Def01A1
-S A$text_manager$340 Def0146
-S A$text_manager$331 Def0139
-S A$text_manager$322 Def012B
-S A$text_manager$304 Def0112
-S A$text_manager$250 Def00C1
-S A$text_manager$214 Def00A7
-S A$text_manager$205 Def009D
-S A$text_manager$160 Def0073
-S A$text_manager$142 Def0062
-S A$text_manager$133 Def0059
-S A$text_manager$124 Def004E
-S A$text_manager$115 Def0044
-S G$engine_text_manager_diff$0$0 Def02F3
-S A$text_manager$710 Def0330
-S A$text_manager$602 Def02C0
-S A$text_manager$530 Def025A
-S A$text_manager$521 Def024D
-S A$text_manager$512 Def0240
-S A$text_manager$503 Def0232
-S A$text_manager$440 Def01D8
-S A$text_manager$431 Def01CB
-S A$text_manager$422 Def01BD
-S A$text_manager$413 Def01B0
-S A$text_manager$404 Def01A2
-S A$text_manager$350 Def0155
-S A$text_manager$341 Def0148
-S A$text_manager$332 Def013A
-S A$text_manager$323 Def012D
-S A$text_manager$314 Def011E
-S A$text_manager$305 Def0113
-S A$text_manager$260 Def00D0
-S A$text_manager$251 Def00C2
-S A$text_manager$215 Def00A8
-S A$text_manager$206 Def00A0
-S A$text_manager$170 Def0080
-S A$text_manager$161 Def0074
-S A$text_manager$143 Def0065
-S A$text_manager$134 Def005A
-S A$text_manager$125 Def0050
-S A$text_manager$116 Def0045
-S A$text_manager$720 Def0336
-S A$text_manager$630 Def02D5
-S A$text_manager$603 Def02C2
-S A$text_manager$540 Def0265
-S A$text_manager$531 Def025D
-S A$text_manager$522 Def024F
-S A$text_manager$513 Def0241
-S A$text_manager$504 Def0234
-S A$text_manager$450 Def01E6
-S A$text_manager$441 Def01DA
-S A$text_manager$432 Def01CC
-S A$text_manager$423 Def01BF
-S A$text_manager$414 Def01B1
-S A$text_manager$405 Def01A4
-S A$text_manager$360 Def0164
-S A$text_manager$351 Def0157
-S A$text_manager$342 Def0149
-S A$text_manager$333 Def013C
-S A$text_manager$324 Def012E
-S A$text_manager$315 Def0121
-S A$text_manager$306 Def0115
-S A$text_manager$270 Def00DF
-S A$text_manager$261 Def00D1
-S A$text_manager$252 Def00C4
-S A$text_manager$234 Def00BA
-S A$text_manager$216 Def00A9
-S A$text_manager$207 Def00A1
-S A$text_manager$180 Def0088
-S A$text_manager$162 Def0075
-S A$text_manager$153 Def006F
-S A$text_manager$144 Def0066
-S A$text_manager$135 Def005C
-S A$text_manager$126 Def0051
-S A$text_manager$117 Def0046
-S A$text_manager$730 Def0342
-S A$text_manager$721 Def0339
-S A$text_manager$631 Def02D8
-S A$text_manager$613 Def02CC
-S A$text_manager$604 Def02C3
-S A$text_manager$550 Def0274
-S A$text_manager$541 Def0266
-S A$text_manager$532 Def025E
-S A$text_manager$523 Def0250
-S A$text_manager$514 Def0243
-S A$text_manager$505 Def0235
-S A$text_manager$451 Def01E7
-S A$text_manager$442 Def01DB
-S A$text_manager$433 Def01CE
-S A$text_manager$424 Def01C0
-S A$text_manager$415 Def01B3
-S A$text_manager$406 Def01A5
-S A$text_manager$370 Def0173
-S A$text_manager$361 Def0166
-S A$text_manager$352 Def0158
-S A$text_manager$343 Def014B
-S A$text_manager$334 Def013D
-S A$text_manager$325 Def0130
-S A$text_manager$316 Def0122
-S A$text_manager$307 Def0116
-S A$text_manager$280 Def00EE
-S A$text_manager$271 Def00E0
-S A$text_manager$262 Def00D3
-S A$text_manager$253 Def00C5
-S A$text_manager$226 Def00B4
-S A$text_manager$217 Def00AA
-S A$text_manager$208 Def00A4
-S A$text_manager$190 Def0092
-S A$text_manager$181 Def008A
-S A$text_manager$163 Def0076
-S A$text_manager$145 Def0068
-S A$text_manager$136 Def005D
-S A$text_manager$127 Def0052
-S C$text_manager.c$41$2$80 Def00BB
-S A$text_manager$740 Def034C
-S A$text_manager$731 Def0343
-S A$text_manager$632 Def02D9
-S A$text_manager$605 Def02C4
-S A$text_manager$560 Def0283
-S A$text_manager$551 Def0275
-S A$text_manager$542 Def0267
-S A$text_manager$524 Def0251
-S A$text_manager$515 Def0244
-S A$text_manager$506 Def0237
-S A$text_manager$470 Def0201
-S A$text_manager$461 Def01F3
-S A$text_manager$452 Def01E9
-S A$text_manager$443 Def01DD
-S A$text_manager$434 Def01CF
-S A$text_manager$425 Def01C2
-S A$text_manager$416 Def01B4
-S A$text_manager$407 Def01A7
-S A$text_manager$380 Def0180
-S A$text_manager$371 Def0175
-S A$text_manager$362 Def0167
-S A$text_manager$353 Def015A
-S A$text_manager$344 Def014C
-S A$text_manager$335 Def013F
-S A$text_manager$326 Def0131
-S A$text_manager$317 Def0123
-S A$text_manager$308 Def0119
-S A$text_manager$290 Def00FD
-S A$text_manager$281 Def00EF
-S A$text_manager$272 Def00E2
-S A$text_manager$263 Def00D4
-S A$text_manager$254 Def00C7
-S A$text_manager$227 Def00B5
-S A$text_manager$218 Def00AD
-S A$text_manager$209 Def00A5
-S A$text_manager$191 Def0093
-S A$text_manager$182 Def008B
-S A$text_manager$164 Def0077
-S A$text_manager$146 Def0069
-S A$text_manager$137 Def005E
-S A$text_manager$750 Def0357
-S A$text_manager$732 Def0344
-S A$text_manager$723 Def033B
-S A$text_manager$714 Def0331
-S A$text_manager$660 Def02F7
-S A$text_manager$606 Def02C7
-S A$text_manager$570 Def0292
-S A$text_manager$561 Def0284
-S A$text_manager$552 Def0277
-S A$text_manager$543 Def0268
-S A$text_manager$525 Def0252
-S A$text_manager$516 Def0246
-S A$text_manager$507 Def0238
-S A$text_manager$480 Def0210
-S A$text_manager$471 Def0202
-S A$text_manager$462 Def01F6
-S A$text_manager$453 Def01EA
-S A$text_manager$444 Def01DE
-S A$text_manager$435 Def01D1
-S A$text_manager$426 Def01C3
-S A$text_manager$417 Def01B6
-S A$text_manager$408 Def01A8
-S A$text_manager$390 Def018D
-S A$text_manager$381 Def0183
-S A$text_manager$372 Def0176
-S A$text_manager$363 Def0169
-S A$text_manager$354 Def015B
-S A$text_manager$345 Def014E
-S A$text_manager$336 Def0140
-S A$text_manager$327 Def0133
-S A$text_manager$318 Def0124
-S A$text_manager$309 Def011C
-S A$text_manager$291 Def00FE
-S A$text_manager$282 Def00F1
-S A$text_manager$273 Def00E3
-S A$text_manager$264 Def00D6
-S A$text_manager$255 Def00C8
-S A$text_manager$228 Def00B7
-S A$text_manager$219 Def00AE
-S A$text_manager$192 Def0095
-S A$text_manager$183 Def008C
-S A$text_manager$174 Def0081
-S A$text_manager$165 Def0079
-S A$text_manager$147 Def006A
-S C$text_manager.c$50$1$83 Def02CD
-S C$text_manager.c$34$2$80 Def00B4
-S C$text_manager.c$10$0$0 Def0000
-S A$text_manager$760 Def0360
-S A$text_manager$751 Def0358
-S A$text_manager$733 Def0345
-S A$text_manager$724 Def033C
-S A$text_manager$715 Def0334
-S A$text_manager$670 Def0308
-S A$text_manager$661 Def02FA
-S A$text_manager$607 Def02CA
-S A$text_manager$580 Def02A1
-S A$text_manager$571 Def0293
-S A$text_manager$562 Def0286
-S A$text_manager$553 Def0278
-S A$text_manager$544 Def026B
-S A$text_manager$526 Def0253
-S A$text_manager$517 Def0247
-S A$text_manager$508 Def023A
-S A$text_manager$490 Def021F
-S A$text_manager$481 Def0211
-S A$text_manager$472 Def0204
-S A$text_manager$463 Def01F7
-S A$text_manager$454 Def01EB
-S A$text_manager$445 Def01E0
-S A$text_manager$436 Def01D2
-S A$text_manager$427 Def01C5
-S A$text_manager$418 Def01B7
-S A$text_manager$409 Def01AA
-S A$text_manager$391 Def018E
-S A$text_manager$382 Def0186
-S A$text_manager$373 Def0178
-S A$text_manager$364 Def016A
-S A$text_manager$355 Def015D
-S A$text_manager$346 Def014F
-S A$text_manager$337 Def0142
-S A$text_manager$328 Def0134
-S A$text_manager$319 Def0127
-S A$text_manager$292 Def0100
-S A$text_manager$283 Def00F2
-S A$text_manager$274 Def00E5
-S A$text_manager$265 Def00D7
-S A$text_manager$256 Def00CA
-S A$text_manager$247 Def00BB
-S A$text_manager$229 Def00B8
-S A$text_manager$193 Def0096
-S A$text_manager$184 Def008F
-S A$text_manager$175 Def0082
-S A$text_manager$166 Def007A
-S A$text_manager$148 Def006D
-S XG$engine_text_manager_clear$0$0 Def001E
-S C$text_manager.c$13$2$75 Def001D
-S A$text_manager$752 Def0359
-S A$text_manager$734 Def0346
-S A$text_manager$725 Def033F
-S A$text_manager$716 Def0335
-S A$text_manager$707 Def0328
-S A$text_manager$671 Def0309
-S A$text_manager$626 Def02CD
-S A$text_manager$608 Def02CB
-S A$text_manager$590 Def02B0
-S A$text_manager$581 Def02A2
-S A$text_manager$572 Def0295
-S A$text_manager$563 Def0287
-S A$text_manager$554 Def027A
-S A$text_manager$545 Def026C
-S A$text_manager$536 Def025F
-S A$text_manager$527 Def0255
-S A$text_manager$518 Def0249
-S A$text_manager$509 Def023B
-S A$text_manager$491 Def0220
-S A$text_manager$482 Def0213
-S A$text_manager$473 Def0205
-S A$text_manager$464 Def01F8
-S A$text_manager$455 Def01EE
-S A$text_manager$446 Def01E1
-S A$text_manager$437 Def01D4
-S A$text_manager$428 Def01C6
-S A$text_manager$419 Def01B9
-S A$text_manager$392 Def018F
-S A$text_manager$383 Def0187
-S A$text_manager$374 Def0179
-S A$text_manager$365 Def016C
-S A$text_manager$356 Def015E
-S A$text_manager$347 Def0151
-S A$text_manager$338 Def0143
-S A$text_manager$329 Def0136
-S A$text_manager$293 Def0101
-S A$text_manager$284 Def00F4
-S A$text_manager$275 Def00E6
-S A$text_manager$266 Def00D9
-S A$text_manager$257 Def00CB
-S A$text_manager$248 Def00BE
-S A$text_manager$185 Def0090
-S A$text_manager$176 Def0084
-S A$text_manager$167 Def007B
-S A$text_manager$158 Def0071
-S A$text_manager$149 Def006E
-S C$text_manager.c$43$1$83 Def00BB
-S A$text_manager$771 Def0366
-S A$text_manager$753 Def035C
-S A$text_manager$744 Def034D
-S A$text_manager$735 Def0347
-S A$text_manager$708 Def032A
-S A$text_manager$672 Def030A
-S A$text_manager$627 Def02D0
-S A$text_manager$591 Def02B1
-S A$text_manager$582 Def02A4
-S A$text_manager$573 Def0296
-S A$text_manager$564 Def0289
-S A$text_manager$555 Def027B
-S A$text_manager$546 Def026E
-S A$text_manager$537 Def0262
-S A$text_manager$528 Def0256
-S A$text_manager$519 Def024A
-S A$text_manager$492 Def0222
-S A$text_manager$483 Def0214
-S A$text_manager$474 Def0207
-S A$text_manager$465 Def01F9
-S A$text_manager$456 Def01F1
-S A$text_manager$447 Def01E3
-S A$text_manager$438 Def01D5
-S A$text_manager$429 Def01C8
-S A$text_manager$393 Def0192
-S A$text_manager$375 Def017A
-S A$text_manager$366 Def016D
-S A$text_manager$357 Def0160
-S A$text_manager$348 Def0152
-S A$text_manager$339 Def0145
-S A$text_manager$294 Def0103
-S A$text_manager$285 Def00F5
-S A$text_manager$276 Def00E8
-S A$text_manager$267 Def00DA
-S A$text_manager$258 Def00CD
-S A$text_manager$249 Def00BF
-S A$text_manager$186 Def0091
-S A$text_manager$177 Def0085
-S A$text_manager$168 Def007E
-S A$text_manager$159 Def0072
-S C$text_manager.c$60$1$85 Def02FB
-S C$text_manager.c$52$1$84 Def02CD
-S C$text_manager.c$44$1$83 Def011E
-S C$text_manager.c$28$2$80 Def006F
-S C$text_manager.c$23$1$77 Def003E
-S A$text_manager$754 Def035D
-S A$text_manager$745 Def034E
-S A$text_manager$736 Def0348
-S A$text_manager$709 Def032E
-S A$text_manager$682 Def0315
-S A$text_manager$673 Def030B
-S A$text_manager$637 Def02DA
-S A$text_manager$628 Def02D1
-S A$text_manager$592 Def02B3
-S A$text_manager$583 Def02A5
-S A$text_manager$574 Def0298
-S A$text_manager$565 Def028A
-S A$text_manager$556 Def027D
-S A$text_manager$547 Def026F
-S A$text_manager$538 Def0263
-S A$text_manager$529 Def0257
-S A$text_manager$493 Def0223
-S A$text_manager$484 Def0216
-S A$text_manager$475 Def0208
-S A$text_manager$466 Def01FA
-S A$text_manager$457 Def01F2
-S A$text_manager$448 Def01E4
-S A$text_manager$439 Def01D7
-S A$text_manager$394 Def0193
-S A$text_manager$376 Def017B
-S A$text_manager$367 Def016F
-S A$text_manager$358 Def0161
-S A$text_manager$349 Def0154
-S A$text_manager$295 Def0104
-S A$text_manager$286 Def00F7
-S A$text_manager$277 Def00E9
-S A$text_manager$268 Def00DC
-S A$text_manager$259 Def00CE
-S A$text_manager$178 Def0086
-S A$text_manager$169 Def007F
-S C$text_manager.c$72$2$91 Def0336
-S C$text_manager.c$61$1$85 Def0315
-S C$text_manager.c$53$1$84 Def02DA
-S C$text_manager.c$45$1$83 Def0188
-S G$engine_text_manager_title$0$0 Def00BB
-S C$text_manager.c$36$3$81 Def009A
-S C$text_manager.c$24$1$77 Def0049
-S A$text_manager$755 Def035E
-S A$text_manager$746 Def034F
-S A$text_manager$737 Def0349
-S A$text_manager$683 Def0318
-S A$text_manager$674 Def030C
-S A$text_manager$665 Def02FB
-S A$text_manager$629 Def02D4
-S A$text_manager$593 Def02B4
-S A$text_manager$584 Def02A7
-S A$text_manager$575 Def0299
-S A$text_manager$566 Def028C
-S A$text_manager$557 Def027E
-S A$text_manager$548 Def0271
-S A$text_manager$539 Def0264
-S A$text_manager$494 Def0225
-S A$text_manager$485 Def0217
-S A$text_manager$476 Def020A
-S A$text_manager$467 Def01FB
-S A$text_manager$449 Def01E5
-S A$text_manager$395 Def0195
-S A$text_manager$377 Def017C
-S A$text_manager$368 Def0170
-S A$text_manager$359 Def0163
-S A$text_manager$296 Def0106
-S A$text_manager$287 Def00F8
-S A$text_manager$278 Def00EB
-S A$text_manager$269 Def00DD
-S A$text_manager$197 Def0098
-S A$text_manager$179 Def0087
-S C$text_manager.c$62$1$85 Def0322
-S C$text_manager.c$46$1$83 Def01F3
-S C$text_manager.c$39$2$80 Def00BA
-S C$text_manager.c$37$3$81 Def00A7
-S C$text_manager.c$30$3$79 Def0071
-S C$text_manager.c$25$1$77 Def0055
-S C$text_manager.c$17$2$75 Def001E
-S C$text_manager.c$15$3$76 Def000C
-S A$text_manager$765 Def0362
-S A$text_manager$747 Def0352
-S A$text_manager$738 Def034A
-S A$text_manager$729 Def0341
-S A$text_manager$693 Def0322
-S A$text_manager$684 Def0319
-S A$text_manager$675 Def030F
-S A$text_manager$666 Def02FE
-S A$text_manager$657 Def02F3
-S A$text_manager$594 Def02B6
-S A$text_manager$585 Def02A8
-S A$text_manager$576 Def029B
-S A$text_manager$567 Def028D
-S A$text_manager$558 Def0280
-S A$text_manager$549 Def0272
-S A$text_manager$495 Def0226
-S A$text_manager$486 Def0219
-S A$text_manager$477 Def020B
-S A$text_manager$468 Def01FE
-S A$text_manager$396 Def0196
-S A$text_manager$387 Def0188
-S A$text_manager$378 Def017E
-S A$text_manager$369 Def0172
-S A$text_manager$297 Def0107
-S A$text_manager$288 Def00FA
-S A$text_manager$279 Def00EC
-S C$text_manager.c$74$3$90 Def0341
-S C$text_manager.c$55$1$84 Def02F3
-S C$text_manager.c$47$1$83 Def025F
-S C$text_manager.c$31$3$79 Def0081
-S C$text_manager.c$26$1$77 Def0061
-S A$text_manager$766 Def0364
-S A$text_manager$748 Def0353
-S A$text_manager$739 Def034B
-S A$text_manager$685 Def031C
-S A$text_manager$676 Def0310
-S A$text_manager$667 Def0302
-S A$text_manager$658 Def02F5
-S A$text_manager$595 Def02B7
-S A$text_manager$586 Def02AA
-S A$text_manager$577 Def029C
-S A$text_manager$568 Def028F
-S A$text_manager$559 Def0281
-S A$text_manager$496 Def0228
-S A$text_manager$487 Def021A
-S A$text_manager$478 Def020D
-S A$text_manager$469 Def01FF
-S A$text_manager$397 Def0198
-S A$text_manager$388 Def018B
-S A$text_manager$379 Def017F
-S A$text_manager$298 Def0109
-S A$text_manager$289 Def00FB
-S C$text_manager.c$75$3$90 Def034D
-S C$text_manager.c$64$1$85 Def0328
-S C$text_manager.c$48$1$83 Def02CC
-S C$text_manager.c$19$2$75 Def003E
-S _engine_text_manager_diff Def02F3
-S A$text_manager$749 Def0356
-S A$text_manager$686 Def031D
-S A$text_manager$677 Def0311
-S A$text_manager$668 Def0305
-S A$text_manager$659 Def02F6
-S A$text_manager$596 Def02B9
-S A$text_manager$587 Def02AB
-S A$text_manager$578 Def029E
-S A$text_manager$569 Def0290
-S A$text_manager$497 Def0229
-S A$text_manager$488 Def021C
-S A$text_manager$479 Def020E
-S A$text_manager$398 Def0199
-S A$text_manager$389 Def018C
-S A$text_manager$299 Def010A
-S C$text_manager.c$70$2$88 Def0331
-S G$engine_text_manager_fire$0$0 Def02CD
-S A$text_manager$759 Def035F
-S A$text_manager$687 Def0320
-S A$text_manager$678 Def0314
-S A$text_manager$669 Def0307
-S A$text_manager$597 Def02BA
-S A$text_manager$588 Def02AD
-S A$text_manager$579 Def029F
-S A$text_manager$498 Def022B
-S A$text_manager$489 Def021D
-S A$text_manager$399 Def019B
-S C$text_manager.c$57$1$85 Def02F3
-S A$text_manager$688 Def0321
-S A$text_manager$598 Def02BC
-S A$text_manager$589 Def02AE
-S A$text_manager$499 Def022C
-S C$text_manager.c$78$2$91 Def0362
-S C$text_manager.c$58$1$85 Def02F3
-S C$text_manager.c$28$2$78 Def0092
-S A$text_manager$599 Def02BD
-S A$text_manager$70 Def000A
-S C$text_manager.c$79$2$91 Def0366
-S C$text_manager.c$72$2$89 Def035F
-S A$text_manager$80 Def0012
-S A$text_manager$71 Def000B
-S A$text_manager$90 Def001D
-S A$text_manager$81 Def0013
-S A$text_manager$63 Def0000
-S A$text_manager$82 Def0016
-S A$text_manager$64 Def0003
-S A$text_manager$83 Def0017
-S A$text_manager$65 Def0004
-S G$engine_text_manager_args$0$0 Def0328
-S A$text_manager$84 Def001A
-S A$text_manager$75 Def000C
-S _engine_text_manager_title Def00BB
-S A$text_manager$85 Def001B
-S A$text_manager$76 Def000D
-S A$text_manager$67 Def0005
-S A$text_manager$95 Def001E
-S A$text_manager$86 Def001C
-S A$text_manager$77 Def000E
-S A$text_manager$68 Def0008
-S A$text_manager$78 Def000F
-S A$text_manager$69 Def0009
-S XG$engine_text_manager_diff$0$0 Def0322
-S Ftext_manager$__str_0$0$0 Def0020
-S A$text_manager$79 Def0011
-S Ftext_manager$__str_1$0$0 Def02DB
-S _engine_text_manager_fire Def02CD
-S Ftext_manager$__str_2$0$0 Def0323
-S _engine_text_manager_args Def0328
+S _engine_font_manager_draw_numb Ref000000
+S _engine_font_manager_draw_text Ref000000
+S .__.ABS. Def000000
+A _CODE size 73 flags 0 addr 0
+S Ftext_manager$__str_0$0_0$0 Def00001D
+S _engine_text_manager_cont Def00003C
+S Ftext_manager$__str_1$0_0$0 Def00004C
+S G$engine_text_manager_one$0$0 Def000065
+S G$engine_text_manager_clear$0$0 Def000000
+S XG$engine_text_manager_cont$0$0 Def000049
+S _engine_text_manager_one Def000065
+S _engine_text_manager_clear Def000000
+S A$text_manager$110 Def000040
+S A$text_manager$111 Def000043
+S A$text_manager$112 Def000044
+S A$text_manager$113 Def000047
+S A$text_manager$114 Def000048
+S A$text_manager$142 Def000065
+S A$text_manager$143 Def000068
+S A$text_manager$125 Def000049
+S XG$engine_text_manager_one$0$0 Def000072
+S A$text_manager$144 Def000069
+S A$text_manager$108 Def00003C
+S A$text_manager$145 Def00006B
+S A$text_manager$109 Def00003F
+S A$text_manager$146 Def00006C
+S A$text_manager$147 Def00006D
+S A$text_manager$157 Def000072
+S A$text_manager$148 Def000070
+S XG$engine_text_manager_clear$0$0 Def00001B
+S A$text_manager$149 Def000071
+S C$text_manager.c$13$2_0$11 Def00001B
+S C$text_manager.c$11$3_0$12 Def00000C
+S C$text_manager.c$21$1_0$14 Def000065
+S C$text_manager.c$23$1_0$14 Def000065
+S A$text_manager$60 Def000003
+S C$text_manager.c$24$1_0$14 Def000072
+S C$text_manager.c$15$2_0$13 Def00003C
+S A$text_manager$61 Def000004
+S C$text_manager.c$17$1_0$13 Def00003C
+S A$text_manager$71 Def00000C
+S C$text_manager.c$18$1_0$13 Def000049
+S A$text_manager$72 Def00000D
+S A$text_manager$63 Def000005
+S C$text_manager.c$19$1_0$13 Def000049
+S A$text_manager$91 Def00001B
+S A$text_manager$73 Def00000F
+S A$text_manager$64 Def000008
+S A$text_manager$83 Def00001A
+S A$text_manager$74 Def000010
+S A$text_manager$65 Def000009
+S A$text_manager$75 Def000013
+S A$text_manager$66 Def00000A
+S A$text_manager$76 Def000014
+S A$text_manager$67 Def00000B
+S A$text_manager$77 Def000017
+S A$text_manager$59 Def000000
+S A$text_manager$78 Def000018
+S A$text_manager$79 Def000019
+S G$engine_text_manager_cont$0$0 Def00003C
+S C$text_manager.c$6$0_0$11 Def000000
+S C$text_manager.c$9$2_0$11 Def00001A
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -613,167 +73,39 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 21 02 00 39 46
+T 00 00 00 21 02 00 39 46
 R 00 00 00 00
-T 05 00
+T 05 00 00
 R 00 00 00 00
-T 05 00 21 03 00 39 7E 90 D8 C5 C5 33 3E 02 F5 33
+T 05 00 00 21 03 00 39 7E 90 D8 C5 0E 01 C5 21
 R 00 00 00 00
-T 13 00 21 20 00 E5 CD 00 00 F1 F1 C1 04 18 E5
-R 00 00 00 00 00 03 00 00 02 07 00 00
-T 20 00
+T 11 00 00 1D 00 E5 CD 00 00 F1 F1 C1 04 18 E8
+R 00 00 00 00 00 03 00 00 02 07 01 00
+T 1D 00 00
 R 00 00 00 00
-T 20 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20
+T 1D 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
 R 00 00 00 00
-T 2E 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20
+T 2A 00 00 20 20 20 20 20 20 20 20 20 20 20 20 20
 R 00 00 00 00
-T 3C 00 20 00
+T 37 00 00 20 20 20 20 00
 R 00 00 00 00
-T 3E 00
+T 3C 00 00
 R 00 00 00 00
-T 3E 00 21 01 00 E5 3E 8A F5 33 CD 00 00 33 21
-R 00 00 00 00 02 0B 04 00
-T 4B 00 1F 00 E3 3E 8C F5 33 CD 00 00 33 21 01 17
-R 00 00 00 00 02 0A 04 00
-T 59 00 E3 3E 8B F5 33 CD 00 00 33 21 1F 17 E3 3E
-R 00 00 00 00 02 08 04 00
-T 67 00 8D F5 33 CD 00 00 F1 33 06 02
-R 00 00 00 00 02 06 04 00
-T 71 00
-R 00 00 00 00
-T 71 00 C5 AF F5 33 C5 33 3E 81 F5 33 CD 00 00 F1
-R 00 00 00 00 02 0D 04 00
-T 7F 00 33 C1 C5 3E 17 F5 33 C5 33 3E 81 F5 33 CD
-R 00 00 00 00
-T 8D 00 00 00 F1 33 C1 04 3E 1E 90 30 D9 06 01
-R 00 00 00 00 02 02 04 00
-T 9A 00
-R 00 00 00 00
-T 9A 00 C5 C5 33 21 80 01 E5 CD 00 00 F1 33 C1 C5
-R 00 00 00 00 02 0A 04 00
-T A8 00 C5 33 21 80 1F E5 CD 00 00 F1 33 C1 04 3E
-R 00 00 00 00 02 09 04 00
-T B6 00 16 90 30 E0 C9
-R 00 00 00 00
-T BB 00
-R 00 00 00 00
-T BB 00 21 90 00 E5 2E 90 E5 2E 20 E5 2E 20 E5 2E
-R 00 00 00 00
-T C9 00 90 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5
-R 00 00 00 00
-T D7 00 2E 90 E5 2E 90 E5 2E 90 E5 2E 20 E5 2E 20
-R 00 00 00 00
-T E5 00 E5 2E 90 E5 2E 90 E5 2E 20 E5 2E 20 E5 2E
-R 00 00 00 00
-T F3 00 90 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5
-R 00 00 00 00
-T 01 01 2E 90 E5 2E 90 E5 2E 90 E5 3E 1A F5 33 21
-R 00 00 00 00
-T 0F 01 37 00 39 56 1E 03 D5 CD 28 03 21 37 00 39
-R 00 00 00 00 00 0A 00 00
-T 1D 01 F9 21 02 00 39 46 04 21 90 00 E5 2E 20 E5
-R 00 00 00 00
-T 2B 01 2E 20 E5 2E 90 E5 2E 20 E5 2E 20 E5 2E 90
-R 00 00 00 00
-T 39 01 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 90 E5 2E
-R 00 00 00 00
-T 47 01 20 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5
-R 00 00 00 00
-T 55 01 2E 20 E5 2E 90 E5 2E 20 E5 2E 20 E5 2E 90
-R 00 00 00 00
-T 63 01 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 20 E5 2E
-R 00 00 00 00
-T 71 01 20 E5 2E 90 E5 3E 1B F5 33 C5 33 3E 03 F5
-R 00 00 00 00
-T 7F 01 33 CD 28 03 21 39 00 39 F9 21 02 00 39 46
+T 3C 00 00 11 04 15 D5 21 4C 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 01 00
+T 49 00 00 C3 65 00
 R 00 00 00 00 00 04 00 00
-T 8D 01 04 04 21 90 00 E5 2E 90 E5 2E 90 E5 2E 90
+T 4C 00 00
 R 00 00 00 00
-T 9B 01 E5 2E 20 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E
+T 4C 00 00 50 52 45 53 53 20 46 49 52 45 20 20 20
 R 00 00 00 00
-T A9 01 90 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5
+T 59 00 00 54 4F 20 43 4F 4E 54 49 4E 55 45 00
 R 00 00 00 00
-T B7 01 2E 20 E5 2E 90 E5 2E 90 E5 2E 90 E5 2E 90
+T 65 00 00
 R 00 00 00 00
-T C5 01 E5 2E 20 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E
-R 00 00 00 00
-T D3 01 90 E5 2E 20 E5 2E 90 E5 2E 90 E5 2E 90 E5
-R 00 00 00 00
-T E1 01 3E 1B F5 33 C5 33 3E 03 F5 33 CD 28 03 21
-R 00 00 00 00 00 0D 00 00
-T EF 01 39 00 39 F9 21 02 00 39 46 04 04 04 21
-R 00 00 00 00
-T FC 01 90 00 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20
-R 00 00 00 00
-T 0A 02 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 90 E5 2E
-R 00 00 00 00
-T 18 02 20 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5
-R 00 00 00 00
-T 26 02 2E 90 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20
-R 00 00 00 00
-T 34 02 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 90 E5 2E
-R 00 00 00 00
-T 42 02 20 E5 2E 90 E5 2E 20 E5 2E 20 E5 3E 1B F5
-R 00 00 00 00
-T 50 02 33 C5 33 3E 03 F5 33 CD 28 03 21 39 00 39
-R 00 00 00 00 00 0A 00 00
-T 5E 02 F9 21 02 00 39 46 04 04 04 04 21 90 00 E5
-R 00 00 00 00
-T 6C 02 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 90
-R 00 00 00 00
-T 7A 02 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E
-R 00 00 00 00
-T 88 02 90 E5 2E 90 E5 2E 90 E5 2E 20 E5 2E 90 E5
-R 00 00 00 00
-T 96 02 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 90
-R 00 00 00 00
-T A4 02 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E
-R 00 00 00 00
-T B2 02 90 E5 2E 90 E5 2E 90 E5 3E 1B F5 33 C5 33
-R 00 00 00 00
-T C0 02 3E 03 F5 33 CD 28 03 21 39 00 39 F9 C9
-R 00 00 00 00 00 07 00 00
-T CD 02
-R 00 00 00 00
-T CD 02 21 05 16 E5 21 DB 02 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 07 00 00 02 0B 00 00
-T DB 02
-R 00 00 00 00
-T DB 02 50 52 45 53 53 20 46 49 52 45 31 20 54 4F
-R 00 00 00 00
-T E9 02 20 43 4F 4E 54 49 4E 55 45 00
-R 00 00 00 00
-T F3 02
-R 00 00 00 00
-T F3 02 3E 0F F5 33 CD 00 00 33 01 00 00 FD 21
-R 00 00 00 00 02 07 05 00 02 0B 01 00
-T 00 03 00 00 FD 6E 04 26 00 29 09 4E 23 46 21
-R 00 00 00 00 02 02 03 00
-T 0D 03 1B 05 E5 C5 CD 00 00 F1 21 1B 06 E3 21
-R 00 00 00 00 02 07 00 00
-T 1A 03 23 03 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 02 00 00 02 06 00 00
-T 23 03
-R 00 00 00 00
-T 23 03 4D 4F 44 45 00
-R 00 00 00 00
-T 28 03
-R 00 00 00 00
-T 28 03 DD E5 DD 21 00 00 DD 39 F5 21 09 00 39 E3
-R 00 00 00 00
-T 36 03 DD 4E 04 06 00
-R 00 00 00 00
-T 3B 03
-R 00 00 00 00
-T 3B 03 78 DD 96 06 30 21 E1 E5 23 23 33 33 E5 2B
-R 00 00 00 00
-T 49 03 2B 5E 23 56 51 0C DD 71 04 C5 DD 7E 05 F5
-R 00 00 00 00
-T 57 03 33 D5 CD 00 00 F1 33 C1 04 18 D9
-R 00 00 00 00 02 05 04 00
-T 62 03
-R 00 00 00 00
-T 62 03 DD F9 DD E1 C9
+T 65 00 00 11 0F 15 D5 3E 01 F5 33 CD 00 00 F1 33
+R 00 00 00 00 02 0C 00 00
+T 72 00 00 C9
 R 00 00 00 00

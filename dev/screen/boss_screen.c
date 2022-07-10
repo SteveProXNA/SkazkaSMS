@@ -7,6 +7,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -32,7 +33,7 @@ static void boss_init( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_laugh( unsigned char selection );
 
-unsigned char beg_boss_hit[ MAX_ENEMIES ] = { 2, 4, 2 };
+unsigned char beg_boss_hit[ 2 ] = { 2, 4 };
 
 void screen_boss_screen_load()
 {
@@ -44,21 +45,26 @@ void screen_boss_screen_load()
 	row = 1;
 
 	devkit_SMS_displayOff();
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 0, row + 9 );
+	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
+
+	engine_content_manager_load_koschey();
 
 	row = 19;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 2; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
-		
+		engine_font_manager_draw_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 2, TOP_Y + row );
 		row++;
 	}
 
-	engine_boss_manager_draw( 10, 0 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 8, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 19, TOP_Y + 20 );
+
+	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
+	engine_graphics_manager_draw_border();
+
 	devkit_SMS_displayOn();
+	event_stage = scene_type_select;
 
 	event_stage = scene_type_select;
 	enemys_damage = 0;
@@ -109,26 +115,30 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 
 		// Erase wide text.
-		engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, FIGHT_ROW + 0 );
-		engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, FIGHT_ROW + 1 );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + 19 );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + 20 );
 
-		row = 19;
+		row = 18;
 		devkit_SMS_mapROMBank( FIXED_BANK );
 		for( idx = 0; idx < 2; idx++ )
 		{
-			engine_font_manager_text( ( unsigned char* ) boss_texts[ idx ], LEFT_X + 7, row );
+			engine_font_manager_draw_text( ( unsigned char* ) boss_texts[ idx ], LEFT_X + 8, TOP_Y + row );
 			row++;
 		}
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 13, TOP_Y + 19 );
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 14, TOP_Y + 19 );
 
 		// Print fight text and reset selection.
-		engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, FIGHT_ROW + 3 );
-		engine_font_manager_text( LOCALE_BOSSX_MSG2, LEFT_X + 17, FIGHT_ROW + 3 );
+		engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + TOP_Y + 21 );
+		engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + TOP_Y + 21 );
 
 		engine_player_manager_hplo();
 		engine_enemy_manager_hplo();
 
-		row = 19;
-		engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
+		engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + 18, 2 );
 	}
 
 	selection = 0;
@@ -178,6 +188,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			// If both you and boss have 0 HP then you get game over first!
 			engine_player_manager_armor( player_armor );
 			engine_player_manager_hit( player_damage );
+
 			if( engine_player_manager_dead() )
 			{
 				// Check if player has extra life!
@@ -194,7 +205,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			engine_enemy_manager_hit( enemys_damage );
 			if( engine_enemy_manager_dead() )
 			{
-				*screen_type = screen_type_complete;
+				engine_enemy_manager_hplo();
+				*screen_type = screen_type_kill;
 				return;
 			}
 		}
@@ -238,5 +250,9 @@ static void boss_laugh( unsigned char selection )
 		selection += 1;
 	}
 
-	engine_font_manager_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, FIGHT_ROW - 6 );
+	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
+	if( 1 == selection )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 29, TOP_Y + 12 );
+	}
 }

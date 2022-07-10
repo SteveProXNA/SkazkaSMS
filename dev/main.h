@@ -20,4 +20,4 @@
 #include "engine/screen_manager.h"
 #include "engine/select_manager.h"
 
-#endif//__MAIN__~
+#endif//__MAIN__

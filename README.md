@@ -29,17 +29,17 @@ http://github.com/SteveProXNA/SkazkaSMS
 ###### ROM HACKING
 You can hack this ROM!  
 Download and dump Skazka.sms into Hex Editor, e.g. HxD, and modify the bytes:
-- 0x004E	Delay			Used to speed through any game delay.
-- 0x004F	Invincible		Non-zero value enables invincibility.
-- 0x0050	Current XP		Non-zero sets current experience pts.
-- 0x0051	Current HP		Non-zero sets default healthy points.
-- 0x0052	Set Gold 		Non-zero sets current gold available.
-- 0x0053	Set Weapon 		Set value to 1 or 2 for stock else 0.
-- 0x0054	Set Armor		Set value to 1 or 2 for armor else 0.
-- 0x0055	Add Life		Set value to 1=Life otherwise 0=None.
-- 0x0056	Village Talk	Set value to 1=repeat villagers talk.
-- 0x0057	Music Off		Set 0=Music to play otherwise silent.
-- 0x0058	Sound Off		Set 0=Sound to play otherwise silent.
+- 0x019E	Delay			Used to speed through any game delay.
+- 0x019F	Invincible		Non-zero value enables invincibility.
+- 0x01A0	Current XP		Non-zero sets current experience pts.
+- 0x01A1	Current HP		Non-zero sets default healthy points.
+- 0x01A2	Set Gold 		Non-zero sets current gold available.
+- 0x01A3	Set Weapon 		Set value to 1 or 2 for stock else 0.
+- 0x01A4	Set Armor		Set value to 1 or 2 for armor else 0.
+- 0x01A5	Add Life		Set value to 1=Life otherwise 0=None.
+- 0x01A6	Village Talk	Set value to 1=repeat villagers talk.
+- 0x01A7	Music Off		Set 0=Music to play otherwise silent.
+- 0x01A8	Sound Off		Set 0=Sound to play otherwise silent.
 
 ###### ENEMIES
 - There are 5x different enemies in order of increasing difficulty: Razboynik, Hungry Wolf, Kikimora, Leshy, Baby Yaga
@@ -57,9 +57,9 @@ Download and dump Skazka.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - Once you fight the boss you cannot "Run away".  Try to fight boss once you have > 60 XP because your weapon and armor may be slightly more powerful!
 
 ###### CHEATS
-- On splash screen, hold joystick down and press button 2 to change default background color.
-- On stats screen, move joystick left or right to skip over the flashing arrows indication.
 - On title screen, hold fire2 to skip intro music.  Same applies on boss and over screens.
+- On title screen, hold fire2 after intro music completes to reveal hidden credits screen.
+- On stats screen, move joystick left or right to skip over the flashing arrows indication.
 - In forest screen, press fire2 to "Run away" without risking losing any HPs [Easy mode].
 
 ###### DEBUGGING
@@ -72,6 +72,9 @@ Extra special thanks to: sverx for [devkitSMS](https://github.com/sverx/devkitSM
 Plus shout out to Mojon Twins in which I found lots of some cool sound effects [here](https://github.com/mojontwins/loves_the_sg1000)!
 <br />
 Finally, thanks goes to: Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
+
+###### UPDATE
+Skazka V1.0 was initially a text-based RPG adventure game. However, after collaboration with [Kagesan](https://www.smspower.org/forums/member7411)! from SMS Power!, graphics were added for all screens for V2.0 which is the most up-to-date version of the game.
 
 ###### CONTACT
 - Blog:		http://steveproxna.blogspot.com

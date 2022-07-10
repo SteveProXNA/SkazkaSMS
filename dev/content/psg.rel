@@ -1,0 +1,22 @@
+XL3
+H 9 areas 3 global symbols
+M psg
+O -mz80
+S .__.ABS. Def000000
+A _CODE size 10 flags 0 addr 0
+S G$sfx_death_psg$0_0$0 Def000000
+S _sfx_death_psg Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 E6 F0 3D E6 F7 3F E6 FB 3F E6 FD 3F E7
+R 00 00 00 00
+T 0D 00 00 FF 39 00
+R 00 00 00 00

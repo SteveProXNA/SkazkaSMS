@@ -27,45 +27,45 @@ void devkit_SMS_VDPturnOffFeature( unsigned int feature )
 /* group 0 */
 unsigned int devkit_VDPFEATURE_EXTRAHEIGHT()
 {
-	return VDPFEATURE_EXTRAHEIGHT;
+	return VDPFEATURE_EXTRAHEIGHT; 
 }
 unsigned int devkit_VDPFEATURE_SHIFTSPRITES()
 {
-	return VDPFEATURE_SHIFTSPRITES;
+	return VDPFEATURE_SHIFTSPRITES; 
 }
-unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL()
+unsigned int devkit_VDPFEATURE_HIDEFIRSTCOL() 
 {
-	return VDPFEATURE_HIDEFIRSTCOL;
+	return VDPFEATURE_HIDEFIRSTCOL; 
 }
 unsigned int devkit_VDPFEATURE_LEFTCOLBLANK()
 {
-	return VDPFEATURE_LEFTCOLBLANK;
+	return VDPFEATURE_LEFTCOLBLANK; 
 }
 unsigned int devkit_VDPFEATURE_LOCKHSCROLL()
 {
-	return VDPFEATURE_LOCKHSCROLL;
+	return VDPFEATURE_LOCKHSCROLL; 
 }
-unsigned int devkit_VDPFEATURE_LOCKVSCROLL()
+unsigned int devkit_VDPFEATURE_LOCKVSCROLL() 
 {
-	return VDPFEATURE_LOCKVSCROLL;
+	return VDPFEATURE_LOCKVSCROLL; 
 }
 
 /* group 1 */
 unsigned int devkit_VDPFEATURE_ZOOMSPRITES()
 {
-	return VDPFEATURE_ZOOMSPRITES;
+	return VDPFEATURE_ZOOMSPRITES; 
 }
 unsigned int devkit_VDPFEATURE_USETALLSPRITES()
 {
-	return VDPFEATURE_USETALLSPRITES;
+	return VDPFEATURE_USETALLSPRITES; 
 }
 unsigned int devkit_VDPFEATURE_240LINES()
 {
-	return VDPFEATURE_240LINES;
+	return VDPFEATURE_240LINES; 
 }
 unsigned int devkit_VDPFEATURE_224LINES()
 {
-	return VDPFEATURE_224LINES;
+	return VDPFEATURE_224LINES; 
 }
 unsigned int devkit_VDPFEATURE_FRAMEIRQ()
 {
@@ -73,7 +73,7 @@ unsigned int devkit_VDPFEATURE_FRAMEIRQ()
 }
 unsigned int devkit_VDPFEATURE_SHOWDISPLAY()
 {
-	return VDPFEATURE_SHOWDISPLAY;
+	return VDPFEATURE_SHOWDISPLAY; 
 }
 
 /* handy macros :) */
@@ -108,23 +108,22 @@ void devkit_SMS_setSpriteMode( unsigned char mode )
 }
 
 /* modes for SMS_setSpriteMode */
-unsigned char devkit_SPRITEMODE_NORMAL()
+unsigned char devkit_SPRITEMODE_NORMAL() 
 {
-	return SPRITEMODE_NORMAL;
+	return SPRITEMODE_NORMAL; 
 }
 unsigned char devkit_SPRITEMODE_TALL()
 {
-	return SPRITEMODE_TALL;
+	return SPRITEMODE_TALL; 
 }
 unsigned char devkit_SPRITEMODE_ZOOMED()
-{
-	return SPRITEMODE_ZOOMED;
+{ 
+	return SPRITEMODE_ZOOMED; 
 }
 unsigned char devkit_SPRITEMODE_TALL_ZOOMED()
 {
-	return SPRITEMODE_TALL_ZOOMED;
+	return SPRITEMODE_TALL_ZOOMED; 
 }
-
 
 /* macro for ROM bankswitching */
 ///*volatile __at (0xffff)*/ unsigned char ROM_bank_to_be_mapped_on_slot2;
@@ -159,37 +158,6 @@ void devkit_SMS_waitForVBlank()
 	SMS_waitForVBlank();
 }
 
-/* functions to load tiles into VRAM */
-void devkit_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size )
-{
-	SMS_loadTiles( src, tilefrom, size );
-}
-void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
-{
-	SMS_loadPSGaidencompressedTiles( src, tilefrom );
-}
-
-/* functions for the tilemap */
-void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size )
-{
-	SMS_loadTileMap( x, y, src, size );
-}
-void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ )
-{
-	SMS_loadSTMcompressedTileMapArea( x, y, src, 0 /*, w*/ );
-}
-void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height )
-{
-	SMS_loadTileMapArea( x, y, src, width, height );
-}
-
-// turning SMS_loadSTMcompressedTileMap into a define
-//#define devkit_SMS_loadSTMcompressedTileMap(x,y,src)     SMS_loadSTMcompressedTileMapArea(x,y,src,32)
-void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsigned char *src )
-{
-	SMS_loadSTMcompressedTileMap( x, y, src );
-}
-
 void devkit_SMS_crt0_RST08( unsigned int addr )
 {
 	SMS_crt0_RST08( addr );
@@ -211,7 +179,6 @@ void devkit_SMS_setAddr( const unsigned int addr )
 
 /* PNT define (has address and VDP flags) */
 //#define SMS_PNTAddress            0x7800
-/* macro for turning x,y into VRAM addr */
 void devkit_XYtoADDR( unsigned int x, unsigned char y )
 {
 	XYtoADDR( x, y );
@@ -233,6 +200,13 @@ void devkit_SMS_setTileatXY( unsigned int x, unsigned char y, unsigned int tile 
 	SMS_setTileatXY( x, y, tile );
 }
 
+//#define SMS_VDPVRAMWrite          0x4000
+/* macro for turning tile numbers into VRAM addr for writing */
+void devkit_TILEtoADDR( unsigned int tile )
+{
+	TILEtoADDR( tile );
+}
+
 /* handy defines for tilemaps entry */
 unsigned int devkit_TILE_FLIPPED_X()
 {
@@ -251,6 +225,67 @@ unsigned int devkit_TILE_PRIORITY()
 	return TILE_PRIORITY;
 }
 
+/* functions to load tiles into VRAM */
+void devkit_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size )
+{
+	SMS_loadTiles( src, tilefrom, size );
+}
+void devkit_SMS_load1bppTiles( const void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1 )
+{
+	SMS_load1bppTiles( src, tilefrom, size, color0, color1 );
+}
+
+/* functions to load compressed tiles into VRAM */
+void devkit_SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst )
+{
+	SMS_loadPSGaidencompressedTilesatAddr( src, dst );
+}
+void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom )
+{
+	SMS_loadPSGaidencompressedTiles( src, tilefrom );
+}
+
+/* UNSAFE functions to load compressed tiles into VRAM */
+void devkit_UNSAFE_SMS_loadZX7compressedTilesatAddr( const void *src, unsigned int dst )
+{
+	UNSAFE_SMS_loadZX7compressedTilesatAddr( src, dst );
+}
+void devkit_UNSAFE_SMS_loadZX7compressedTiles( const void *src, unsigned int tilefrom )
+{
+	UNSAFE_SMS_loadZX7compressedTiles( src, tilefrom );
+}
+void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst )
+{
+	UNSAFE_SMS_loadaPLibcompressedTilesatAddr( src, dst );
+}
+void devkit_UNSAFE_SMS_loadaPLibcompressedTiles( const void *src, unsigned int tilefrom )
+{
+	UNSAFE_SMS_loadaPLibcompressedTiles( src, tilefrom );
+}
+
+/* functions for the tilemap */
+void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, unsigned char *src, int size )
+{
+	SMS_loadTileMap( x, y, src, size );
+}
+void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height )
+{
+	SMS_loadTileMapArea( x, y, src, width, height );
+}
+
+void devkit_SMS_loadSTMcompressedTileMapatAddr( unsigned int dst, const void *src )
+{
+	SMS_loadSTMcompressedTileMapatAddr( dst, src );
+}
+void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsigned char *src )
+{
+	SMS_loadSTMcompressedTileMap( x, y, src );
+}
+void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ )
+{
+	SMS_loadSTMcompressedTileMapArea( x, y, src, 0 /*, w*/ );
+}
+
 /* functions for sprites handling */
 void devkit_SMS_initSprites()
 {
@@ -259,6 +294,14 @@ void devkit_SMS_initSprites()
 void devkit_SMS_addSprite( unsigned char x, unsigned char y, int tile )
 {
 	SMS_addSprite( x, y, tile );
+}
+void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile )
+{
+	SMS_addTwoAdjoiningSprites( x, y, tile );
+}
+void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile )
+{
+	SMS_addThreeAdjoiningSprites( x, y, tile );
 }
 signed char devkit_SMS_reserveSprite( void )
 {
@@ -361,6 +404,22 @@ void devkit_SMS_zeroSpritePalette( void )
 	SMS_zeroSpritePalette();
 }
 
+/* text renderer */
+void devkit_SMS_configureTextRenderer( signed int ascii_to_tile_offset )
+{
+	SMS_configureTextRenderer( ascii_to_tile_offset );
+}
+void devkit_SMS_autoSetUpTextRenderer( void )
+{
+	SMS_autoSetUpTextRenderer();
+}
+
+/* decompress ZX7-compressed data to RAM */
+void devkit_SMS_decompressZX7( const void *src, void *dst )
+{
+	SMS_decompressZX7( src, dst );
+}
+
 /* functions to read joypad(s) */
 unsigned int devkit_SMS_getKeysStatus()
 {
@@ -440,19 +499,37 @@ unsigned int devkit_PORT_B_KEY_START()
 
 unsigned int devkit_RESET_KEY()
 {
-	return RESET_KEY;
+	return RESET_KEY; 
 }
 unsigned int devkit_CARTRIDGE_SLOT()
 {
-	return CARTRIDGE_SLOT;
+	return CARTRIDGE_SLOT; 
 }
 unsigned int devkit_PORT_A_TH()
 {
-	return PORT_A_TH;
+	return PORT_A_TH; 
 }
 unsigned int devkit_PORT_B_TH()
 {
-	return PORT_B_TH;
+	return PORT_B_TH; 
+}
+
+/* paddle controller handling (SMS only) */
+unsigned char devkit_PORT_A()
+{
+	return PORT_A;
+}
+unsigned char devkit_PORT_B()
+{
+	return PORT_B;
+}
+unsigned char devkit_SMS_detectPaddle( unsigned char port )
+{
+	return SMS_detectPaddle( port );
+}
+unsigned char devkit_SMS_readPaddle( unsigned char port )
+{
+	return SMS_readPaddle( port );
 }
 
 /* pause handling (SMS only) */
@@ -494,7 +571,6 @@ unsigned char devkit_VDPFLAG_SPRITECOLLISION()
 	return VDPFLAG_SPRITECOLLISION;
 }
 
-
 /* line interrupt */
 void devkit_SMS_setLineInterruptHandler( void( *theHandlerFunction )( void ) )
 {
@@ -525,11 +601,11 @@ unsigned char devkit_SMS_getHCount( void )
 }
 
 /* low level functions */
-void devkit_SMS_VRAMmemcpy( unsigned int dst, void *src, unsigned int size )
+void devkit_SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size )
 {
 	SMS_VRAMmemcpy( dst, src, size );
 }
-void devkit_SMS_VRAMmemcpy_brief( unsigned int dst, void *src, unsigned char size )
+void devkit_SMS_VRAMmemcpy_brief( unsigned int dst, const void *src, unsigned char size )
 {
 	SMS_VRAMmemcpy_brief( dst, src, size );
 }
@@ -574,8 +650,6 @@ void devkit_UNSAFE_SMS_load4Tiles( void *src, unsigned int tilefrom )
 	UNSAFE_SMS_VRAMmemcpy128( ( tilefrom ) * 32, ( src ) );
 }
 
-/* macros for SEGA and SDSC headers */
-//#define SMS_BYTE_TO_BCD(n) (((n)/10)*16+((n)%10))
 
 /* the Interrupt Service Routines (do not modify) */
 void dekvit_SMS_isr( void )
@@ -586,6 +660,7 @@ void dekvit_SMS_nmi_isr( void )
 {
 	SMS_nmi_isr();
 }
+
 
 
 // Helper functions.
@@ -635,6 +710,6 @@ unsigned char devkit_isCollisionDetected()
 // Sega header.
 #ifdef _CONSOLE
 #else
-	SMS_EMBED_SEGA_ROM_HEADER( productCode, revision );
-	SMS_EMBED_SDSC_HEADER( verMaj, verMin, dateYear, dateMonth, dateDay, author, name, descr );
+SMS_EMBED_SEGA_ROM_HEADER( productCode, revision );
+SMS_EMBED_SDSC_HEADER( verMaj, verMin, dateYear, dateMonth, dateDay, author, name, descr );
 #endif

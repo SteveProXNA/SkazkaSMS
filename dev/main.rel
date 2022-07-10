@@ -1,127 +1,114 @@
 ;!FILE main.asm
-XL2
-H 9 areas 75 global symbols
+XL3
+H 9 areas 68 global symbols
 M main
 O -mz80
-S _engine_input_manager_update Ref0000
-S _engine_screen_manager_init Ref0000
-S _engine_select_manager_init Ref0000
-S _engine_hack_manager_load Ref0000
-S _devkit_SMS_displayOn Ref0000
-S _devkit_SMS_init Ref0000
-S _devkit_PSGSFXFrame Ref0000
-S _engine_player_manager_init Ref0000
-S _engine_screen_manager_update Ref0000
-S _devkit_SMS_VDPturnOnFeature Ref0000
-S _engine_hack_manager_init Ref0000
-S _devkit_SMS_useFirstHalfTilesforSprites Ref0000
-S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref0000
-S _devkit_PSGFrame Ref0000
-S _engine_game_manager_init Ref0000
-S _devkit_PSGSilenceChannels Ref0000
-S .__.ABS. Def0000
-S _devkit_SMS_setSpriteMode Ref0000
-S _engine_enemy_manager_init Ref0000
-S _devkit_SMS_resetPauseRequest Ref0000
-S _devkit_SMS_displayOff Ref0000
-S _devkit_SPRITEMODE_NORMAL Ref0000
-S _engine_asm_manager_clear_VRAM Ref0000
-S _engine_sound_manager_init Ref0000
-S _devkit_SMS_waitForVBlank Ref0000
-S _engine_hack_manager_invert Ref0000
-S _devkit_SMS_queryPauseRequested Ref0000
-S _devkit_PSGRestoreVolumes Ref0000
-A _CODE size 81 flags 0 addr 0
-S A$main$200 Def0069
-S A$main$110 Def0019
-S A$main$101 Def000F
-S C$main.c$62$3$129 Def0079
-S C$main.c$53$3$129 Def0069
-S A$main$210 Def0073
-S A$main$201 Def006C
-S A$main$102 Def0012
-S C$main.c$65$2$128 Def007F
-S C$main.c$63$3$129 Def007C
-S C$main.c$49$5$132 Def0066
-S A$main$202 Def006E
-S A$main$121 Def0022
-S A$main$222 Def007C
-S A$main$141 Def0031
-S A$main$114 Def001A
-S C$main.c$39$3$129 Def0045
-S _main Def0000
-S A$main$214 Def0076
-S A$main$133 Def002B
-S A$main$115 Def001D
-S A$main$106 Def0013
-S C$main.c$58$3$129 Def0070
-S A$main$206 Def0070
-S A$main$161 Def0042
-S A$main$125 Def0025
-S A$main$116 Def001E
-S A$main$107 Def0014
-S C$main.c$59$3$129 Def0073
-S A$main$180 Def0058
-S A$main$153 Def003A
-S A$main$117 Def0021
-S A$main$108 Def0015
-S A$main$190 Def0064
-S A$main$154 Def003C
-S A$main$145 Def0034
-S A$main$109 Def0016
-S A$main$227 Def007F
-S A$main$218 Def0079
-S A$main$173 Def004C
-S A$main$155 Def003D
-S A$main$137 Def002E
-S A$main$156 Def003E
-S A$main$129 Def0028
-S A$main$184 Def005B
-S A$main$166 Def0045
-S A$main$157 Def0041
-S A$main$185 Def005F
-S A$main$167 Def0048
-S A$main$149 Def0037
-S A$main$195 Def0066
-S A$main$177 Def004F
-S A$main$168 Def0049
-S C$main.c$9$1$127 Def0000
-S A$main$178 Def0053
-S A$main$169 Def004A
-S A$main$179 Def0056
-S A$main$189 Def0061
-S XG$main$0$0 Def007F
-S A$main$93 Def0006
-S A$main$85 Def0000
-S C$main.c$3$0$0 Def0000
-S A$main$97 Def0009
-S A$main$98 Def000C
-S A$main$89 Def0003
-S A$main$99 Def000D
-S C$main.c$10$1$127 Def0003
-S C$main.c$41$4$130 Def004C
-S C$main.c$11$1$127 Def0006
-S C$main.c$42$4$130 Def004F
-S C$main.c$30$1$127 Def002E
-S C$main.c$43$4$130 Def005B
-S C$main.c$31$1$127 Def0031
-S C$main.c$13$1$127 Def0009
-S G$main$0$0 Def0000
-S C$main.c$32$1$127 Def0034
-S C$main.c$14$1$127 Def0013
-S C$main.c$15$1$127 Def001A
-S C$main.c$34$1$127 Def0037
-S C$main.c$25$1$127 Def0022
-S C$main.c$45$5$131 Def0061
-S C$main.c$35$1$127 Def003A
-S C$main.c$26$1$127 Def0025
-S C$main.c$36$1$127 Def0042
-S C$main.c$27$1$127 Def0028
-S C$main.c$60$3$129 Def0076
-S C$main.c$28$1$127 Def002B
-S A$main$100 Def000E
+S _engine_input_manager_update Ref000000
+S _engine_screen_manager_init Ref000000
+S _engine_select_manager_init Ref000000
+S _engine_hack_manager_load Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _devkit_SMS_init Ref000000
+S _devkit_PSGSFXFrame Ref000000
+S _engine_player_manager_init Ref000000
+S _engine_screen_manager_update Ref000000
+S _engine_hack_manager_init Ref000000
+S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
+S _devkit_PSGFrame Ref000000
+S _engine_game_manager_init Ref000000
+S _devkit_PSGSilenceChannels Ref000000
+S .__.ABS. Def000000
+S _engine_enemy_manager_init Ref000000
+S _devkit_SMS_resetPauseRequest Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_content_manager_load_tiles Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _engine_sound_manager_init Ref000000
+S _devkit_SMS_waitForVBlank Ref000000
+S _engine_hack_manager_invert Ref000000
+S _devkit_SMS_queryPauseRequested Ref000000
+S _devkit_PSGRestoreVolumes Ref000000
+A _CODE size 72 flags 0 addr 0
+S A$main$110 Def000016
+S A$main$102 Def000010
+S A$main$130 Def000025
+S A$main$203 Def00006A
+S A$main$122 Def00001F
+S A$main$114 Def000019
+S _main Def000000
+S A$main$151 Def000036
+S A$main$142 Def000030
+S A$main$106 Def000013
+S A$main$215 Def000070
+S A$main$170 Def000050
+S A$main$152 Def000039
+S A$main$134 Def000028
+S A$main$207 Def00006D
+S A$main$180 Def000057
+S A$main$162 Def000040
+S A$main$153 Def00003A
+S A$main$135 Def00002A
+S A$main$126 Def000022
+S A$main$163 Def000044
+S A$main$154 Def00003B
+S A$main$136 Def00002B
+S A$main$118 Def00001C
+S C$main.c$10$1_0$149 Def000003
+S A$main$191 Def000061
+S A$main$164 Def000047
+S A$main$146 Def000033
+S A$main$137 Def00002C
+S C$main.c$20$1_0$149 Def000013
+S C$main.c$11$1_0$149 Def000006
+S A$main$174 Def000052
+S A$main$165 Def000049
+S A$main$138 Def00002F
+S C$main.c$35$3_0$151 Def000036
+S C$main.c$30$1_0$149 Def000030
+S C$main.c$21$1_0$149 Def000016
+S A$main$175 Def000055
+S C$main.c$54$3_0$151 Def000061
+S C$main.c$41$5_0$153 Def000052
+S C$main.c$22$1_0$149 Def000019
+S C$main.c$13$1_0$149 Def000009
+S A$main$185 Def00005A
+S A$main$158 Def00003D
+S C$main.c$55$3_0$151 Def000064
+S C$main.c$32$1_0$149 Def000033
+S A$main$195 Def000064
+S A$main$186 Def00005D
+S C$main.c$24$1_0$149 Def00001C
+S A$main$187 Def00005F
+S A$main$169 Def00004C
+S C$main.c$57$3_0$151 Def000067
+S C$main.c$37$4_0$152 Def00003D
+S C$main.c$25$1_0$149 Def00001F
+S C$main.c$61$2_0$149 Def000070
+S C$main.c$58$3_0$151 Def00006A
+S C$main.c$49$3_0$151 Def00005A
+S C$main.c$38$4_0$152 Def000040
+S C$main.c$26$1_0$149 Def000022
+S XG$main$0$0 Def000070
+S C$main.c$59$3_0$151 Def00006D
+S C$main.c$45$5_0$154 Def000057
+S C$main.c$39$4_0$152 Def00004C
+S A$main$199 Def000067
+S C$main.c$28$1_0$149 Def000025
+S C$main.c$19$1_0$149 Def000010
+S C$main.c$29$1_0$149 Def000028
+S A$main$90 Def000006
+S A$main$82 Def000000
+S C$main.c$3$0_0$149 Def000000
+S A$main$94 Def000009
+S A$main$95 Def00000A
+S A$main$86 Def000003
+S A$main$96 Def00000B
+S A$main$97 Def00000C
+S A$main$98 Def00000F
+S C$main.c$9$1_0$149 Def000000
+S G$main$0$0 Def000000
 A _DATA size 1 flags 0 addr 0
-S Lmain.main$global_pause$1$127 Def0000
+S Lmain.main$global_pause$1_0$149 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -129,41 +116,37 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 05 00 02 06 14 00 02 09 16 00
-T 0A 00 00 00 45 C5 33 CD 00 00 33 AF F5 33 CD
-R 00 00 00 00 02 02 15 00 02 08 11 00
-T 17 00 00 00 33 CD 00 00 E5 CD 00 00 F1 CD
-R 00 00 00 00 02 02 0B 00 02 06 0C 00 02 0A 09 00
-T 23 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 02 07 00 02 05 0A 00 02 08 03 00
-T 2C 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 02 19 00 02 05 12 00 02 08 0E 00
-T 35 00 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 CD
-R 00 00 00 00 02 02 17 00 02 05 02 00 02 0C 01 00
-T 43 00 00 00
-R 00 00 00 00 02 02 04 00
-T 45 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 AF F5 33 CD
+R 00 00 00 00 02 04 05 00 02 07 11 00 02 0A 13 00
+T 0D 00 00 00 00 33 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 0A 00 02 07 07 00 02 0A 09 00
+T 17 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 03 00 02 06 16 00 02 09 0F 00
+T 20 00 00 00 00 CD 00 00 CD 00 00 3E 01 F5 33 CD
+R 00 00 00 00 02 03 0C 00 02 06 14 00 02 09 02 00
+T 2D 00 00 00 00 33 CD 00 00 CD 00 00
+R 00 00 00 00 02 03 01 00 02 07 12 00 02 0A 04 00
+T 36 00 00
 R 00 00 00 00
-T 45 00 CD 00 00 7D B7 28 1D CD 00 00 FD 21 00 00
-R 00 00 00 00 02 03 1A 00 02 0A 13 00 00 0E 01 00
-T 53 00 FD 7E 00 EE 01 FD 77 00 FD CB 00 46 28 05
+T 36 00 00 CD 00 00 7D B7 28 1D CD 00 00 FD 21
+R 00 00 00 00 02 04 17 00 02 0B 10 00
+T 42 00 00 00 00 FD 7E 00 EE 01 32 00 00 FD CB 00
+R 00 00 00 00 00 03 01 00 00 0B 01 00
+T 4F 00 00 46 28 05 CD 00 00 18 03
+R 00 00 00 00 02 07 0D 00
+T 57 00 00
 R 00 00 00 00
-T 61 00 CD 00 00 18 03
-R 00 00 00 00 02 03 0F 00
-T 66 00
+T 57 00 00 CD 00 00
+R 00 00 00 00 02 04 18 00
+T 5A 00 00
 R 00 00 00 00
-T 66 00 CD 00 00
-R 00 00 00 00 02 03 1B 00
-T 69 00
-R 00 00 00 00
-T 69 00 21 00 00 CB 46 20 D5 CD 00 00 CD 00 00 CD
-R 00 00 00 00 00 03 01 00 02 0A 00 00 02 0D 08 00
-T 77 00 00 00 CD 00 00 CD 00 00 18 C4
-R 00 00 00 00 02 02 18 00 02 05 0D 00 02 08 06 00
+T 5A 00 00 21 00 00 CB 46 20 D5 CD 00 00 CD 00 00
+R 00 00 00 00 00 04 01 00 02 0B 00 00 02 0E 08 00
+T 67 00 00 CD 00 00 CD 00 00 CD 00 00 18 C4
+R 00 00 00 00 02 04 15 00 02 07 0B 00 02 0A 06 00

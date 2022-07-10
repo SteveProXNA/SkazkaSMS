@@ -1,117 +1,122 @@
 ;!FILE input_manager.asm
-XL2
-H 9 areas 3D global symbols
+XL3
+H 9 areas 3E global symbols
 M input_manager
 O -mz80
-S .__.ABS. Def0000
-S _devkit_SMS_getKeysStatus Ref0000
-A _CODE size 45 flags 0 addr 0
-S XG$engine_input_manager_move$0$0 Def0044
-S _engine_input_manager_update Def0000
-S A$input_manager$100 Def0024
-S A$input_manager$110 Def0036
-S A$input_manager$101 Def0025
-S A$input_manager$102 Def0029
-S A$input_manager$130 Def003A
-S A$input_manager$112 Def0037
-S A$input_manager$103 Def002C
-S A$input_manager$140 Def0044
-S A$input_manager$131 Def003D
-S A$input_manager$104 Def002D
-S A$input_manager$132 Def003E
-S A$input_manager$105 Def002E
-S A$input_manager$133 Def003F
-S A$input_manager$106 Def0031
-S A$input_manager$134 Def0042
-S A$input_manager$107 Def0032
-S A$input_manager$135 Def0043
-S A$input_manager$117 Def0039
-S XG$engine_input_manager_update$0$0 Def000C
-S A$input_manager$109 Def0034
-S C$input_manager.c$24$1$71 Def003A
-S C$input_manager.c$25$1$71 Def0044
-S C$input_manager.c$12$1$67 Def0000
-S C$input_manager.c$10$0$0 Def0000
-S C$input_manager.c$20$1$69 Def0039
-S C$input_manager.c$13$1$67 Def0006
-S C$input_manager.c$14$1$67 Def000C
-S C$input_manager.c$22$1$69 Def003A
-S C$input_manager.c$17$1$67 Def000D
-S C$input_manager.c$19$1$69 Def000D
-S G$engine_input_manager_hold$0$0 Def000D
-S A$input_manager$70 Def0009
-S A$input_manager$90 Def0011
-S A$input_manager$91 Def0012
-S A$input_manager$64 Def0000
-S A$input_manager$92 Def0014
-S A$input_manager$65 Def0003
-S A$input_manager$93 Def0018
-S A$input_manager$75 Def000C
-S A$input_manager$94 Def001B
-S A$input_manager$95 Def001C
-S A$input_manager$96 Def001D
-S A$input_manager$69 Def0006
-S A$input_manager$97 Def0020
-S A$input_manager$88 Def000D
-S A$input_manager$98 Def0021
-S A$input_manager$89 Def0010
-S _engine_input_manager_hold Def000D
-S A$input_manager$99 Def0022
-S G$engine_input_manager_move$0$0 Def003A
-S XG$engine_input_manager_hold$0$0 Def0039
-S G$engine_input_manager_update$0$0 Def0000
-S _engine_input_manager_move Def003A
+S .__.ABS. Def000000
+S _devkit_SMS_getKeysStatus Ref000000
+A _CODE size 51 flags 0 addr 0
+S XG$engine_input_manager_move$0$0 Def000050
+S _engine_input_manager_update Def000000
+S A$input_manager$100 Def000024
+S A$input_manager$110 Def000036
+S A$input_manager$101 Def000025
+S A$input_manager$102 Def000026
+S A$input_manager$112 Def000038
+S A$input_manager$103 Def000028
+S A$input_manager$140 Def00004B
+S A$input_manager$113 Def00003A
+S A$input_manager$104 Def00002C
+S A$input_manager$150 Def000050
+S A$input_manager$141 Def00004E
+S A$input_manager$123 Def00003D
+S A$input_manager$105 Def00002F
+S A$input_manager$142 Def00004F
+S A$input_manager$115 Def00003B
+S A$input_manager$106 Def000030
+S A$input_manager$107 Def000031
+S A$input_manager$108 Def000034
+S XG$engine_input_manager_update$0$0 Def00000C
+S A$input_manager$136 Def00003E
+S A$input_manager$109 Def000035
+S A$input_manager$137 Def000042
+S A$input_manager$138 Def000044
+S A$input_manager$139 Def000047
+S G$engine_input_manager_hold$0$0 Def00000D
+S A$input_manager$70 Def000009
+S C$input_manager.c$10$0_0$84 Def000000
+S A$input_manager$91 Def00000D
+S A$input_manager$64 Def000000
+S C$input_manager.c$12$1_0$84 Def000000
+S A$input_manager$92 Def000011
+S A$input_manager$65 Def000003
+S C$input_manager.c$20$1_0$86 Def00003D
+S C$input_manager.c$13$1_0$84 Def000006
+S A$input_manager$93 Def000013
+S C$input_manager.c$14$1_0$84 Def00000C
+S A$input_manager$94 Def000016
+S A$input_manager$95 Def000018
+S A$input_manager$96 Def00001C
+S A$input_manager$78 Def00000C
+S A$input_manager$69 Def000006
+S A$input_manager$97 Def00001F
+S C$input_manager.c$23$1_0$88 Def00003E
+S A$input_manager$98 Def000020
+S C$input_manager.c$17$1_0$86 Def00000D
+S _engine_input_manager_hold Def00000D
+S A$input_manager$99 Def000021
+S C$input_manager.c$25$1_0$88 Def00003E
+S C$input_manager.c$26$1_0$88 Def000050
+S C$input_manager.c$19$1_0$86 Def00000D
+S G$engine_input_manager_move$0$0 Def00003E
+S XG$engine_input_manager_hold$0$0 Def00003D
+S G$engine_input_manager_update$0$0 Def000000
+S _engine_input_manager_move Def00003E
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 4 flags 0 addr 0
-S Finput_manager$curr_joypad1$0$0 Def0000
-S Finput_manager$prev_joypad1$0$0 Def0002
+S Finput_manager$curr_joypad1$0_0$0 Def000000
+S Finput_manager$prev_joypad1$0_0$0 Def000002
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 4 flags 0 addr 0
-S Finput_manager$__xinit_curr_joypad1$0$0 Def0000
-S Finput_manager$__xinit_prev_joypad1$0$0 Def0002
+S Finput_manager$__xinit_curr_joypad1$0_0$0 Def000000
+S Finput_manager$__xinit_prev_joypad1$0_0$0 Def000002
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 02 00
-T 00 00
+T 00 00 00
 R 00 00 02 00
-T 02 00
+T 02 00 00
 R 00 00 02 00
-T 02 00
+T 02 00 00
 R 00 00 02 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 2A 00 00 22 02 00 CD 00 00 22
-R 00 00 00 00 00 03 02 00 00 06 02 00 02 09 01 00
-T 0A 00 00 00 C9
-R 00 00 00 00 00 02 02 00
-T 0D 00
+T 00 00 00 2A 00 00 22 02 00 CD 00 00 22
+R 00 00 00 00 00 04 02 00 00 07 02 00 02 0A 01 00
+T 0A 00 00 00 00 C9
+R 00 00 00 00 00 03 02 00
+T 0D 00 00
 R 00 00 00 00
-T 0D 00 21 02 00 39 4E 06 00 FD 21 00 00 FD 7E 00
-R 00 00 00 00 00 0B 02 00
-T 1B 00 A1 5F FD 7E 01 A0 B3 28 10 79 FD 21 02 00
+T 0D 00 00 FD 21 02 00 FD 39 FD 4E 00 06 00 FD 21
+R 00 00 00 00
+T 1A 00 00 00 00 FD 7E 00 A1 5F FD 7E 01 A0 B3 28
+R 00 00 00 00 00 03 02 00
+T 27 00 00 10 FD 21 02 00 FD 7E 00 A1 4F FD 7E 01
+R 00 00 00 00 00 06 02 00
+T 34 00 00 A0 B1 28 03
+R 00 00 00 00
+T 38 00 00
+R 00 00 00 00
+T 38 00 00 2E 00 C9
+R 00 00 00 00
+T 3B 00 00
+R 00 00 00 00
+T 3B 00 00 2E 01 C9
+R 00 00 00 00
+T 3E 00 00
+R 00 00 00 00
+T 3E 00 00 FD 21 02 00 FD 39 FD 7E 00 FD 21 00 00
 R 00 00 00 00 00 0E 02 00
-T 29 00 FD A6 00 4F 78 FD A6 01 B1 28 03
+T 4B 00 00 FD 4E 00 A1 6F C9
 R 00 00 00 00
-T 34 00
-R 00 00 00 00
-T 34 00 2E 00 C9
-R 00 00 00 00
-T 37 00
-R 00 00 00 00
-T 37 00 2E 01 C9
-R 00 00 00 00
-T 3A 00
-R 00 00 00 00
-T 3A 00 21 02 00 39 4E 3A 00 00 A1 6F C9
-R 00 00 00 00 00 08 02 00
-T 00 00
+T 00 00 00
 R 00 00 07 00
-T 00 00 00 00
+T 00 00 00 00 00
 R 00 00 07 00
-T 02 00
+T 02 00 00
 R 00 00 07 00
-T 02 00 00 00
+T 02 00 00 00 00
 R 00 00 07 00

@@ -14,6 +14,10 @@ extern const unsigned char	sound11_psg[];
 #define				sound11_psg_size 1573
 #define				sound11_psg_bank 14
 
+extern const unsigned char	sound12_psg[];
+#define				sound12_psg_size 530
+#define				sound12_psg_bank 14
+
 extern const unsigned char	sound2_psg[];
 #define				sound2_psg_size 34
 #define				sound2_psg_bank 14

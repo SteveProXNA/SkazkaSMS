@@ -53,6 +53,7 @@ const unsigned char *sound_sample_data[] =
 	sound9_psg,
 	sound10_psg,
 	sound11_psg,
+	sound12_psg,
 };
 
 const unsigned char sound_sample_bank[] =
@@ -69,4 +70,5 @@ const unsigned char sound_sample_bank[] =
 	sound9_psg_bank,
 	sound10_psg_bank,
 	sound11_psg_bank,
+	sound12_psg_bank,
 };

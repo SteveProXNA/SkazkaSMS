@@ -1,5 +1,9 @@
 M:gfx
-S:G$font_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$font_tiles__tilemap__bin$0$0({1536}DA1536d,SC:U),D,0,0
-S:G$font_tiles__tilemap__stmcompr$0$0({49}DA49d,SC:U),D,0,0
-S:G$font_tiles__tiles__psgcompr$0$0({3142}DA3142d,SC:U),D,0,0
+S:G$background__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$battle_enemies_leshy__tilemap__bin$0_0$0({24}DA24d,SC:U),D,0,0
+S:G$battle_enemies_leshy__tiles__psgcompr$0_0$0({259}DA259d,SC:U),D,0,0
+S:G$border__tilemap__bin$0_0$0({6}DA6d,SC:U),D,0,0
+S:G$border__tiles__psgcompr$0_0$0({56}DA56d,SC:U),D,0,0
+S:G$font__tilemap__bin$0_0$0({96}DA96d,SC:U),D,0,0
+S:G$font__tiles__psgcompr$0_0$0({385}DA385d,SC:U),D,0,0
+S:G$sprite__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0

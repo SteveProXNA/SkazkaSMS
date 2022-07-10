@@ -5,6 +5,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -23,23 +24,21 @@ static unsigned char select_type;
 
 void screen_diff_screen_load()
 {
-	unsigned char row = 1;
 	select_type = select_type_diff;
 
 	devkit_SMS_displayOff();
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 0, row + 9 );
-
-	// SKAZKA.
-	engine_text_manager_title( row + 2 );
-	engine_font_manager_text( LOCALE_DIFFICULTY, LEFT_X + 8, 12 );
+	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
+	engine_content_manager_load_logo_big();
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	engine_font_manager_text( ( unsigned char * ) diff_texts[ 0 ], LEFT_X + 15, 17 );
-	engine_font_manager_text( ( unsigned char * ) diff_texts[ 1 ], LEFT_X + 15, 18 );
+	engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ 0 ], LEFT_X + 14, TOP_Y + DIFFICULTY_ROW + 0 );
+	engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ 1 ], LEFT_X + 14, TOP_Y + DIFFICULTY_ROW + 1 );
 
-	engine_select_manager_load( select_type, LEFT_X + 12, DIFFICULTY_ROW, 2 );
+	engine_font_manager_draw_text( LOCALE_DIFFICULTY, LEFT_X + 7, TOP_Y + 12 );
+	engine_graphics_manager_draw_border();
+
+	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + DIFFICULTY_ROW, 2 );
 	devkit_SMS_displayOn();
 
 	engine_timer_manager_load( DIFF_SOUND_DELAY );

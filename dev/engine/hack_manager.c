@@ -9,7 +9,7 @@ struct_hack_object global_hack_object;
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
 #define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
 
-#define HACKER_START		0x0050
+#define HACKER_START		0x01A0
 
 #ifdef _CONSOLE
 #else
@@ -40,17 +40,17 @@ void engine_hack_manager_load()
 
 #ifndef _CONSOLE
 
-	ho->hack_delays = PEEK( HACKER_START - 2 );			// 0x004E		// Used to speed through any game delay.
-	ho->hack_nodead = PEEK( HACKER_START - 1 );			// 0x004F		// Non-zero value enables invincibility.
-	ho->hack_currxp = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero sets default experience pts.
-	ho->hack_currhp = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero sets default healthy points.
-	ho->hack_goldno = PEEK( HACKER_START + 2 );			// 0x0052		// Non-zero sets default gold available.
-	ho->hack_weapon = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1 or 2 for stock else 0.
-	ho->hack_armors = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1 or 2 for armor else 0.
-	ho->hack_oneups = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Life otherwise 0=None.
-	ho->hack_talker = PEEK( HACKER_START + 6 );			// 0x0056		// Set value to 1=repeat villagers talk.
-	ho->hack_musics = PEEK( HACKER_START + 7 );			// 0x0056		// Set 0=Music to play otherwise silent.
-	ho->hack_sounds = PEEK( HACKER_START + 8 );			// 0x0057		// Set 0=Sound to play otherwise silent.
+	ho->hack_delays = PEEK( HACKER_START - 2 );			// 0x019E		// Used to speed through any game delay.
+	ho->hack_nodead = PEEK( HACKER_START - 1 );			// 0x019F		// Non-zero value enables invincibility.
+	ho->hack_currxp = PEEK( HACKER_START + 0 );			// 0x01A0		// Non-zero sets default experience pts.
+	ho->hack_currhp = PEEK( HACKER_START + 1 );			// 0x01A1		// Non-zero sets default healthy points.
+	ho->hack_goldno = PEEK( HACKER_START + 2 );			// 0x01A2		// Non-zero sets default gold available.
+	ho->hack_weapon = PEEK( HACKER_START + 3 );			// 0x01A3		// Set value to 1 or 2 for stock else 0.
+	ho->hack_armors = PEEK( HACKER_START + 4 );			// 0x01A4		// Set value to 1 or 2 for armor else 0.
+	ho->hack_oneups = PEEK( HACKER_START + 5 );			// 0x01A5		// Set value to 1=Life otherwise 0=None.
+	ho->hack_talker = PEEK( HACKER_START + 6 );			// 0x01A6		// Set value to 1=repeat villagers talk.
+	ho->hack_musics = PEEK( HACKER_START + 7 );			// 0x01A7		// Set 0=Music to play otherwise silent.
+	ho->hack_sounds = PEEK( HACKER_START + 8 );			// 0x01A8		// Set 0=Sound to play otherwise silent.
 
 #endif
 }

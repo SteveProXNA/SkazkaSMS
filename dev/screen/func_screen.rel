@@ -1,263 +1,39 @@
 ;!FILE func_screen.asm
-XL2
-H 9 areas FD global symbols
+XL3
+H 9 areas 1D global symbols
 M func_screen
 O -mz80
-S _engine_fight_manager_player_to_boss Ref0000
-S _engine_fight_manager_boss_to_player Ref0000
-S _engine_font_manager_text Ref0000
-S _engine_random_manager_next Ref0000
-S _global_player_object Ref0000
-S _engine_font_manager_data Ref0000
-S .__.ABS. Def0000
-S _global_enemy_object Ref0000
-S _engine_fight_manager_player_to_enemy Ref0000
-S _engine_fight_manager_enemy_to_player Ref0000
-S _engine_target_manager_load Ref0000
-A _CODE size 147 flags 0 addr 0
-S A$func_screen$93 Def0018
-S A$func_screen$84 Def0010
-S A$func_screen$75 Def000B
-S A$func_screen$94 Def0019
-S A$func_screen$76 Def000C
-S XFfunc_screen$player$0$0 Def00D7
-S Ffunc_screen$__str_0$0$0 Def0079
-S A$func_screen$98 Def001A
-S A$func_screen$89 Def0012
-S A$func_screen$99 Def001B
-S _screen_func_screen_load Def0000
-S XFfunc_screen$enemy$0$0 Def0146
-S XG$screen_func_screen_load$0$0 Def0078
-S G$screen_func_screen_update$0$0 Def008A
-S A$func_screen$100 Def001C
-S A$func_screen$110 Def0026
-S A$func_screen$101 Def001D
-S C$func_screen.c$30$1$30 Def0028
-S C$func_screen.c$21$1$30 Def000D
-S A$func_screen$102 Def0020
-S C$func_screen.c$40$1$30 Def0056
-S C$func_screen.c$31$1$30 Def0030
-S C$func_screen.c$22$1$30 Def0010
-S A$func_screen$310 Def00E0
-S A$func_screen$301 Def00D8
-S A$func_screen$220 Def0090
-S A$func_screen$211 Def008A
-S A$func_screen$130 Def0039
-S A$func_screen$103 Def0021
-S C$func_screen.c$41$1$30 Def005A
-S C$func_screen.c$32$1$30 Def0034
-S A$func_screen$320 Def00F0
-S A$func_screen$311 Def00E3
-S A$func_screen$302 Def00DA
-S A$func_screen$212 Def008B
-S A$func_screen$131 Def003A
-S A$func_screen$122 Def0030
-S C$func_screen.c$22$2$31 Def0022
-S A$func_screen$330 Def00FB
-S A$func_screen$321 Def00F1
-S A$func_screen$312 Def00E4
-S A$func_screen$303 Def00DE
-S A$func_screen$213 Def008C
-S A$func_screen$132 Def003D
-S A$func_screen$123 Def0033
-S A$func_screen$114 Def0028
-S Ffunc_screen$player$0$0 Def0091
-S C$func_screen.c$43$1$30 Def0069
-S C$func_screen.c$34$1$30 Def003F
-S A$func_screen$340 Def0109
-S A$func_screen$331 Def00FC
-S A$func_screen$322 Def00F2
-S A$func_screen$313 Def00E5
-S A$func_screen$250 Def00A6
-S A$func_screen$241 Def0096
-S A$func_screen$214 Def008D
-S A$func_screen$160 Def0056
-S A$func_screen$142 Def0043
-S A$func_screen$133 Def003E
-S A$func_screen$115 Def002A
-S C$func_screen.c$44$1$30 Def006D
-S C$func_screen.c$35$1$30 Def0043
-S _screen_func_screen_update Def008A
-S A$func_screen$350 Def0113
-S A$func_screen$332 Def00FD
-S A$func_screen$323 Def00F5
-S A$func_screen$314 Def00E6
-S A$func_screen$260 Def00B2
-S A$func_screen$242 Def0099
-S A$func_screen$215 Def008E
-S A$func_screen$170 Def0060
-S A$func_screen$161 Def0059
-S A$func_screen$152 Def004E
-S A$func_screen$143 Def0044
-S A$func_screen$116 Def002B
-S A$func_screen$107 Def0022
-S C$func_screen.c$50$1$34 Def0090
-S C$func_screen.c$45$1$30 Def0078
-S A$func_screen$360 Def011D
-S A$func_screen$351 Def0115
-S A$func_screen$333 Def00FF
-S A$func_screen$324 Def00F6
-S A$func_screen$315 Def00E7
-S A$func_screen$270 Def00C0
-S A$func_screen$261 Def00B5
-S A$func_screen$243 Def009A
-S A$func_screen$171 Def0063
-S A$func_screen$153 Def0050
-S A$func_screen$144 Def0045
-S A$func_screen$117 Def002C
-S A$func_screen$108 Def0023
-S C$func_screen.c$24$3$32 Def0012
-S C$func_screen.c$19$1$30 Def0000
-S A$func_screen$370 Def012B
-S A$func_screen$361 Def0120
-S A$func_screen$352 Def0116
-S A$func_screen$334 Def0100
-S A$func_screen$325 Def00F7
-S A$func_screen$316 Def00EA
-S A$func_screen$280 Def00CB
-S A$func_screen$271 Def00C1
-S A$func_screen$262 Def00B6
-S A$func_screen$244 Def009B
-S A$func_screen$172 Def0064
-S A$func_screen$154 Def0051
-S A$func_screen$145 Def0048
-S A$func_screen$127 Def0034
-S A$func_screen$118 Def002F
-S A$func_screen$109 Def0024
-S C$func_screen.c$60$1$35 Def00D7
-S C$func_screen.c$52$1$34 Def0091
-S C$func_screen.c$47$1$30 Def008A
-S C$func_screen.c$25$3$32 Def001A
-S A$func_screen$380 Def0138
-S A$func_screen$371 Def012E
-S A$func_screen$362 Def0121
-S A$func_screen$353 Def0117
-S A$func_screen$344 Def010A
-S A$func_screen$335 Def0102
-S A$func_screen$317 Def00EB
-S A$func_screen$281 Def00CD
-S A$func_screen$272 Def00C2
-S A$func_screen$254 Def00A7
-S A$func_screen$245 Def009D
-S A$func_screen$236 Def0091
-S A$func_screen$173 Def0067
-S A$func_screen$155 Def0052
-S A$func_screen$146 Def0049
-S A$func_screen$137 Def003F
-S A$func_screen$128 Def0035
-S C$func_screen.c$61$1$35 Def00D8
-S C$func_screen.c$39$1$30 Def004E
-S A$func_screen$381 Def0139
-S A$func_screen$372 Def012F
-S A$func_screen$363 Def0122
-S A$func_screen$354 Def011A
-S A$func_screen$345 Def010D
-S A$func_screen$336 Def0103
-S A$func_screen$318 Def00ED
-S A$func_screen$291 Def00D7
-S A$func_screen$282 Def00D0
-S A$func_screen$273 Def00C5
-S A$func_screen$255 Def00AA
-S A$func_screen$246 Def00A0
-S A$func_screen$237 Def0094
-S A$func_screen$183 Def006D
-S A$func_screen$174 Def0068
-S A$func_screen$165 Def005A
-S A$func_screen$156 Def0055
-S A$func_screen$147 Def004C
-S A$func_screen$138 Def0042
-S A$func_screen$129 Def0036
-S A$func_screen$382 Def013B
-S A$func_screen$373 Def0130
-S A$func_screen$364 Def0123
-S A$func_screen$355 Def011B
-S A$func_screen$346 Def010E
-S A$func_screen$337 Def0104
-S A$func_screen$319 Def00EE
-S A$func_screen$283 Def00D1
-S A$func_screen$274 Def00C6
-S A$func_screen$256 Def00AB
-S A$func_screen$247 Def00A1
-S A$func_screen$184 Def006E
-S A$func_screen$166 Def005C
-S A$func_screen$148 Def004D
-S C$func_screen.c$54$1$35 Def0091
-S A$func_screen$383 Def013D
-S A$func_screen$365 Def0124
-S A$func_screen$356 Def011C
-S A$func_screen$347 Def010F
-S A$func_screen$338 Def0107
-S A$func_screen$329 Def00F8
-S A$func_screen$284 Def00D2
-S A$func_screen$266 Def00B7
-S A$func_screen$257 Def00AD
-S A$func_screen$248 Def00A2
-S A$func_screen$194 Def0078
-S A$func_screen$185 Def006F
-S A$func_screen$167 Def005D
-S C$func_screen.c$55$1$35 Def0091
-S A$func_screen$393 Def0146
-S A$func_screen$384 Def013E
-S A$func_screen$366 Def0126
-S A$func_screen$348 Def0110
-S A$func_screen$339 Def0108
-S A$func_screen$285 Def00D5
-S A$func_screen$267 Def00BA
-S A$func_screen$258 Def00B0
-S A$func_screen$249 Def00A5
-S A$func_screen$186 Def0072
-S A$func_screen$168 Def005E
-S C$func_screen.c$63$1$37 Def00E0
-S C$func_screen.c$56$1$35 Def0096
-S A$func_screen$385 Def013F
-S A$func_screen$367 Def0127
-S A$func_screen$349 Def0112
-S A$func_screen$286 Def00D6
-S A$func_screen$268 Def00BB
-S A$func_screen$259 Def00B1
-S A$func_screen$187 Def0073
-S A$func_screen$178 Def0069
-S A$func_screen$169 Def005F
-S C$func_screen.c$64$1$37 Def00E0
-S C$func_screen.c$57$1$35 Def00A7
-S C$func_screen.c$49$1$34 Def008A
-S A$func_screen$386 Def0142
-S A$func_screen$377 Def0131
-S A$func_screen$368 Def0129
-S A$func_screen$278 Def00C7
-S A$func_screen$269 Def00BD
-S A$func_screen$188 Def0076
-S A$func_screen$179 Def006C
-S C$func_screen.c$65$1$37 Def00F8
-S C$func_screen.c$58$1$35 Def00B7
-S C$func_screen.c$15$0$0 Def0000
-S A$func_screen$387 Def0143
-S A$func_screen$378 Def0134
-S A$func_screen$369 Def012A
-S A$func_screen$279 Def00CA
-S A$func_screen$189 Def0077
-S C$func_screen.c$66$1$37 Def010A
-S C$func_screen.c$59$1$35 Def00C7
-S A$func_screen$388 Def0144
-S A$func_screen$379 Def0137
-S C$func_screen.c$67$1$37 Def011D
-S XG$screen_func_screen_update$0$0 Def0090
-S C$func_screen.c$68$1$37 Def0131
-S C$func_screen.c$69$1$37 Def0146
-S A$func_screen$70 Def0000
-S Ffunc_screen$enemy$0$0 Def00D8
-S A$func_screen$80 Def000D
-S A$func_screen$71 Def0003
-S G$screen_func_screen_load$0$0 Def0000
-S A$func_screen$90 Def0013
-S A$func_screen$72 Def0004
-S A$func_screen$91 Def0014
-S A$func_screen$73 Def0007
-S A$func_screen$92 Def0015
-S A$func_screen$74 Def0008
-A _DATA size 2 flags 0 addr 0
-S Ffunc_screen$player_damage$0$0 Def0001
-S Ffunc_screen$enemys_damage$0$0 Def0000
+S _engine_font_manager_draw_text Ref000000
+S .__.ABS. Def000000
+A _CODE size 21 flags 0 addr 0
+S A$func_screen$57 Def000000
+S A$func_screen$58 Def000003
+S A$func_screen$59 Def000004
+S A$func_screen$88 Def00001A
+S A$func_screen$89 Def00001B
+S _screen_func_screen_load Def000000
+S Ffunc_screen$__str_0$0_0$0 Def00000E
+S XG$screen_func_screen_load$0$0 Def00000D
+S C$func_screen.c$5$0_0$9 Def000000
+S G$screen_func_screen_update$0$0 Def00001A
+S C$func_screen.c$7$1_0$9 Def000000
+S C$func_screen.c$8$1_0$9 Def00000D
+S A$func_screen$100 Def000020
+S _screen_func_screen_update Def00001A
+S C$func_screen.c$10$1_0$11 Def00001A
+S C$func_screen.c$12$1_0$11 Def00001A
+S C$func_screen.c$13$1_0$11 Def000020
+S XG$screen_func_screen_update$0$0 Def000020
+S A$func_screen$60 Def000007
+S A$func_screen$61 Def000008
+S A$func_screen$71 Def00000D
+S A$func_screen$62 Def00000B
+S G$screen_func_screen_load$0$0 Def000000
+S A$func_screen$90 Def00001C
+S A$func_screen$63 Def00000C
+S A$func_screen$91 Def00001D
+S A$func_screen$92 Def00001E
+A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -265,77 +41,17 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
-R 00 00 01 00
-T 00 00
-R 00 00 01 00
-T 01 00
-R 00 00 01 00
-T 01 00
-R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 21 02 00 E5 21 79 00 E5 CD 00 00 F1 F1 CD
-R 00 00 00 00 00 07 00 00 02 0B 02 00
-T 0E 00 91 00 06 00
-R 00 00 00 00 00 02 00 00
-T 12 00
+T 00 00 00 11 0A 0A D5 21 0E 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 00 00
+T 0D 00 00 C9
 R 00 00 00 00
-T 12 00 C5 C5 33 CD 00 00 33 C1 C5 C5 33 CD D8 00
-R 00 00 00 00 02 06 0A 00 00 0E 00 00
-T 20 00 33 C1 04 78 D6 06 38 EA 3E 02 F5 33 CD
+T 0E 00 00
 R 00 00 00 00
-T 2D 00 00 00 33 CD 00 00 45 C5 33 21 00 00 E5 CD
-R 00 00 00 00 02 02 0A 00 02 06 03 00 00 0C 01 00
-T 3B 00 00 00 F1 33 CD 00 00 45 C5 33 21 01 00 E5
-R 00 00 00 00 02 02 08 00 02 07 03 00 00 0D 01 00
-T 49 00 CD 00 00 F1 33 3E 05 F5 33 CD 00 00 33 CD
-R 00 00 00 00 02 03 09 00 02 0C 0A 00
-T 57 00 00 00 45 3E 02 F5 33 C5 33 21 00 00 E5 CD
-R 00 00 00 00 02 02 03 00 00 0C 01 00
-T 65 00 00 00 F1 F1 CD 00 00 45 C5 33 21 01 00 E5
-R 00 00 00 00 02 02 00 00 02 07 03 00 00 0D 01 00
-T 73 00 CD 00 00 F1 33 C9
-R 00 00 00 00 02 03 01 00
-T 79 00
+T 0E 00 00 46 55 4E 43 20 53 43 52 45 45 4E 00
 R 00 00 00 00
-T 79 00 46 55 4E 43 20 53 43 52 45 45 4E 2E 2E 2E
+T 1A 00 00
 R 00 00 00 00
-T 87 00 21 21 00
+T 1A 00 00 C1 E1 E5 C5 36 15 C9
 R 00 00 00 00
-T 8A 00
-R 00 00 00 00
-T 8A 00 C1 E1 E5 C5 36 13 C9
-R 00 00 00 00
-T 91 00
-R 00 00 00 00
-T 91 00 21 04 00 36 01 21 00 00 23 4E 06 00 21
-R 00 00 00 00 02 03 04 00 02 08 04 00
-T 9E 00 05 02 E5 C5 CD 00 00 F1 F1 21 00 00 4E 06
-R 00 00 00 00 02 07 05 00 02 0C 04 00
-T AC 00 00 21 0A 02 E5 C5 CD 00 00 F1 F1 21 04 00
-R 00 00 00 00 02 09 05 00 02 0E 04 00
-T BA 00 4E 06 00 21 0F 02 E5 C5 CD 00 00 F1 F1 21
-R 00 00 00 00 02 0B 05 00
-T C8 00 05 00 4E 06 00 21 14 02 E5 C5 CD 00 00 F1
-R 00 00 00 00 02 02 04 00 02 0D 05 00
-T D6 00 F1 C9
-R 00 00 00 00
-T D8 00
-R 00 00 00 00
-T D8 00 DD E5 DD 21 00 00 DD 39 DD 56 04 14 14 14
-R 00 00 00 00
-T E6 00 14 21 00 00 4E 06 00 D5 1E 05 D5 C5 CD
-R 00 00 00 00 02 04 07 00
-T F3 00 00 00 F1 F1 D1 21 00 00 23 4E 06 00 D5 1E
-R 00 00 00 00 02 02 05 00 02 08 07 00
-T 01 01 0A D5 C5 CD 00 00 F1 F1 D1 21 00 00 23 23
-R 00 00 00 00 02 06 05 00 02 0C 07 00
-T 0F 01 4E 06 00 D5 1E 0F D5 C5 CD 00 00 F1 F1 D1
-R 00 00 00 00 02 0B 05 00
-T 1D 01 21 00 00 23 23 23 4E 06 00 D5 1E 14 D5 C5
-R 00 00 00 00 02 03 07 00
-T 2B 01 CD 00 00 F1 F1 D1 21 00 00 01 04 00 09 4E
-R 00 00 00 00 02 03 05 00 02 09 07 00
-T 39 01 06 00 1E 19 D5 C5 CD 00 00 F1 F1 DD E1 C9
-R 00 00 00 00 02 09 05 00

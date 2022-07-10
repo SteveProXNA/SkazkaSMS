@@ -21,8 +21,10 @@ typedef enum tag_enum_screen_type
 	screen_type_menu = 15,
 	screen_type_relive = 16,
 	screen_type_over = 17,
-	screen_type_test = 18,
-	screen_type_func = 19,
+	screen_type_credit = 18,
+	screen_type_kill = 19,
+	screen_type_test = 20,
+	screen_type_func = 21,
 
 } enum_screen_type;
 
@@ -70,7 +72,7 @@ typedef enum tag_enum_action_type
 
 typedef enum tag_enum_weapon_type
 {
-	weapon_type_none = 0,
+	weapon_type_dagger = 0,
 	weapon_type_sword = 1,
 	weapon_type_axe = 2,
 
@@ -170,6 +172,7 @@ typedef enum tag_enum_sound_type
 	sound_type_9 = 9,
 	sound_type_10 = 10,
 	sound_type_11 = 11,
+	sound_type_12 = 12,
 
 } enum_sound_type;
 

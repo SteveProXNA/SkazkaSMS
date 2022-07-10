@@ -1,15 +1,15 @@
 const unsigned char *intro_texts[] =
 {
-	"    YOU ARE A YOUNG HERO WHO ",
-	" WISHES TO RID THE LAND FROM ",
-	" A TERRIFYING CREATURE KNOWN ",
-	" AS KOSCHEY THE IMMORTAL.    ",
+	"   YOU ARE A YOUNG HERO WHO",
+	"WISHES TO RID THE LAND FROM",
+	"A TERRIFYING CREATURE KNOWN",
+	"AS KOSCHEY THE IMMORTAL",
 	"",
-	"   RIGHT NOW ALL YOU HAVE IS ",
-	" YOUR DAGGER AND YOUR WHITS. ",
+	"  RIGHT NOW ALL YOU HAVE IS",
+	"YOUR DAGGER AND YOUR WITS",
 	"",
-	" YOU ENTER A VILLAGE TO BEGIN",
-	" YOUR ADVENTURE.             ",
+	"YOU ENTER A VILLAGE TO BEGIN",
+	"YOUR ADVENTURE",
 };
 
 const unsigned char *diff_texts[] =
@@ -20,38 +20,38 @@ const unsigned char *diff_texts[] =
 
 const unsigned char *stats_texts[] =
 {
-	"WHAT SHALL WE DO?  ",
+	"VILLAGE  WHAT NOW ",
 	"",
-	"1) GO FOREST PATROL",
-	"2) PURCHASE AT SHOP",
-	"3) REST BY THE WELL",
-	"4) TALK TO VILLAGER",
-	"5) BEAT THE KOSCHEY",
-	"6) RETURN MAIN MENU",
+	"  GO FOREST PATROL",
+	"  PURCHASE AT SHOP",
+	"  REST BY THE WELL",
+	"  TALK TO VILLAGER",
+	"  BEAT THE KOSCHEY",
+	"  RETURN MAIN MENU",
 };
 
 const unsigned char *weapon_texts[] =
 {
-	"",
-	"   SWORD",
-	"     AXE",
+	"DAGGER",
+	"SWORD",
+	"AXE",
 };
 const unsigned char *armor_texts[] =
 {
 	"",
-	" TEGILAY",
+	"TEGILAY",
 	"KOLCHUGA",
 };
 const unsigned char *life_texts[] =
 {
 	"",
-	" +1 LIFE",
+	"LIFE",
 };
 
 const unsigned char *forest_texts[] =
 {
-	"YOU ARE IN THE FOREST!",
-	"YOU ENCOUNTERED ENEMY: "
+	"YOU ARE IN THE FOREST",
+	"YOU ENCOUNTERED ENEMY"
 };
 
 const unsigned char *enemy_texts[] =
@@ -65,54 +65,55 @@ const unsigned char *enemy_texts[] =
 
 const unsigned char *fight_texts[] =
 {
-	"WHAT WILL YOU DO?  ",
-	"1) RUN  ",
-	"2) FIGHT",
+	"WHAT WILL YOU DO",
+	"",
+	"RUN  ",
+	"FIGHT",
 };
 
 const unsigned char *gold_texts[] =
 {
-	"    VICTORY!  ",
+	"     VICTORY",
 	"", "",
-	"YOU GOT GOLD -",
+	"YOU GOT GOLD",
 };
 
 const unsigned char *shop_texts[] =
 {
-	"VILLAGE SHOP",
+	" VILLAGE SHOP",
 	"", "",
-	"1) SWORD   ",
-	"2) AXE     ",
-	"3) TEGILAY ",
-	"4) KOLCHUGA",
-	"5) LIFE    ",
+	"SWORD",
+	"AXE",
+	"TEGILAY",
+	"KOLCHUGA",
+	"LIFE",
 };
 
 const unsigned char *menus_texts[] =
 {
-	"   MENU",
+	"  MENU",
 	"", "",
-	"1) EXIT GAME",
-	"2) RESTART  ",
-	"3) CONTINUE  ",
+	"EXIT GAME",
+	"RESTART",
+	"CONTINUE",
 };
 
 
 const unsigned char *villager_texts[] =
 {
-	"  YOU LOST SOME MONEY!     ",
+	"  YOU FOUND SOME MONEY    ",
 	"",
 	"",
 	" DID YOU KNOW THAT YOU CAN ",
 	" ONLY HAVE ONE LIFE POTION ",
-	" AT A TIME?                ",
+	" AT A TIME                 ",
 	"DID YOU KNOW THAT A TEGILAY",
-	"IS MADE OF LEATHER, AND THE",
-	"KOLCHUGA IS MADE OF STEEL? ",
+	"IS MADE OF LEATHER  AND THE",
+	"KOLCHUGA IS MADE OF STEEL  ",
 	"  TRULY THE AXE IS THE     ",
 	"  GREATEST WEAPON OF OUR   ",
 	"  PEOPLE!                  ",
-	" SOMETIMES ITS WISE TO RUN ",
+	" SOMETIMES IT S WISE TO RUN",
 	" AWAY                      ",
 	"",
 	" YOU BETTER BE KNOWN AS A  ",
@@ -120,14 +121,14 @@ const unsigned char *villager_texts[] =
 	"",
 	" DID YOU KNOW THAT WOLVES  ",
 	" ONLY ATTACK WHEN THEY ARE ",
-	" HUNGRY?",
+	" HUNGRY",
 	" SOME PEOPLE SAY THEY SAW  ",
-	" BABA YAGA IN THE FOREST,  ",
-	" BUT I DON'T BELIEVE THEM  ",
-	"  CYKA, BLYAT!             ",
+	" BABA YAGA IN THE FOREST   ",
+	" BUT I DON T BELIEVE THEM  ",
+	"  CYKA  BLYAT              ",
 	"",
 	"",
-	"  YOU FOUND SOME MONEY!   ",
+	"  YOU LOST SOME MONEY      ",
 	"",
 	"",
 };
@@ -135,50 +136,60 @@ const unsigned char *villager_texts[] =
 
 extern const unsigned char *prep_texts[] =
 {
-	" THIS IS THE MOST IMPORTANT",
-	" BATTLE OF YOUR LIFE.      ",
+	"THIS IS THE MOST IMPORTANT",
+	"BATTLE OF YOUR LIFE",
 	"",
 	"",
-	" CAN YOU HANDLE THE BATTLE?",
+	"CAN YOU HANDLE THE BATTLE",
 	"",
 	"",
-	"     1)  YES",
-	"     2)  NO",
+	"            YES",
+	"            NO",
 };
 
 const unsigned char *boss_texts[] =
 {
-	"1) BEG FOR YOUR LIFE",
-	"2) FIGHT!!          ",
+	"BEG FOR YOUR LIFE",
+	"FIGHT",
 };
 
 const unsigned char *query_texts[] =
 {
-	"SO YOU HAVE COME TO CALLENGE",
-	"ME FOOLISH MORTAL? VERY WELL"
+	"SO YOU VE COME TO CHALLENGE",
+	"ME FOOLISH MORTAL  VERY WELL"
 };
 
 const unsigned char *laugh_texts[] =
 {
 	"HA HA HA",
-	"YOU DIE!",
+	"YOU DIE ",
 	"YOU FOOL",
 };
 
 const unsigned char *over_texts[] =
 {
-	"YOU ARE DEAD!",
+	"YOU ARE DEAD",
 	"", "",
-	"  GAME OVER  ",
+	"  GAME OVER",
 };
 
 const unsigned char *beat_texts[] =
 {
-	"      CONGLATURATION!!    ",
+	"      CONGLATURATION",
 	"", "", "",
-	"YOU HAVE COMPLETED A GREAT ",
+	"YOU HAVE COMPLETED A GREAT",
 	"GAME AND PROVED THE JUSTICE",
-	"OF OUR CULTURE.",
+	"OF OUR CULTURE",
 	"", "", "",
-	" NOW GO AND REST OUR HERO!",
+	" NOW GO AND REST OUR HERO",
+};
+
+const unsigned char *credit_texts[] =
+{
+	"PROGRAMMING", "STEVEPRO",
+	"", "",
+	"ART GRAPHICS", "KAGESAN",
+	"PCM SAMPLING", "MAXIM",
+	"DEVKIT SMS", "SVERX",
+	"EMULICIOUS", "CALINDRO",
 };

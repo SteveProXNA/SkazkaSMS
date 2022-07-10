@@ -1,49 +1,49 @@
 ;!FILE load_screen.asm
-XL2
+XL3
 H 9 areas 28 global symbols
 M load_screen
 O -mz80
-S .__.ABS. Def0000
-S _global_game_object Ref0000
-S _engine_player_manager_calc Ref0000
-S _engine_select_manager_once Ref0000
-S _engine_player_manager_load Ref0000
+S .__.ABS. Def000000
+S _global_game_object Ref000000
+S _engine_player_manager_calc Ref000000
+S _engine_select_manager_once Ref000000
+S _engine_player_manager_load Ref000000
 A _CODE size 1B flags 0 addr 0
-S XG$screen_load_screen_load$0$0 Def0006
-S G$screen_load_screen_update$0$0 Def0009
-S C$load_screen.c$20$1$20 Def0011
-S A$load_screen$100 Def0013
-S C$load_screen.c$22$1$20 Def000D
-S C$load_screen.c$22$2$21 Def0015
-S A$load_screen$113 Def0018
-S A$load_screen$104 Def0015
-S C$load_screen.c$23$2$21 Def0017
-S C$load_screen.c$26$1$20 Def0018
-S C$load_screen.c$17$1$20 Def0009
-S C$load_screen.c$10$1$18 Def0003
-S C$load_screen.c$27$1$20 Def001A
-S C$load_screen.c$18$1$20 Def0009
-S _screen_load_screen_update Def0009
-S C$load_screen.c$12$1$18 Def0006
-S A$load_screen$108 Def0017
-S C$load_screen.c$13$1$18 Def0006
-S A$load_screen$118 Def001A
-S C$load_screen.c$15$1$18 Def0009
-S XG$screen_load_screen_update$0$0 Def001A
-S A$load_screen$71 Def0006
-S G$screen_load_screen_load$0$0 Def0000
-S A$load_screen$63 Def0003
-S A$load_screen$92 Def000D
-S A$load_screen$93 Def000E
-S A$load_screen$94 Def000F
-S A$load_screen$95 Def0010
-S A$load_screen$59 Def0000
-S C$load_screen.c$9$1$18 Def0000
-S A$load_screen$87 Def0009
-S A$load_screen$88 Def000C
-S A$load_screen$99 Def0011
-S C$load_screen.c$7$0$0 Def0000
-S _screen_load_screen_load Def0000
+S XG$screen_load_screen_load$0$0 Def000006
+S G$screen_load_screen_update$0$0 Def000009
+S A$load_screen$111 Def000017
+S A$load_screen$102 Def000011
+S A$load_screen$103 Def000013
+S A$load_screen$124 Def00001A
+S _screen_load_screen_update Def000009
+S A$load_screen$116 Def000018
+S A$load_screen$107 Def000015
+S C$load_screen.c$10$1_0$20 Def000003
+S C$load_screen.c$12$1_0$20 Def000006
+S C$load_screen.c$20$1_0$22 Def000011
+S C$load_screen.c$13$1_0$20 Def000006
+S XG$screen_load_screen_update$0$0 Def00001A
+S C$load_screen.c$22$1_0$22 Def00000D
+S C$load_screen.c$22$2_0$23 Def000015
+S C$load_screen.c$15$1_0$22 Def000009
+S C$load_screen.c$23$2_0$23 Def000017
+S C$load_screen.c$26$1_0$22 Def000018
+S C$load_screen.c$17$1_0$22 Def000009
+S C$load_screen.c$27$1_0$22 Def00001A
+S C$load_screen.c$18$1_0$22 Def000009
+S G$screen_load_screen_load$0$0 Def000000
+S A$load_screen$90 Def000009
+S A$load_screen$63 Def000003
+S A$load_screen$91 Def00000C
+S A$load_screen$74 Def000006
+S A$load_screen$95 Def00000D
+S A$load_screen$59 Def000000
+S A$load_screen$96 Def00000E
+S A$load_screen$97 Def00000F
+S A$load_screen$98 Def000010
+S C$load_screen.c$7$0_0$20 Def000000
+S _screen_load_screen_load Def000000
+S C$load_screen.c$9$1_0$20 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -52,17 +52,17 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 C3 00 00
-R 00 00 00 00 02 03 04 00 02 06 02 00 02 09 03 00
-T 09 00
+T 00 00 00 CD 00 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 04 04 00 02 07 02 00 02 0A 03 00
+T 09 00 00
 R 00 00 00 00
-T 09 00 21 03 00 4E D1 E1 E5 D5 CB 41 28 03 36 06
-R 00 00 00 00 02 03 01 00
-T 17 00 C9
+T 09 00 00 21 02 00 4E D1 E1 E5 D5 CB 41 28 03 36
+R 00 00 00 00 02 04 01 00
+T 16 00 00 06 C9
 R 00 00 00 00
-T 18 00
+T 18 00 00
 R 00 00 00 00
-T 18 00 36 07 C9
+T 18 00 00 36 07 C9
 R 00 00 00 00

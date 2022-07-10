@@ -1,78 +1,76 @@
 ;!FILE timer_manager.asm
-XL2
-H 9 areas 44 global symbols
+XL3
+H 9 areas 42 global symbols
 M timer_manager
 O -mz80
-S _global_hack_object Ref0000
-S .__.ABS. Def0000
-A _CODE size 50 flags 0 addr 0
-S A$timer_manager$138 Def0046
-S A$timer_manager$129 Def003E
-S A$timer_manager$148 Def004E
-S G$engine_timer_manager_load$0$0 Def0000
-S C$timer_manager.c$10$1$3 Def0008
-S C$timer_manager.c$11$1$3 Def0008
-S C$timer_manager.c$21$1$3 Def0029
-S C$timer_manager.c$12$1$3 Def000E
-S C$timer_manager.c$15$1$3 Def001A
-S C$timer_manager.c$30$2$6 Def0048
-S C$timer_manager.c$23$1$5 Def0029
-S A$timer_manager$70 Def000B
-S C$timer_manager.c$33$1$5 Def004E
-S C$timer_manager.c$34$1$5 Def004F
-S A$timer_manager$90 Def0023
-S C$timer_manager.c$26$1$5 Def0029
-S C$timer_manager.c$19$1$3 Def0028
-S C$timer_manager.c$17$2$4 Def0020
-S C$timer_manager.c$27$1$5 Def0032
-S _engine_timer_manager_load Def0000
-S A$timer_manager$92 Def0026
-S A$timer_manager$83 Def001A
-S A$timer_manager$74 Def000E
-S C$timer_manager.c$28$1$5 Def0043
-S A$timer_manager$84 Def001D
-S A$timer_manager$75 Def0011
-S A$timer_manager$57 Def0000
-S A$timer_manager$85 Def001E
-S A$timer_manager$76 Def0014
-S A$timer_manager$58 Def0002
-S A$timer_manager$77 Def0015
-S A$timer_manager$59 Def0006
-S A$timer_manager$78 Def0016
-S A$timer_manager$69 Def0008
-S A$timer_manager$97 Def0028
-S A$timer_manager$79 Def0019
-S A$timer_manager$89 Def0020
-S C$timer_manager.c$7$0$0 Def0000
-S XG$engine_timer_manager_load$0$0 Def0028
-S C$timer_manager.c$9$1$3 Def0008
-S G$engine_timer_manager_update$0$0 Def0029
-S _engine_timer_manager_update Def0029
-S A$timer_manager$120 Def0035
-S A$timer_manager$130 Def0040
-S A$timer_manager$121 Def0036
-S A$timer_manager$131 Def0041
-S A$timer_manager$122 Def0037
-S A$timer_manager$113 Def0029
-S A$timer_manager$123 Def0038
-S A$timer_manager$114 Def002D
-S A$timer_manager$142 Def0048
-S A$timer_manager$124 Def0039
-S A$timer_manager$115 Def002E
-S A$timer_manager$143 Def004B
-S A$timer_manager$125 Def003A
-S A$timer_manager$153 Def004F
-S A$timer_manager$135 Def0043
-S A$timer_manager$126 Def003B
-S XG$engine_timer_manager_update$0$0 Def004F
-S A$timer_manager$136 Def0044
-S A$timer_manager$127 Def003C
-S A$timer_manager$137 Def0045
-S A$timer_manager$128 Def003D
-S A$timer_manager$119 Def0032
+S _global_hack_object Ref000000
+S .__.ABS. Def000000
+A _CODE size 4A flags 0 addr 0
+S A$timer_manager$138 Def00003F
+S A$timer_manager$129 Def000037
+S A$timer_manager$157 Def000049
+S A$timer_manager$139 Def000040
+S A$timer_manager$149 Def000048
+S G$engine_timer_manager_load$0$0 Def000000
+S A$timer_manager$70 Def00000B
+S A$timer_manager$80 Def000018
+S A$timer_manager$81 Def00001B
+S A$timer_manager$91 Def000022
+S _engine_timer_manager_load Def000000
+S A$timer_manager$92 Def000023
+S A$timer_manager$74 Def00000E
+S A$timer_manager$93 Def000024
+S A$timer_manager$75 Def000011
+S A$timer_manager$57 Def000000
+S A$timer_manager$94 Def000025
+S A$timer_manager$85 Def00001C
+S A$timer_manager$76 Def000012
+S A$timer_manager$58 Def000002
+S A$timer_manager$86 Def00001F
+S A$timer_manager$77 Def000013
+S A$timer_manager$59 Def000006
+S A$timer_manager$87 Def000020
+S A$timer_manager$78 Def000016
+S A$timer_manager$69 Def000008
+S C$timer_manager.c$10$1_0$3 Def000008
+S A$timer_manager$79 Def000017
+S C$timer_manager.c$11$1_0$3 Def000008
+S C$timer_manager.c$12$1_0$3 Def00000E
+S A$timer_manager$99 Def000026
+S C$timer_manager.c$21$1_0$5 Def000029
+S C$timer_manager.c$15$1_0$3 Def00001C
+S C$timer_manager.c$30$2_0$6 Def000042
+S C$timer_manager.c$23$1_0$5 Def000029
+S C$timer_manager.c$33$1_0$5 Def000048
+S XG$engine_timer_manager_load$0$0 Def000028
+S C$timer_manager.c$34$1_0$5 Def000049
+S C$timer_manager.c$26$1_0$5 Def000029
+S C$timer_manager.c$19$1_0$3 Def000028
+S C$timer_manager.c$17$2_0$4 Def000022
+S C$timer_manager.c$27$1_0$5 Def000032
+S C$timer_manager.c$28$1_0$5 Def00003F
+S G$engine_timer_manager_update$0$0 Def000029
+S C$timer_manager.c$7$0_0$3 Def000000
+S C$timer_manager.c$9$1_0$3 Def000008
+S _engine_timer_manager_update Def000029
+S A$timer_manager$120 Def000029
+S A$timer_manager$130 Def000038
+S A$timer_manager$121 Def00002D
+S A$timer_manager$131 Def000039
+S A$timer_manager$122 Def00002E
+S A$timer_manager$104 Def000028
+S A$timer_manager$132 Def00003B
+S A$timer_manager$133 Def00003C
+S A$timer_manager$143 Def000042
+S A$timer_manager$134 Def00003E
+S A$timer_manager$144 Def000045
+S A$timer_manager$126 Def000032
+S XG$engine_timer_manager_update$0$0 Def000049
+S A$timer_manager$127 Def000035
+S A$timer_manager$128 Def000036
 A _DATA size 4 flags 0 addr 0
-S G$global_timer_object$0$0 Def0000
-S _global_timer_object Def0000
+S _global_timer_object Def000000
+S G$global_timer_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -80,31 +78,31 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 22 00 00
-R 00 00 00 00 00 0E 01 00
-T 0E 00 21 02 00 DD 7E 04 77 23 DD 7E 05 77 3A
-R 00 00 00 00 00 03 01 00
-T 1B 00 00 00 B7 28 06 21 00 00 22 02 00
-R 00 00 00 00 02 02 00 00 00 0B 01 00
-T 26 00
+T 00 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 22
 R 00 00 00 00
-T 26 00 DD E1 C9
+T 0C 00 00 00 00 01 02 00 69 60 DD 7E 04 77 23 DD
+R 00 00 00 00 00 03 01 00 00 06 01 00
+T 19 00 00 7E 05 77 3A 00 00 B7 28 04 AF 02 03 02
+R 00 00 00 00 02 07 00 00
+T 26 00 00
 R 00 00 00 00
-T 29 00
+T 26 00 00 DD E1 C9
 R 00 00 00 00
-T 29 00 ED 4B 00 00 03 ED 43 00 00 21 00 00 23 23
-R 00 00 00 00 00 04 01 00 00 09 01 00 00 0C 01 00
-T 37 00 5E 23 56 79 93 78 9A 3E 00 17 EE 01 4F 47
+T 29 00 00
 R 00 00 00 00
-T 45 00 B7 28 06 21 00 00 22 00 00
-R 00 00 00 00 00 09 01 00
-T 4E 00
+T 29 00 00 ED 4B 00 00 03 ED 43 00 00 2A 02 00 79
+R 00 00 00 00 00 05 01 00 00 0A 01 00 00 0D 01 00
+T 36 00 00 95 78 9C 3E 00 17 EE 01 4F B7 28 06 21
 R 00 00 00 00
-T 4E 00 68 C9
+T 43 00 00 00 00 22 00 00
+R 00 00 00 00 00 06 01 00
+T 48 00 00
+R 00 00 00 00
+T 48 00 00 69 C9
 R 00 00 00 00

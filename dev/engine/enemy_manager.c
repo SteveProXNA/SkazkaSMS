@@ -3,18 +3,22 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../content/gfx.h"
 #include "../banks/fixedbank.h"
+#include "../banks/bank2.h"
 #include <stdlib.h>
 
 // Global variable.
 struct_enemy_object global_enemy_object;
 
-#define ENEMY_ROW				8
-
 unsigned char hplo_num[ MAX_ENEMIES ] =	{ 10, 10, 25, 25, 35, 50 };
 unsigned char ax_num[ MAX_ENEMIES ] =	{  1,  1,  2,  2,  3,  4 };
 unsigned char gldo_num[ MAX_ENEMIES ] = {  5,  5, 10, 10, 15,  0 };
 unsigned char xpo_num[ MAX_ENEMIES ] =	{  2,  2,  4,  4, 10,  0 };
+
+static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y );
+static void draw_leshy( unsigned char x, unsigned char y );
 
 void engine_enemy_manager_init()
 {
@@ -91,20 +95,71 @@ void engine_target_manager_load( unsigned char index )
 	eo->xpo = xpo_num[ index ];
 }
 
-void engine_enemy_manager_draw()
+void engine_enemy_manager_draw( unsigned char x, unsigned char y )
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	engine_font_manager_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, ENEMY_ROW );
+	if( enemy_type_leshy != eo->index )
+	{
+		draw_enemy( eo->index, x, y );
+	}
+	else
+	{
+		draw_leshy( x, y );
+	}
+}
 
-	engine_text_manager_args( LEFT_X + 23, FIGHT_ROW + 0, 2, 0x20, 0x40 );
-	engine_text_manager_args( LEFT_X + 23, FIGHT_ROW + 1, 3, 0x2D, 0x8E, 0x2D );
-	engine_text_manager_args( LEFT_X + 23, FIGHT_ROW + 2, 2, 0x20, 0x5E );
+static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = battle_enemies__tilemap__bin;
+
+	unsigned char wide = 3;
+	unsigned char high = 4;
+	unsigned char i, j;
+
+	unsigned int tile = idx * ( wide * high );
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			tile++;
+		}
+	}
+}
+static void draw_leshy( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
+
+	unsigned char wide = 3;
+	unsigned char high = 4;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int tile = 0;
+	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( SPRITE_TILES + idx ) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}
+
+void engine_enemy_manager_text()
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_draw_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
 }
 
 void engine_enemy_manager_hplo()
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	engine_font_manager_data( eo->hplo, LEFT_X + 29, FIGHT_ROW + 3 );
+	engine_font_manager_draw_data( eo->hplo, LEFT_X + 29, TOP_Y + 21 );
 }
 
 void engine_enemy_manager_hit( char hp )

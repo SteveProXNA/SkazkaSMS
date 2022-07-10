@@ -1,69 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\devkit">
-      <UniqueIdentifier>{7f633552-a6d4-4fb7-a338-9117501e7ee0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\engine">
-      <UniqueIdentifier>{e2fd97d9-ac69-4a7a-8d99-fddc5462cbbd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\devkit">
-      <UniqueIdentifier>{f148aff4-06ab-469a-9d2a-cf52e99900e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\engine">
-      <UniqueIdentifier>{741adb6f-8ef6-4422-953c-1a6aa5238433}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\screen">
-      <UniqueIdentifier>{bff1fa7b-1bc5-415e-b26f-62a8c2a9a037}</UniqueIdentifier>
+    <Filter Include="Header Files\devkit">
+      <UniqueIdentifier>{7f633552-a6d4-4fb7-a338-9117501e7ee0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\screen">
-      <UniqueIdentifier>{68ea314a-6b30-46bd-be74-024da28c4cea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\banks">
-      <UniqueIdentifier>{713dc248-64ab-47f9-a628-5ff7e45e64a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\banks">
-      <UniqueIdentifier>{01b82bdc-54a4-4fcb-b092-6c42c370fbfb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\object">
-      <UniqueIdentifier>{786896d1-a9d3-441d-aeba-9cb0bd355f8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\object">
-      <UniqueIdentifier>{9270fca4-8922-4aa4-8cd6-5767c3ed980a}</UniqueIdentifier>
+    <Filter Include="Source Files\devkit">
+      <UniqueIdentifier>{f148aff4-06ab-469a-9d2a-cf52e99900e0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\content">
-      <UniqueIdentifier>{8752d6bd-574c-499e-a8c2-25f187ea7b0e}</UniqueIdentifier>
+      <UniqueIdentifier>{45758e2f-ffcc-4bb6-af81-3b639b86411c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\content">
-      <UniqueIdentifier>{242337f3-db91-4b69-8fa5-f8e44ae48d31}</UniqueIdentifier>
+      <UniqueIdentifier>{392bbe63-56ed-4fc3-a06e-a3b6a39c755f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{bee96e13-f6a1-446b-874e-671e8a5ad55d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{1fbe9e91-cb24-44ad-8c7d-49b2edcdb838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\banks">
+      <UniqueIdentifier>{e12cf6e9-1811-4dcc-964c-234e7b92fbf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\banks">
+      <UniqueIdentifier>{bb6baaac-8c97-4a6e-ade8-9f44ac511042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{367a914f-f358-488d-aa45-da0488ae9872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\screen">
+      <UniqueIdentifier>{f4e5a7c1-312e-49e3-850a-33a5b653ab0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\screen">
+      <UniqueIdentifier>{f10d0617-f5ea-4acd-a8e9-dc9ae0233edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{70d833e2-3006-4bf1-a7cb-faea1a4c353e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="devkit\_sms_manager.c">
       <Filter>Source Files\devkit</Filter>
     </ClCompile>
-    <ClCompile Include="engine\content_manager.c">
-      <Filter>Source Files\engine</Filter>
+    <ClCompile Include="game.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="content\gfx.c">
+      <Filter>Source Files\content</Filter>
     </ClCompile>
     <ClCompile Include="engine\asm_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\content_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="engine\font_manager.c">
@@ -72,19 +75,97 @@
     <ClCompile Include="engine\screen_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="engine\enum_manager.c">
+    <ClCompile Include="engine\graphics_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="engine\global_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="banks\bank2.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank3.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\locale_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\text_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\fixedbank.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="object\audio_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\enemy_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\game_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\hack_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\player_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\select_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\timer_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\boss_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\complete_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\diff_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\forest_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
     <ClCompile Include="screen\func_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\intro_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\load_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\menu_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="screen\none_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="screen\over_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\prep_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\relive_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\shop_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
     <ClCompile Include="screen\splash_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\start_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\stats_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\talk_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="screen\test_screen.c">
@@ -93,26 +174,47 @@
     <ClCompile Include="screen\title_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="screen\victory_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\enum_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\audio_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\enemy_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\fight_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\game_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\hack_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
     <ClCompile Include="engine\input_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="engine\text_manager.c">
+    <ClCompile Include="engine\player_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="engine\locale_manager.c">
+    <ClCompile Include="engine\random_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\sample_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="engine\select_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="object\select_object.c">
-      <Filter>Source Files\object</Filter>
+    <ClCompile Include="engine\timer_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="banks\bank2.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="banks\bank3.c">
-      <Filter>Source Files\banks</Filter>
+    <ClCompile Include="screen\credit_screen.c">
+      <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="banks\bank4.c">
       <Filter>Source Files\banks</Filter>
@@ -150,103 +252,13 @@
     <ClCompile Include="banks\bank15.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
-    <ClCompile Include="banks\fixedbank.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="devkit\_snd_manager.c">
       <Filter>Source Files\devkit</Filter>
     </ClCompile>
-    <ClCompile Include="engine\hack_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\timer_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="object\hack_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="object\timer_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\sample_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\game_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\player_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="object\game_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="object\player_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\forest_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\intro_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\menu_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\over_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\shop_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\stats_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\talk_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="content\gfx.c">
+    <ClCompile Include="content\psg.c">
       <Filter>Source Files\content</Filter>
     </ClCompile>
-    <ClCompile Include="object\enemy_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\enemy_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\fight_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\complete_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\victory_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\boss_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\prep_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\load_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="object\audio_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\audio_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\relive_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\random_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\diff_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\start_screen.c">
+    <ClCompile Include="screen\kill_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -259,16 +271,19 @@
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="devkit\_sms_manager.h">
       <Filter>Header Files\devkit</Filter>
     </ClInclude>
-    <ClInclude Include="engine\content_manager.h">
-      <Filter>Header Files\engine</Filter>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="content\gfx.h">
+      <Filter>Header Files\content</Filter>
     </ClInclude>
     <ClInclude Include="engine\asm_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\content_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\font_manager.h">
@@ -277,19 +292,97 @@
     <ClInclude Include="engine\screen_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="engine\enum_manager.h">
+    <ClInclude Include="banks\bank2.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\bank3.h">
+      <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\graphics_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\global_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="engine\locale_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\text_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="banks\fixedbank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="object\audio_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\enemy_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\game_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\hack_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\player_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\select_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\timer_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\boss_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\complete_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\diff_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\forest_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
     <ClInclude Include="screen\func_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\intro_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\load_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\menu_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="screen\none_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="screen\over_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\prep_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\relive_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\shop_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
     <ClInclude Include="screen\splash_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\start_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\stats_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\talk_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="screen\test_screen.h">
@@ -298,26 +391,47 @@
     <ClInclude Include="screen\title_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="screen\victory_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\enum_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\audio_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\enemy_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\fight_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\game_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\hack_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
     <ClInclude Include="engine\input_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="engine\text_manager.h">
+    <ClInclude Include="engine\sample_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="engine\locale_manager.h">
+    <ClInclude Include="engine\random_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\player_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\select_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="object\select_object.h">
-      <Filter>Header Files\object</Filter>
+    <ClInclude Include="engine\timer_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="banks\bank2.h">
-      <Filter>Header Files\banks</Filter>
-    </ClInclude>
-    <ClInclude Include="banks\bank3.h">
-      <Filter>Header Files\banks</Filter>
+    <ClInclude Include="screen\credit_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="banks\bank4.h">
       <Filter>Header Files\banks</Filter>
@@ -355,103 +469,13 @@
     <ClInclude Include="banks\bank15.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="banks\fixedbank.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="devkit\_snd_manager.h">
       <Filter>Header Files\devkit</Filter>
     </ClInclude>
-    <ClInclude Include="engine\hack_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\timer_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="object\hack_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="object\timer_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\sample_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="object\player_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="object\game_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\game_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\player_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\forest_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\intro_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\menu_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\over_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\shop_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\stats_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\talk_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="content\gfx.h">
+    <ClInclude Include="content\psg.h">
       <Filter>Header Files\content</Filter>
     </ClInclude>
-    <ClInclude Include="object\enemy_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\enemy_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\fight_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\complete_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\victory_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\boss_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\prep_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\load_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="object\audio_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\audio_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\relive_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\random_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\diff_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\start_screen.h">
+    <ClInclude Include="screen\kill_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -15,6 +16,7 @@
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdbool.h>
 #include <stdlib.h>
@@ -32,7 +34,7 @@ static unsigned char run_away_val;
 static void setup();
 static bool calc_add_armor();
 
-unsigned char run_away_hit[ MAX_ENEMIES ] = { 1, 2, 1 };
+unsigned char run_away_hit[ 2 ] = { 1, 2 };
 
 void screen_forest_screen_load()
 {
@@ -76,8 +78,8 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
-			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 3 );
-			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 2 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 17 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 18 );
 
 			if( fight_type_battle == curr_selection )
 			{
@@ -106,6 +108,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				engine_enemy_manager_hit( enemys_damage );
 				if( engine_enemy_manager_dead() )
 				{
+					devkit_PSGSFXStop();
+					devkit_PSGStop();
+
 					engine_fight_manager_gold( &xp, &player_gold );
 					engine_player_manager_inc_gold( xp, player_gold );
 
@@ -190,7 +195,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				}
 
 				engine_sound_manager_play( sound_type_10 );
-				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
+				engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
 				event_stage = scene_type_pushon;
 			}
 		}
@@ -204,11 +211,11 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			random = engine_random_manager_next();
 			engine_fight_manager_enemy_to_player( &player_damage, random );
 
-			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
-			engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
 
-			engine_font_manager_data( enemys_damage, LEFT_X + 23, FIGHT_ROW - 3 );
-			engine_font_manager_data( player_damage, LEFT_X + 23, FIGHT_ROW - 2 );
+			engine_font_manager_draw_data( enemys_damage, LEFT_X + 24, TOP_Y + 17 );
+			engine_font_manager_draw_data( player_damage, LEFT_X + 24, TOP_Y + 18 );
 
 			event_stage = scene_type_pushon;
 		}
@@ -222,35 +229,53 @@ static void setup()
 	unsigned char row;
 	unsigned char idx;
 
-	row = 1;
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 2, row + 9 );
+	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
 
-	row = 5;
+	engine_content_manager_load_logo_small();
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+
+	engine_content_manager_load_enemies();
+	engine_content_manager_load_leshy();
+	engine_enemy_manager_draw( LEFT_X + 27, TOP_Y + 16 );
+
+	engine_content_manager_load_player();
+	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );
+
+	row = 6;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 2; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char * ) forest_texts[ idx ], LEFT_X + 5, row++ );
+		engine_font_manager_draw_text( ( unsigned char * ) forest_texts[ idx ], LEFT_X + 5, TOP_Y + row );
+		row++;
 	}
+
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 26, TOP_Y + 6 );
+	engine_font_manager_draw_punc( LOCALE_COLON, LEFT_X + 26, TOP_Y + 7 );
 
 	row = 11;
-	for( idx = 0; idx < 3; idx++ )
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 4; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 5, row++ );
+		engine_font_manager_draw_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 7, TOP_Y + row );
+		row++;
 	}
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 23, TOP_Y + 11 );
 
-	row = 12;
-	engine_select_manager_load( select_type, LEFT_X + 3, row, 2 );
+	row = 13;
+	engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + row, 2 );
 
-	engine_player_manager_draw();
-	engine_enemy_manager_draw();
+	engine_enemy_manager_text();
 
-	engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, FIGHT_ROW + 3 );
-	engine_font_manager_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, FIGHT_ROW + 3 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + 21 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + 21 );
 
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
+
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 }
 
 static bool calc_add_armor()

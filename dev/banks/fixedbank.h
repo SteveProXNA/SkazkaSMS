@@ -26,5 +26,6 @@ extern const unsigned char *menus_texts[];
 
 extern const unsigned char *over_texts[];
 extern const unsigned char *beat_texts[];
+extern const unsigned char *credit_texts[];
 
 #endif//_FIXEDBANK_H_

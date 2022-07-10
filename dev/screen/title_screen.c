@@ -1,9 +1,11 @@
 #include "title_screen.h"
+#include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
@@ -11,6 +13,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 #include <stdbool.h>
 #include <stdlib.h>
 
@@ -23,20 +26,23 @@ static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
-	unsigned char row = 1;
-	engine_timer_manager_load( TITLE_FLASH_DELAY );
-
 	devkit_SMS_displayOff();
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 0, row + 9 );
 
-	// SKAZKA.
-	engine_text_manager_title( row + 2 );
-	engine_font_manager_text( LOCALE_TITLE_MSG1, LEFT_X + 7, 12 );
-	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_load_tiles();
+	engine_content_manager_load_logo_big();
 
+	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
+	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
+
+	engine_graphics_manager_draw_border();
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( TITLE_FLASH_DELAY );
 	first_time = true;
 	event_stage = event_stage_start;
 	flash_count = 0;
@@ -73,15 +79,24 @@ void screen_title_screen_update( unsigned char *screen_type )
 				{
 					engine_music_manager_play( index );
 					engine_input_manager_update();
-					input = engine_input_manager_move( input_type_fire2 );
+					input = engine_input_manager_hold( input_type_fire2 );
 					if( input )
 					{
+						engine_input_manager_update();
 						index = 5;
 					}
 				}
 			}
 
-			engine_text_manager_fire();
+			engine_text_manager_cont();
+		}
+
+		// Navigate to hidden credits screen.
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			*screen_type = screen_type_credit;
+			return;
 		}
 
 		rand();
@@ -95,18 +110,18 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 			if( flash_count )
 			{
-				engine_font_manager_text( LOCALE_6_SPCS, LEFT_X + 11, FIRE1_ROW );
+				engine_font_manager_draw_char( LOCALE_1_SPCS, LEFT_X + 15, TOP_Y + 21 );
 			}
 			else
 			{
-				engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
+				engine_text_manager_one();
 			}
 		}
 
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
-			engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
+			engine_text_manager_one();
 			engine_timer_manager_load( TITLE_SOUND_DELAY );
 
 			if( !ho->hack_delays )

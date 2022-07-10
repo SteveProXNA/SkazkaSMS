@@ -5,29 +5,43 @@
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-#include <stdbool.h>
 
 #define OVER_SCREEN_DELAY		200
 
-static void game_over();
 static bool first_time;
 
 void screen_over_screen_load()
 {
-	unsigned char row = 1;
+	unsigned char row;
+	unsigned char idx;
 
 	devkit_SMS_displayOff();
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 2, row + 9 );
+	engine_content_manager_load_logo_small();
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
-	game_over();
-	engine_text_manager_fire();
+	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
+
+	row = 9;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 4; idx++ )
+	{
+		engine_font_manager_draw_text( ( unsigned char * ) over_texts[ idx ], LEFT_X + 9, TOP_Y + row );
+		row++;
+	}
+
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 21, TOP_Y + 9 );
+
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_draw_underline( TOP_Y + 4 );
+
+	engine_text_manager_cont();
 	devkit_SMS_displayOn();
 
 	engine_timer_manager_load( OVER_SCREEN_DELAY );
@@ -69,23 +83,9 @@ void screen_over_screen_update( unsigned char *screen_type )
 	timer = engine_timer_manager_update();
 	if( input1 || input2 || timer )
 	{
-		
 		*screen_type = screen_type_title;
 		return;
 	}
 
 	*screen_type = screen_type_over;
-}
-
-static void game_over()
-{
-	unsigned char row;
-	unsigned char idx;
-
-	row = 9;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 4; idx++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) over_texts[ idx ], LEFT_X + 10, row++ );
-	}
 }

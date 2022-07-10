@@ -19,6 +19,7 @@ unsigned char engine_input_manager_hold( unsigned char data )
 	return curr_joypad1 & data && !( prev_joypad1 & data );
 }
 
+// Public methods MOVE.
 unsigned char engine_input_manager_move( unsigned char data )
 {
 	return curr_joypad1 & data;

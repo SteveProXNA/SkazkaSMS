@@ -56,19 +56,6 @@ unsigned char* devkit_SMS_SRAM();
 /* wait until next VBlank starts */
 void devkit_SMS_waitForVBlank();
 
-/* functions to load tiles into VRAM */
-void devkit_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size );
-void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom );
-
-/* functions for the tilemap */
-void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size );
-void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char width*/ );
-void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height );
-
-// turning SMS_loadSTMcompressedTileMap into a define
-void devkit_SMS_loadSTMcompressedTileMap(unsigned char x, unsigned char y, unsigned char *src);
-//#define devkit_SMS_loadSTMcompressedTileMap(x,y,src)     SMS_loadSTMcompressedTileMapArea(x,y,src,32)
-
 void devkit_SMS_crt0_RST08( unsigned int addr );
 void devkit_SMS_crt0_RST18( unsigned int tile );
 
@@ -81,8 +68,12 @@ void devkit_SMS_setAddr( const unsigned int addr );
 void devkit_XYtoADDR( unsigned int x, unsigned char y );
 void devkit_SMS_setNextTileatXY( unsigned char x, unsigned char y );
 void devkit_SMS_setNextTileatLoc( unsigned int loc );
-void devkit_SMS_setNextTileatAddr( const unsigned char a );
+void devkit_SMS_setNextTileatAddr( const unsigned char a	);
 void devkit_SMS_setTileatXY( unsigned int x, unsigned char y, unsigned int tile );
+
+//#define SMS_VDPVRAMWrite          0x4000
+/* macro for turning tile numbers into VRAM addr for writing */
+void devkit_TILEtoADDR( unsigned int tile );
 
 /* handy defines for tilemaps entry */
 unsigned int devkit_TILE_FLIPPED_X();
@@ -90,9 +81,34 @@ unsigned int devkit_TILE_FLIPPED_Y();
 unsigned int devkit_TILE_USE_SPRITE_PALETTE();
 unsigned int devkit_TILE_PRIORITY();
 
+/* functions to load tiles into VRAM */
+void devkit_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size );
+void devkit_SMS_load1bppTiles( const void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1 );
+
+/* functions to load compressed tiles into VRAM */
+void devkit_SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom );
+
+/* UNSAFE functions to load compressed tiles into VRAM */
+void devkit_UNSAFE_SMS_loadZX7compressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_UNSAFE_SMS_loadZX7compressedTiles( const void *src, unsigned int tilefrom );
+void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_UNSAFE_SMS_loadaPLibcompressedTiles( const void *src, unsigned int tilefrom );
+
+/* functions for the tilemap */
+void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, unsigned char *src, int size );
+void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height );
+
+void devkit_SMS_loadSTMcompressedTileMapatAddr( unsigned int dst, const void *src );
+void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsigned char *src );
+void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ );
+// SMS_loadSTMcompressedTileMapArea *DEPRECATED* - will be dropped at some point in 201818
+
 /* functions for sprites handling */
 void devkit_SMS_initSprites();
 void devkit_SMS_addSprite( unsigned char x, unsigned char y, int tile );
+void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile ); /*__naked __preserves_regs( iyh, iyl )*/     /* doesn't return anything */
+void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile );  /*__naked __preserves_regs( iyh, iyl )*/   /* doesn't return anything */
 signed char devkit_SMS_reserveSprite( void );
 void devkit_SMS_updateSpritePosition( signed char sprite, unsigned char x, unsigned char y );
 void devkit_SMS_updateSpriteImage( signed char sprite, unsigned char tile );
@@ -127,6 +143,13 @@ void devkit_SMS_loadSpritePaletteHalfBrightness( void *palette );
 void devkit_SMS_zeroBGPalette( void );
 void devkit_SMS_zeroSpritePalette( void );
 
+/* text renderer */
+void devkit_SMS_configureTextRenderer( signed int ascii_to_tile_offset );
+void devkit_SMS_autoSetUpTextRenderer( void );
+
+/* decompress ZX7-compressed data to RAM */
+void devkit_SMS_decompressZX7( const void *src, void *dst );
+
 /* functions to read joypad(s) */
 unsigned int devkit_SMS_getKeysStatus();
 unsigned int devkit_SMS_getKeysPressed();
@@ -155,28 +178,41 @@ unsigned int devkit_CARTRIDGE_SLOT();
 unsigned int devkit_PORT_A_TH();
 unsigned int devkit_PORT_B_TH();
 
+/* paddle controller handling (SMS only) */
+unsigned char devkit_PORT_A();
+unsigned char devkit_PORT_B();
+unsigned char devkit_SMS_detectPaddle( unsigned char port ); //__z88dk_fastcall __naked;
+unsigned char devkit_SMS_readPaddle( unsigned char port ); //__z88dk_fastcall __naked;
+
 /* pause handling (SMS only) */
 unsigned char devkit_SMS_queryPauseRequested();
 void devkit_SMS_resetPauseRequest();
 
-/* VDPType handling (SMS only) */
-//unsigned char SMS_VDPType( void );
+// SMS_VDPType
+//unsigned char devkit_SMS_VDPType( void );
+///* WARNING: these constants may change value later, please use defines */
 //unsigned char devkit_VDP_PAL();
 //unsigned char devkit_VDP_NTSC();
 
+// SMS_VDPFlags
 unsigned char devkit_SMS_VDPFlags( void );
 unsigned char devkit_VDPFLAG_SPRITEOVERFLOW();
 unsigned char devkit_VDPFLAG_SPRITECOLLISION();
 
 /* line interrupt */
-void devkit_SMS_setLineInterruptHandler( void( *theHandlerFunction )( void ) );
+void devkit_SMS_setLineInterruptHandler( void( *theHandlerFunction )( void ) ); // __z88dk_fastcall;
 void devkit_SMS_setLineCounter( unsigned char count );
 void devkit_SMS_enableLineInterrupt(); /* turns on line IRQ */
 void devkit_SMS_disableLineInterrupt(); /* turns off line IRQ */
 
+/* Vcount */
+unsigned char devkit_SMS_getVCount( void );
+/* Hcount */
+unsigned char devkit_SMS_getHCount( void );
+
 /* low level functions */
-void devkit_SMS_VRAMmemcpy( unsigned int dst, void *src, unsigned int size );
-void devkit_SMS_VRAMmemcpy_brief( unsigned int dst, void *src, unsigned char size );
+void devkit_SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size ); // __naked __z88dk_callee __preserves_regs( iyh, iyl );
+void devkit_SMS_VRAMmemcpy_brief( unsigned int dst, const void *src, unsigned char size ); // __naked __z88dk_callee __preserves_regs( iyh, iyl );
 void devkit_SMS_VRAMmemset( unsigned int dst, unsigned char value, unsigned int size );
 void devkit_SMS_VRAMmemsetW( unsigned int dst, unsigned int value, unsigned int size );
 
@@ -191,12 +227,9 @@ void devkit_UNSAFE_SMS_load1Tile( void *src, unsigned int theTile );
 void devkit_UNSAFE_SMS_load2Tiles( void *src, unsigned int tilefrom );
 void devkit_UNSAFE_SMS_load4Tiles( void *src, unsigned int tilefrom );
 
-/* macros for SEGA and SDSC headers */
-//#define SMS_BYTE_TO_BCD(n) (((n)/10)*16+((n)%10))
-
 /* the Interrupt Service Routines (do not modify) */
-void dekvit_SMS_isr( void );
-void dekvit_SMS_nmi_isr( void );
+void dekvit_SMS_isr( void ); // __naked;
+void dekvit_SMS_nmi_isr( void ); // __naked;
 
 
 // Helper functions.

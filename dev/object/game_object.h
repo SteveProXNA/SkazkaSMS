@@ -5,7 +5,6 @@
 
 typedef struct tag_struct_game_object
 {
-	bool blue_screen;
 	bool intro_once;
 	bool play_music;
 	bool flash_arrow;

@@ -22,7 +22,7 @@ void PSGSFXPlay (void *sfx, unsigned char channels) {}
 void PSGSFXPlayLoop (void *sfx, unsigned char channels) {}
 void PSGSFXCancelLoop (void) {}
 void PSGSFXStop (void) {}
-unsigned char PSGSFXGetStatus (void) { return 1; }
+unsigned char PSGSFXGetStatus (void) { return 0; }
 
 void PSGSilenceChannels (void) {}
 void PSGRestoreVolumes (void) {}
