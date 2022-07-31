@@ -1,6 +1,8 @@
 # Skazka SMS
 Skazka game for the SMS Power! 2022 Competition.
 
+![Skazka](https://github.com/SteveProXNA/SkazkaSMS/blob/main/img/SkazkaSMS.png)
+
 ###### RELEASE
 Sunday, 27th March 2022
 
